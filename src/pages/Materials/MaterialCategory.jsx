@@ -25,27 +25,25 @@ const MaterialCategory = () => {
   return (
     <section className="min-h-screen bg-slate-50">
       <div
-        className="relative h-56 bg-cover bg-center sm:h-72 lg:h-80"
+        className="relative h-44 sm:h-56 md:h-72 lg:h-80 bg-cover bg-center"
         style={{ backgroundImage: `url(${bannerIndustrial})` }}
       >
-        <div className="absolute inset-0 bg-slate-950/75" />
-        <div className="relative mx-auto flex h-full max-w-7xl items-center px-5 sm:px-8 lg:px-10">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-400">
-              Material Group
-            </p>
-            <h1 className="mt-3 text-3xl font-semibold text-white sm:text-4xl lg:text-5xl">
-              {material.name}
-            </h1>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-slate-300">
-              {material.overview}
-            </p>
-          </div>
+        <div className="absolute inset-0 bg-blue-950/70" />
+        <div className="relative max-w-7xl mx-auto h-full flex flex-col justify-center px-5 sm:px-8 lg:px-10">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-400 mb-2">
+            Material Group
+          </p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-wide text-white">
+            {material.name} Products
+          </h1>
+          <p className="mt-4 max-w-2xl text-slate-200 text-sm sm:text-base">
+            {material.overview}
+          </p>
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-10">
-        <div className="flex flex-wrap gap-3">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        <div className="flex flex-wrap gap-3 mb-10">
           {material.highlight?.map((item) => (
             <span
               key={item}
@@ -56,30 +54,31 @@ const MaterialCategory = () => {
           ))}
         </div>
 
-        <div className="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
           {material.items?.map((item) => (
             <Link
               key={item.slug}
               to={`/materials/${material.slug}/${item.slug}`}
-              className="group overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-[0_18px_55px_-25px_rgba(15,23,42,0.35)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_-28px_rgba(15,23,42,0.4)]"
+              className="group flex flex-col bg-white rounded-2xl border-2 border-sky-500 overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
             >
               <div className="overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-56 sm:h-60 object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <div className="p-6">
-                <h2 className="text-xl font-semibold text-slate-900">
+
+              <div className="flex flex-col flex-1 p-6">
+                <h2 className="text-xl font-bold text-blue-900 leading-7 mb-3 uppercase">
                   {item.title}
                 </h2>
-                <p className="mt-3 text-sm leading-7 text-slate-600">
+                <p className="text-gray-600 text-sm leading-6 flex-grow">
                   {item.shortDescription}
                 </p>
-                <div className="mt-5 text-sm font-semibold text-sky-700">
-                  View material details →
-                </div>
+                <span className="mt-8 w-full text-center bg-blue-900 group-hover:bg-sky-600 text-white font-semibold uppercase tracking-wide py-3 rounded-lg transition-all duration-300">
+                  Explore Range
+                </span>
               </div>
             </Link>
           ))}
