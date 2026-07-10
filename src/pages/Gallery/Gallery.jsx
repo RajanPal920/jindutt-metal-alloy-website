@@ -9,7 +9,7 @@ import products from "../../data/products";
 const Gallery = () => {
   const categories = useMemo(
     () => ["All", ...new Set(products.map((p) => p.category))],
-    []
+    [],
   );
   const [activeFilter, setActiveFilter] = useState("All");
   const [lightboxImage, setLightboxImage] = useState(null);
@@ -22,7 +22,7 @@ const Gallery = () => {
   return (
     <section className="bg-slate-50 min-h-screen">
       {/* Hero */}
-      <div className="bg-slate-950 py-16 px-5 sm:px-8 lg:px-10">
+      <div className="bg-blue-950 py-16 px-5 sm:px-8 lg:px-10">
         <div className="max-w-7xl mx-auto">
           <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-amber-400 mb-3 block">
             Our Work
@@ -46,8 +46,8 @@ const Gallery = () => {
               onClick={() => setActiveFilter(cat)}
               className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors duration-200 ${
                 activeFilter === cat
-                  ? "bg-red-700 text-white"
-                  : "bg-white border border-slate-200 text-slate-600 hover:border-red-300 hover:text-red-700"
+                  ? "bg-sky-700 text-white"
+                  : "bg-white border border-slate-200 text-slate-600 hover:border-sky-300 hover:text-blue-900"
               }`}
             >
               {cat}
