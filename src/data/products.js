@@ -1,3 +1,30 @@
+import {
+  Settings,
+  GaugeCircle,
+  ScrollText,
+  Circle,
+  Cable,
+  RectangleHorizontal,
+  AlignHorizontalSpaceAround,
+  ShieldCheck,
+  Grid2X2,
+  Bolt,
+  Square,
+  GitBranch,
+  Nut,
+  Disc3,
+  FlaskConical,
+  Waves,
+  Layers,
+  LayoutGrid,
+  Cylinder,
+  Wrench,
+  Columns3,
+  CircleDot,
+  Milk,
+  Network,
+} from "lucide-react";
+
 import flangesImg from "../assets/images/productImage/Flanges.webp";
 import valvesImg from "../assets/images/productImage/valves.webp";
 import coilsImg from "../assets/images/productImage/coil.webp";
@@ -30,6 +57,7 @@ const products = [
     name: "Flanges",
     slug: "flanges",
     image: flangesImg,
+    icon: Settings,
     category: "Pipe Fittings",
     shortDescription:
       "Premium quality industrial flanges manufactured in Stainless Steel, Carbon Steel, Duplex and Alloy Steel.",
@@ -39,6 +67,7 @@ const products = [
     name: "Valves",
     slug: "valves",
     image: valvesImg,
+    icon: GaugeCircle,
     category: "Industrial Valves",
     shortDescription:
       "Reliable industrial valves designed for high pressure and critical flow control applications.",
@@ -48,6 +77,7 @@ const products = [
     name: "Coils",
     slug: "coils",
     image: coilsImg,
+    icon: ScrollText,
     category: "Flat Products",
     shortDescription:
       "High-quality stainless steel coils available in various thicknesses and finishes.",
@@ -57,198 +87,204 @@ const products = [
     name: "Rod & Round Bars",
     slug: "rod-bars",
     image: roundBarsImg,
+    icon: Circle,
     category: "Bars & Rods",
     shortDescription:
-      "Precision engineered stainless steel and alloy round bars for industrial applications.",
+      "Precision engineered stainless steel and alloy round bars.",
   },
   {
     id: 5,
     name: "Wires",
     slug: "wires",
     image: wiresImg,
+    icon: Cable,
     category: "Wire Products",
-    shortDescription:
-      "Industrial wires suitable for fabrication, welding, and engineering industries.",
+    shortDescription: "Industrial wires suitable for fabrication and welding.",
   },
   {
     id: 6,
     name: "Patta Patti",
     slug: "patta-patti",
     image: pattaPattiImg,
+    icon: RectangleHorizontal,
     category: "Flat Products",
     shortDescription:
-      "Premium stainless steel patta patti available in multiple dimensions.",
+      "Premium stainless steel patta patti in multiple dimensions.",
   },
   {
     id: 7,
     name: "Strips",
     slug: "strips",
     image: stripsImg,
+    icon: AlignHorizontalSpaceAround,
     category: "Flat Products",
-    shortDescription:
-      "Durable stainless steel strips for industrial and commercial use.",
+    shortDescription: "Durable stainless steel strips for industrial use.",
   },
   {
     id: 8,
     name: "Dairy & Pharma Valves",
     slug: "dairy-pharma-valves",
     image: dairyPharmaValvesImg,
+    icon: ShieldCheck,
     category: "Sanitary Valves",
     shortDescription:
-      "Specialized valves designed for dairy, food and pharmaceutical industries.",
+      "Specialized valves for dairy and pharmaceutical industries.",
   },
   {
     id: 9,
     name: "Perforated Sheet",
     slug: "perforated-sheet",
     image: perforatedSheetImg,
+    icon: Grid2X2,
     category: "Sheets",
     shortDescription:
-      "High precision perforated sheets manufactured in various hole patterns.",
+      "High precision perforated sheets in various hole patterns.",
   },
   {
     id: 10,
     name: "Anchor Fastener",
     slug: "anchor-fastener",
     image: anchorFastenerImg,
+    icon: Bolt,
     category: "Fasteners",
     shortDescription:
-      "Heavy-duty anchor fasteners for construction and industrial installations.",
+      "Heavy-duty anchor fasteners for industrial installations.",
   },
   {
     id: 11,
     name: "Pipes",
     slug: "pipes",
     image: pipesImg,
+    icon: Cylinder,
     category: "Pipes & Tubes",
-    shortDescription:
-      "Seamless and welded pipes available in multiple grades and standards.",
+    shortDescription: "Seamless and welded pipes available in multiple grades.",
   },
   {
     id: 12,
     name: "Sheets",
     slug: "sheets",
     image: sheetsImg,
+    icon: Square,
     category: "Flat Products",
-    shortDescription:
-      "High-performance stainless steel sheets for engineering industries.",
+    shortDescription: "High-performance stainless steel sheets.",
   },
   {
     id: 13,
     name: "Buttweld Fittings",
     slug: "buttweld-fittings",
     image: buttweldImg,
+    icon: GitBranch,
     category: "Pipe Fittings",
     shortDescription:
-      "Premium buttweld fittings manufactured according to ASTM and ASME standards.",
+      "Premium buttweld fittings manufactured to ASTM standards.",
   },
   {
     id: 14,
     name: "Fasteners",
     slug: "fasteners",
     image: fastenersImg,
+    icon: Nut,
     category: "Industrial Fasteners",
-    shortDescription:
-      "Complete range of industrial fasteners for heavy engineering applications.",
+    shortDescription: "Complete range of industrial fasteners.",
   },
   {
     id: 15,
     name: "Rings",
     slug: "rings",
     image: ringsImg,
+    icon: Disc3,
     category: "Forged Products",
-    shortDescription:
-      "Precision forged rings manufactured to international quality standards.",
+    shortDescription: "Precision forged rings.",
   },
   {
     id: 16,
     name: "Pharma Fittings",
     slug: "pharma-fittings",
     image: pharmaFittingsImg,
+    icon: FlaskConical,
     category: "Sanitary Fittings",
-    shortDescription:
-      "Hygienic pharmaceutical fittings manufactured with superior finish.",
+    shortDescription: "Hygienic pharmaceutical fittings.",
   },
   {
     id: 17,
     name: "Hose Pipe",
     slug: "hose-pipe",
     image: hosePipeImg,
+    icon: Waves,
     category: "Industrial Hose",
-    shortDescription:
-      "Industrial hose pipes suitable for chemical and fluid transfer systems.",
+    shortDescription: "Industrial hose pipes for chemical transfer.",
   },
   {
     id: 18,
     name: "Hardox Plate",
     slug: "hardox-plate",
     image: hardoxPlateImg,
+    icon: Layers,
     category: "Wear Resistant Plates",
-    shortDescription:
-      "Premium Hardox wear-resistant plates for mining and heavy industries.",
+    shortDescription: "Premium Hardox wear-resistant plates.",
   },
   {
     id: 19,
     name: "Plates",
     slug: "plates",
     image: platesImg,
+    icon: LayoutGrid,
     category: "Flat Products",
-    shortDescription:
-      "Industrial plates manufactured in Stainless Steel, Carbon Steel and Alloy Steel.",
+    shortDescription: "Industrial plates in stainless steel and alloy steel.",
   },
   {
     id: 20,
     name: "Tubes",
     slug: "tubes",
     image: tubesImg,
+    icon: Cylinder,
     category: "Pipes & Tubes",
-    shortDescription:
-      "Seamless and welded tubes for industrial, structural and process applications.",
+    shortDescription: "Seamless and welded tubes.",
   },
   {
     id: 21,
     name: "Forged Fittings",
     slug: "forged-fittings",
     image: forgedFittingsImg,
+    icon: Wrench,
     category: "Forged Products",
-    shortDescription:
-      "High-pressure forged fittings manufactured according to ASTM standards.",
+    shortDescription: "High-pressure forged fittings.",
   },
   {
     id: 22,
     name: "Angle & Channels",
     slug: "angle-channels",
     image: angleChannelsImg,
+    icon: Columns3,
     category: "Structural Steel",
-    shortDescription:
-      "Structural angles and channels for fabrication and infrastructure projects.",
+    shortDescription: "Structural angles and channels.",
   },
   {
     id: 23,
     name: "Circles",
     slug: "circles",
     image: circlesImg,
+    icon: CircleDot,
     category: "Flat Products",
-    shortDescription:
-      "High precision stainless steel circles available in multiple diameters.",
+    shortDescription: "High precision stainless steel circles.",
   },
   {
     id: 24,
     name: "Dairy Fittings",
     slug: "dairy-fittings",
     image: dairyFittingsImg,
+    icon: Milk,
     category: "Sanitary Fittings",
-    shortDescription:
-      "Food-grade dairy fittings manufactured with excellent surface finish.",
+    shortDescription: "Food-grade dairy fittings.",
   },
   {
     id: 25,
     name: "Wire Mesh",
     slug: "wire-mesh",
     image: wireMeshImg,
+    icon: Network,
     category: "Wire Products",
-    shortDescription:
-      "Industrial wire mesh for filtration, screening and architectural applications.",
+    shortDescription: "Industrial wire mesh for filtration and screening.",
   },
 ];
 

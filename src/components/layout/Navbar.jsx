@@ -69,8 +69,12 @@ export default function Navbar() {
                   `}
                   >
                     <div className="flex items-center gap-3">
-                      {/* Modern dynamic bullet indicator */}
-                      <span className="h-1.5 w-1.5 rounded-full bg-slate-300 group-hover/item:bg-sky-500 group-hover/item:scale-125 transition-all duration-200" />
+                      {item.icon ? (
+                        <item.icon className="w-4 h-4 text-sky-500" />
+                      ) : (
+                        <span className="h-1.5 w-1.5 rounded-full bg-slate-300" />
+                      )}
+
                       <span className="tracking-wide whitespace-nowrap">
                         {item.name}
                       </span>
@@ -131,8 +135,10 @@ export default function Navbar() {
                 key={item.slug}
                 to={`/${path}/${item.slug}`}
                 onClick={() => setMobileMenu(false)}
-                className="py-2 text-sm text-slate-500 hover:text-sky-600"
+                className="flex items-center gap-3 py-2 text-sm text-slate-500 hover:text-sky-600"
               >
+                {item.icon && <item.icon className="w-4 h-4 text-sky-500" />}
+
                 {item.name}
               </NavLink>
             ))}

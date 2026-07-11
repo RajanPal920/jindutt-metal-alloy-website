@@ -1,16 +1,8 @@
-import React from "react";
-import { Globe } from "lucide-react";
+import { Globe, MapPin } from "lucide-react";
+import countries from "../../data/countries";
+import cities from "../../data/state";
 
-const Countries = ({ product }) => {
-  const countries = product?.countries || [];
-  const cities = product?.cities || [];
-
-  if (
-    (!countries || countries.length === 0) &&
-    (!cities || cities.length === 0)
-  )
-    return null;
-
+const Countries = () => {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
@@ -29,7 +21,7 @@ const Countries = ({ product }) => {
           <p className="mt-5 max-w-3xl mx-auto text-slate-600 leading-7">
             Jindutt Metal & Alloy Pvt. Ltd. supplies premium quality industrial
             products to customers across the globe with reliable delivery,
-            certified quality and competitive pricing.
+            certified quality, and competitive pricing.
           </p>
         </div>
 
@@ -38,24 +30,37 @@ const Countries = ({ product }) => {
           {countries.map((country, index) => (
             <div
               key={index}
-              className="group flex items-center gap-5 bg-slate-50 border border-slate-200 rounded-xl p-6 hover:bg-sky-50 hover:border-sky-300 hover:shadow-lg transition-all duration-300"
+              className="group flex items-center gap-5 bg-slate-50 border rounded-xl p-6"
             >
-              <div className="w-14 h-14 rounded-full bg-sky-100 flex items-center justify-center group-hover:bg-sky-600 transition">
-                <Globe
-                  size={28}
-                  className="text-sky-700 group-hover:text-white transition"
-                />
-              </div>
+              <span
+                className={`fi fi-${country.code.toLowerCase()} text-3xl rounded`}
+              ></span>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-800">
-                  {country}
-                </h3>
-
+                <h3 className="font-semibold">{country.name}</h3>
                 <p className="text-sm text-slate-500">Export Destination</p>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Cities */}
+        <div className="mt-20">
+          <h3 className="text-3xl font-bold text-center text-slate-900 mb-10">
+            Major Supply Cities
+          </h3>
+
+          <div className="flex flex-wrap justify-center gap-4">
+            {cities.map((city, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-2 px-5 py-3 rounded-full bg-slate-100 hover:bg-sky-600 hover:text-white transition-all duration-300"
+              >
+                <MapPin size={18} />
+                <span>{city.name}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -1,3 +1,14 @@
+import {
+  ShieldCheck,
+  Layers,
+  FlaskConical,
+  Waves,
+  CircleDot,
+  Settings,
+  Sparkles,
+  Box,
+} from "lucide-react";
+
 import coilImg from "../assets/images/productImage/coil.webp";
 import plateImg from "../assets/images/productImage/plates.webp";
 import tubeImg from "../assets/images/productImage/tubes.webp";
@@ -18,6 +29,7 @@ const materials = [
     name: "Stainless Steel",
     slug: "stainless-steel",
     image: coilImg,
+    icon: ShieldCheck,
     description:
       "Corrosion-resistant austenitic, ferritic, and martensitic grades for general industrial, food, and architectural use.",
     overview:
@@ -70,6 +82,7 @@ const materials = [
     name: "Duplex Steel",
     slug: "duplex-steel",
     image: plateImg,
+    icon: Layers,
     description:
       "High-strength duplex and super duplex grades combining austenitic and ferritic properties for demanding environments.",
     overview:
@@ -118,6 +131,7 @@ const materials = [
     name: "Nickel Alloy",
     slug: "nickel-alloy",
     image: tubeImg,
+    icon: FlaskConical,
     description:
       "High-performance nickel-based alloys for extreme temperature and corrosive service.",
     overview:
@@ -166,6 +180,7 @@ const materials = [
     name: "Copper Nickel",
     slug: "copper-nickel",
     image: pipeImg,
+    icon: Waves,
     description:
       "Copper-nickel alloys prized for seawater corrosion resistance in marine and offshore applications.",
     overview:
@@ -210,6 +225,7 @@ const materials = [
     name: "Hastelloy",
     slug: "hastelloy",
     image: roundBarImg,
+    icon: Settings,
     description:
       "Nickel-molybdenum-chromium alloys engineered for severe chemical processing environments.",
     overview:
@@ -256,6 +272,7 @@ const materials = [
   {
     name: "Incoloy",
     slug: "incoloy",
+    icon: Layers,
     image: sheetImg,
     description:
       "Iron-nickel-chromium alloys offering strong resistance to oxidation and carburization at high temperatures.",
@@ -301,6 +318,7 @@ const materials = [
     name: "Inconel",
     slug: "inconel",
     image: wireImg,
+    icon: CircleDot,
     description:
       "Nickel-chromium superalloys built for extreme heat, pressure, and corrosive service in aerospace and energy.",
     overview:
@@ -349,6 +367,7 @@ const materials = [
     name: "Monel",
     slug: "monel",
     image: flangeImg,
+    icon: Box,
     description:
       "Nickel-copper alloys with excellent resistance to seawater and hydrofluoric acid environments.",
     overview:
@@ -397,6 +416,7 @@ const materials = [
     name: "Titanium",
     slug: "titanium",
     image: valveImg,
+    icon: Sparkles,
     description:
       "Lightweight, high-strength titanium grades with outstanding corrosion resistance for aerospace and marine use.",
     overview:
@@ -449,6 +469,7 @@ const materials = [
     name: "Sanicro",
     slug: "sanicro",
     image: ringImg,
+    icon: ShieldCheck,
     description:
       "Specialty austenitic stainless steels engineered for demanding sulfuric and phosphoric acid service.",
     overview:
@@ -497,6 +518,7 @@ const materials = [
     name: "Special Materials",
     slug: "special-materials",
     image: circleImg,
+    icon: Settings,
     description:
       "Custom and specialty alloy grades sourced for unique project specifications and critical applications.",
     overview:
@@ -549,6 +571,7 @@ const materials = [
     name: "Other Materials",
     slug: "other-materials",
     image: stripImg,
+    icon: Box,
     description:
       "Additional carbon steel, alloy steel, and engineering material grades available on request.",
     overview:

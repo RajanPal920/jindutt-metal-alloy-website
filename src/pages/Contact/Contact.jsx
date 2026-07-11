@@ -14,7 +14,7 @@ import {
   Diamond,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import logo from "../../assets/images/logo/logo.png";
+import logo from "../../assets/images/logo/jindutt-logo.png"
 
 const Contact = () => {
   const leftVariant = {
@@ -504,21 +504,21 @@ const Contact = () => {
           >
             {/* Company Logo Card */}
             <div className="absolute top-6 right-6 hidden md:flex items-center gap-4 rounded-xl bg-white px-5 py-3 shadow-2xl border border-slate-200 z-20">
-              <img
+              {/* <img
                 src={logo}
                 alt="Jindutt Metal & Alloy Pvt. Ltd."
-                className="h-12 w-auto object-contain"
-              />
+                className="h-12 w-20 object-contain rounded-full"
+              /> */}
 
-              <div>
-                <h3 className="text-lg font-extrabold text-[#082C8C] uppercase">
+               <div>
+                 <h3 className="text-sm font-extrabold text-[#082C8C] uppercase">
                   Jindutt Metal & Alloy Pvt. Ltd. EXPORT
-                </h3>
+                </h3> 
 
-                <p className="text-[11px] uppercase tracking-[0.2em] text-slate-500">
+                 <p className="text-[11px] uppercase tracking-[0.2em] text-slate-500">
                   VERIFIED SUPPLY NODE
-                </p>
-              </div>
+                </p> 
+              </div> 
             </div>
             {/* Decorative Corners */}
             <div className="absolute -top-5 -left-5 w-8 h-8 border-l-4 border-t-4 border-sky-500 z-20"></div>

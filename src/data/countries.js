@@ -1,5 +1,5 @@
 const countries = [
-  { name: "India", code: "in" },
+
   { name: "United States", code: "us" },
   { name: "Canada", code: "ca" },
   { name: "United Kingdom", code: "gb" },
@@ -41,7 +41,6 @@ const countries = [
   { name: "Bangladesh", code: "bd" },
   { name: "Nepal", code: "np" },
   { name: "Bhutan", code: "bt" },
-  { name: "Pakistan", code: "pk" },
   { name: "United Arab Emirates", code: "ae" },
   { name: "Saudi Arabia", code: "sa" },
   { name: "Qatar", code: "qa" },

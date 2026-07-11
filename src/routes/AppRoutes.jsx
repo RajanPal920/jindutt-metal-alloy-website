@@ -9,7 +9,7 @@ import Gallery from "../pages/Gallery/Gallery";
 import Materials from "../pages/Materials/Materials";
 import MaterialCategory from "../pages/Materials/MaterialCategory";
 import MaterialDetail from "../pages/Materials/MaterialDetail";
-import Dimensions from "../pages/Dimensions/Dimensions";
+
 
 import Certificates from "../pages/Certificates/Certificates";
 import CertificateDetails from "../pages/Certificates/CertificateDetails";
@@ -17,6 +17,8 @@ import CertificateDetails from "../pages/Certificates/CertificateDetails";
 import ProductMaterials from "../pages/Products/ProductMaterials";
 import ProductDetails from "../pages/Products/ProductDetails";
 import ProductCategories from "../components/productDetails/ProductCategories";
+import DimensionViewer from "../pages/Dimensions/DimensionViewer";
+
 
 const AppRoutes = () => {
   return (
@@ -41,7 +43,9 @@ const AppRoutes = () => {
       <Route path="/materials/:slug/:itemSlug" element={<MaterialDetail />} />
 
       {/* Dimensions */}
-      <Route path="/dimensions" element={<Dimensions />} />
+    
+
+      <Route path="/dimensions/:slug" element={<DimensionViewer />} />
 
       {/* Certificates */}
       <Route path="/certificates" element={<Certificates />} />

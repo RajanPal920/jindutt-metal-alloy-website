@@ -23,47 +23,365 @@ const anchorFastenerTypes = [
     fullDescription:
       "Our premium quality Wedge Anchors are engineered for superior performance in concrete and masonry applications. These heavy-duty anchors feature a precision-machined wedge mechanism that expands against the base material for maximum holding strength. Manufactured to international standards, our Wedge Anchors provide reliable, vibration-resistant fastening solutions for structural steel, heavy machinery, and industrial equipment installations. Available in a wide range of materials and sizes to suit your specific requirements.",
 
-    features: [
-      "High holding strength in concrete",
-      "Vibration-resistant design",
-      "Precision threaded for easy installation",
-      "Available in multiple materials",
-      "Corrosion-resistant options",
-      "Suitable for heavy loads",
-      "Quick and easy installation",
-      "Reliable performance in all weather conditions",
+    // ===============================
+    // TECHNICAL OVERVIEW
+    // ===============================
+
+    technicalOverview: {
+      title: "Wedge Anchors: Technical Overview",
+      description:
+        "Wedge anchors are mechanical fasteners designed for heavy-duty applications in concrete and masonry. They feature a precision-machined wedge mechanism that expands against the base material for maximum holding strength. The unique design ensures vibration-resistant performance and reliable load-bearing capacity.",
+      keyFeatures: [
+        "Heavy-duty construction for maximum strength",
+        "Vibration-resistant design for long-term reliability",
+        "Precision threading for easy installation",
+        "Corrosion-resistant options available",
+        "High load capacity for demanding applications",
+        "Suitable for both indoor and outdoor use",
+      ],
+    },
+
+    // ===============================
+    // STANDARD AUSTENITIC GRADES
+    // ===============================
+
+    standardGrades: [
+      {
+        grade: "SS 304/304L",
+        uns: "S30400/S30403",
+        description:
+          "The most widely used '18/8' stainless steel. Grade 304L features lower carbon to prevent sensitization during welding. It is the industry standard for food processing, kitchen equipment, and architectural paneling.",
+        applications: [
+          "Food processing equipment",
+          "Kitchen equipment",
+          "Architectural paneling",
+          "Chemical containers",
+          "General construction",
+        ],
+      },
+      {
+        grade: "SS 316/316L",
+        uns: "S31600/S31603",
+        description:
+          "Enhanced with Molybdenum, these coils offer superior resistance to chlorides and marine environments. They are the primary choice for pharmaceutical equipment, chemical tankers, and coastal infrastructure.",
+        applications: [
+          "Pharmaceutical equipment",
+          "Chemical tankers",
+          "Coastal infrastructure",
+          "Marine environments",
+          "Medical devices",
+        ],
+      },
     ],
 
-    benefits: [
-      "Superior load capacity",
-      "Quick installation saves time",
-      "Long service life",
-      "Minimal maintenance required",
-      "Cost-effective fastening solution",
-      "Versatile application range",
+    // ===============================
+    // HIGH-TEMPERATURE GRADES
+    // ===============================
+
+    highTemperatureGrades: [
+      {
+        grade: "SS 310S",
+        uns: "S31008",
+        description:
+          "High-nickel and high-chromium alloy designed for oxidation resistance. Specifically used for continuous service up to 1100°C (2012°F) in furnace parts and heat treatment equipment.",
+        applications: [
+          "Furnace parts",
+          "Heat treatment equipment",
+          "High-temperature processing",
+          "Thermal processing equipment",
+        ],
+      },
+      {
+        grade: "SS 321",
+        uns: "S32100",
+        description:
+          "Titanium-stabilized to prevent intergranular corrosion. Ideal for high-temperature applications in the range of 427°C to 815°C, such as aircraft exhaust stacks and manifold systems.",
+        applications: [
+          "Aircraft exhaust stacks",
+          "Manifold systems",
+          "Heat exchangers",
+          "High-temperature applications",
+        ],
+      },
     ],
+
+    // ===============================
+    // SPECIALIZED CORROSION GRADES
+    // ===============================
+
+    specializedGrades: [
+      {
+        grade: "SS 904L",
+        uns: "N08904",
+        description:
+          "A non-stabilized high-alloy austenitic steel with copper additions. Offers exceptional resistance to strong reducing acids and is widely used in pulp and paper industries and sulfuric acid plants.",
+        applications: [
+          "Pulp and paper industries",
+          "Sulfuric acid plants",
+          "Chemical processing",
+          "Seawater applications",
+        ],
+      },
+      {
+        grade: "17-4 PH",
+        uns: "S17400",
+        description:
+          "A chromium-copper precipitation-hardening martensitic stainless steel. Provides an outstanding combination of high strength, hardness, and moderate corrosion resistance, essential for aerospace components and pump shafts.",
+        applications: [
+          "Aerospace components",
+          "Pump shafts",
+          "Valve parts",
+          "High-strength applications",
+        ],
+      },
+    ],
+
+    // ===============================
+    // MANUFACTURING STANDARDS
+    // ===============================
+
+    manufacturingStandards: {
+      title: "Manufacturing and Quality Standards",
+      standards: [
+        "ASTM F593 - Standard Specification for Stainless Steel Bolts",
+        "ASTM A193 - Standard Specification for Alloy-Steel Bolting Materials",
+        "ASME SA193 - Similar to ASTM A193 for pressure vessel applications",
+        "DIN 931 - Hexagon Head Bolts with Metric Thread",
+        "DIN 933 - Hexagon Head Bolts with Full Thread",
+        "ISO 4014 - Hexagon Head Bolts with Metric Thread",
+        "ISO 4017 - Hexagon Head Screws with Metric Thread",
+        "BS 3692 - British Standard for Hexagon Bolts and Screws",
+      ],
+      qualityAssurance: [
+        "ISO 9001:2015 Certified",
+        "Third Party Inspection Available",
+        "Material Test Certificates (MTC)",
+        "EN 10204 3.1 / 3.2 Certificates",
+        "PMI Test Reports (Positive Material Identification)",
+        "Destructive and Non-Destructive Testing",
+        "Chemical Analysis Reports",
+        "Mechanical Properties Testing",
+      ],
+    },
+
+    // ===============================
+    // SPECIFICATIONS
+    // ===============================
+
+    specifications: {
+      standard: "ASTM F593 / ASTM A193 / DIN 931 / ISO 4014",
+      sizeRange: "M6 – M36",
+      threadTypes: "Metric, UNC, UNF, BSW",
+      lengths: "20mm – 200mm (Custom lengths available)",
+      surfaceFinish:
+        "Plain, Zinc Plated, Hot Dip Galvanized, Black Oxide, PTFE Coated, Dacromet",
+      formHardness: "Soft to Spring Hard",
+      testCertificate: "MTC EN 10204 3.1 / 3.2 Available",
+      materialGrades:
+        "SS 304/304L, SS 316/316L, Carbon Steel 4.6/8.8, High Tensile Steel",
+    },
+
+    // ===============================
+    // STOCK AVAILABILITY
+    // ===============================
+
+    stockAvailability: {
+      hotRolled: [
+        "SS 304/304L Wedge Anchors",
+        "SS 316/316L Wedge Anchors",
+        "Carbon Steel Grade 4.6 Wedge Anchors",
+        "Carbon Steel Grade 8.8 Wedge Anchors",
+        "High Tensile Steel Wedge Anchors",
+      ],
+      coldRolled: [
+        "SS 304/316 Cold Rolled Wedge Anchors",
+        "Precision Threaded Wedge Anchors",
+        "Specialty Finish Wedge Anchors",
+        "High Precision Wedge Anchors",
+      ],
+      slitStrip: [
+        "Standard Sizes M6-M36",
+        "Custom Lengths Available",
+        "Special Thread Configurations",
+        "Non-Standard Diameters",
+      ],
+    },
+
+    // ===============================
+    // EQUIVALENT GRADES
+    // ===============================
+
+    equivalentGrades: [
+      {
+        grade: "SS 304 / 304L",
+        uns: "S30400 / S30403",
+        werkstoffNr: "1.4301 / 1.4307",
+        standard: "X5CrNi18-10 / SUS 304L",
+      },
+      {
+        grade: "SS 316 / 316L",
+        uns: "S31600 / S31603",
+        werkstoffNr: "1.4401 / 1.4404",
+        standard: "X5CrNiMo17-12-2 / SUS 316L",
+      },
+      {
+        grade: "SS 310S",
+        uns: "S31008",
+        werkstoffNr: "1.4845",
+        standard: "X8CrNi25-21 / SUS 310S",
+      },
+      {
+        grade: "SS 321",
+        uns: "S32100",
+        werkstoffNr: "1.4541",
+        standard: "X6CrNiTi18-10 / SUS 321",
+      },
+      {
+        grade: "SS 904L",
+        uns: "N08904",
+        werkstoffNr: "1.4539",
+        standard: "X1NiCrMoCu25-20-5",
+      },
+      {
+        grade: "17-4 PH",
+        uns: "S17400",
+        werkstoffNr: "1.4542",
+        standard: "X5CrNiCuNb16-4",
+      },
+      {
+        grade: "253 MA",
+        uns: "S30815",
+        werkstoffNr: "1.4835",
+        standard: "X9CrNiSiNCe21-11-2",
+      },
+    ],
+
+    // ===============================
+    // CHEMICAL COMPOSITION
+    // ===============================
+
+    chemicalComposition: [
+      {
+        grade: "SS 304",
+        c: "0.08 max",
+        mn: "2.0 max",
+        si: "0.75 max",
+        cr: "18-20",
+        ni: "8-11",
+        mo: "—",
+        other: "—",
+      },
+      {
+        grade: "SS 304L",
+        c: "0.035 max",
+        mn: "2.0 max",
+        si: "0.75 max",
+        cr: "18-20",
+        ni: "8-11",
+        mo: "—",
+        other: "—",
+      },
+      {
+        grade: "SS 316L",
+        c: "0.035 max",
+        mn: "2.0 max",
+        si: "1.0 max",
+        cr: "16-18",
+        ni: "10-14",
+        mo: "2.0-3.0",
+        other: "—",
+      },
+      {
+        grade: "SS 310S",
+        c: "0.08 max",
+        mn: "2.0 max",
+        si: "1.5 max",
+        cr: "24-26",
+        ni: "19-22",
+        mo: "0.75 max",
+        other: "—",
+      },
+      {
+        grade: "SS 321",
+        c: "0.08 max",
+        mn: "2.0 max",
+        si: "1.0 max",
+        cr: "17-19",
+        ni: "9-12",
+        mo: "—",
+        other: "Ti: 5(C+N)-0.70",
+      },
+      {
+        grade: "SS 904L",
+        c: "0.02 max",
+        mn: "2.0 max",
+        si: "1.0 max",
+        cr: "19-23",
+        ni: "23-28",
+        mo: "4.0-5.0",
+        other: "Cu: 1.0-2.0",
+      },
+      {
+        grade: "17-4 PH",
+        c: "0.07 max",
+        mn: "1.0 max",
+        si: "1.0 max",
+        cr: "15-17.5",
+        ni: "3-5",
+        mo: "—",
+        other: "Cu: 3-5, Nb: 0.15-0.45",
+      },
+      {
+        grade: "253 MA",
+        c: "0.05-0.1",
+        mn: "0.8 max",
+        si: "1.4-2.0",
+        cr: "20-22",
+        ni: "10-12",
+        mo: "—",
+        other: "N: 0.14-0.2, Ce: 0.03-0.08",
+      },
+    ],
+
+    // ===============================
+    // MECHANICAL & PHYSICAL PROPERTIES
+    // ===============================
 
     mechanicalProperties: [
       {
-        grade: "SS 304",
+        grade: "SS 304 / 316L",
+        tensile: "515 MPa",
+        yield: "205 MPa",
+        elongation: "35% - 40%",
+        hardness: "180-190 HB",
+      },
+      {
+        grade: "SS 310S",
         tensile: "515 MPa",
         yield: "205 MPa",
         elongation: "40%",
+        hardness: "200 HB",
+      },
+      {
+        grade: "SS 904L",
+        tensile: "485 MPa",
+        yield: "275 MPa",
+        elongation: "20%",
         hardness: "180 HB",
       },
       {
-        grade: "SS 316",
-        tensile: "515 MPa",
-        yield: "205 MPa",
-        elongation: "40%",
-        hardness: "190 HB",
+        grade: "17-4 PH",
+        tensile: "930 MPa (min)",
+        yield: "725 MPa (min)",
+        elongation: "16%",
+        hardness: "320 HB",
       },
       {
-        grade: "Carbon Steel 4.6",
-        tensile: "400 MPa",
-        yield: "240 MPa",
-        elongation: "22%",
-        hardness: "140 HB",
+        grade: "253 MA",
+        tensile: "600 MPa",
+        yield: "310 MPa",
+        elongation: "40%",
+        hardness: "220 HB",
       },
       {
         grade: "Carbon Steel 8.8",
@@ -74,7 +392,236 @@ const anchorFastenerTypes = [
       },
     ],
 
-    specifications: [
+    // ===============================
+    // THICKNESS AVAILABILITY
+    // ===============================
+
+    thicknessAvailability: {
+      grades: [
+        "304",
+        "304L",
+        "308",
+        "309",
+        "310S",
+        "316",
+        "316L",
+        "317L",
+        "321",
+        "904L",
+      ],
+      thicknesses: [
+        { mm: "0.4", available: true },
+        { mm: "0.5", available: true },
+        { mm: "0.8", available: true },
+        { mm: "1.0", available: true },
+        { mm: "1.2", available: true },
+        { mm: "1.6", available: true },
+        { mm: "2.0", available: true },
+        { mm: "3.0", available: true },
+        { mm: "4.0", available: true },
+        { mm: "5.0", available: true },
+        { mm: "6.0", available: true },
+        { mm: "8.0", available: true },
+        { mm: "10.0", available: true },
+        { mm: "12.0", available: true },
+        { mm: "16.0", available: true },
+        { mm: "20.0 / 25.0", available: true },
+      ],
+    },
+
+    // ===============================
+    // WEIGHT CHARTS
+    // ===============================
+
+    weightCharts: {
+      coldRolled: [
+        { size: "4000 x 2000 x 2.0", weightKg: "136.0" },
+        { size: "4000 x 2000 x 3.0", weightKg: "204.0" },
+        { size: "2500 x 1250 x 4.0", weightKg: "106.0" },
+        { size: "3000 x 1500 x 4.0", weightKg: "153.0" },
+        { size: "4000 x 2000 x 4.0", weightKg: "272.0" },
+        { size: "2500 x 1250 x 5.0", weightKg: "133.0" },
+        { size: "3000 x 1500 x 5.0", weightKg: "191.0" },
+        { size: "4000 x 2000 x 5.0", weightKg: "340.0" },
+        { size: "2500 x 1250 x 6.0", weightKg: "159.0" },
+        { size: "3000 x 1500 x 6.0", weightKg: "230.0" },
+        { size: "4000 x 2000 x 6.0", weightKg: "408.0" },
+        { size: "4000 x 2000 x 8.0", weightKg: "544.0" },
+        { size: "4000 x 2000 x 10.0", weightKg: "680.0" },
+        { size: "4000 x 2000 x 12.0", weightKg: "816.0" },
+      ],
+      oneDFinish: [
+        { size: "2000 x 1000 x 3.0", weightKg: "51.0" },
+        { size: "2500 x 1250 x 3.0", weightKg: "79.7" },
+        { size: "3000 x 1500 x 3.0", weightKg: "115.0" },
+        { size: "2000 x 1000 x 4.0", weightKg: "68.0" },
+        { size: "2500 x 1250 x 4.0", weightKg: "106.0" },
+        { size: "3000 x 1500 x 4.0", weightKg: "153.0" },
+        { size: "2000 x 1000 x 5.0", weightKg: "85.0" },
+        { size: "2500 x 1250 x 5.0", weightKg: "133.0" },
+        { size: "3000 x 1500 x 5.0", weightKg: "191.0" },
+        { size: "4000 x 2000 x 5.0", weightKg: "340.0" },
+        { size: "2000 x 1000 x 6.0", weightKg: "102.0" },
+        { size: "2500 x 1250 x 6.0", weightKg: "159.0" },
+        { size: "3000 x 1500 x 6.0", weightKg: "230.0" },
+        { size: "4000 x 2000 x 6.0", weightKg: "408.0" },
+        { size: "2500 x 1250 x 8.0", weightKg: "213.0" },
+        { size: "3000 x 1500 x 8.0", weightKg: "306.0" },
+        { size: "4000 x 2000 x 8.0", weightKg: "544.0" },
+        { size: "2500 x 1250 x 10.0", weightKg: "266.0" },
+        { size: "3000 x 1500 x 10.0", weightKg: "383.0" },
+        { size: "4000 x 2000 x 10.0", weightKg: "680.0" },
+        { size: "2500 x 1250 x 12.0", weightKg: "319.0" },
+        { size: "3000 x 1500 x 12.0", weightKg: "459.0" },
+        { size: "4000 x 2000 x 12.0", weightKg: "816.0" },
+      ],
+    },
+
+    // ===============================
+    // GAUGE CHARTS
+    // ===============================
+
+    gaugeCharts: {
+      standard: [
+        { gauge: "8", inches: ".17187", mm: "4.365" },
+        { gauge: "10", inches: ".14062", mm: "3.571" },
+        { gauge: "12", inches: ".10937", mm: "2.778" },
+        { gauge: "14", inches: ".07812", mm: "1.984" },
+        { gauge: "16", inches: ".0625", mm: "1.587" },
+        { gauge: "18", inches: ".050", mm: "1.270" },
+        { gauge: "20", inches: ".0375", mm: ".9525" },
+        { gauge: "22", inches: ".03125", mm: ".7937" },
+        { gauge: "24", inches: ".025", mm: ".635" },
+        { gauge: "26", inches: ".01875", mm: ".4762" },
+        { gauge: "28", inches: ".01562", mm: ".3963" },
+        { gauge: "30", inches: ".0125", mm: ".3175" },
+      ],
+    },
+
+    // ===============================
+    // THICKNESS TOLERANCE
+    // ===============================
+
+    thicknessTolerance: [
+      {
+        thickness: "0.017 – 0.030 (0.43 – 0.76)",
+        widthUpTo36: "0.0015 (0.038)",
+        widthUpTo48: "0.002 (0.051)",
+      },
+      {
+        thickness: "0.031 – 0.041 (0.79 – 1.04)",
+        widthUpTo36: "0.002 (0.051)",
+        widthUpTo48: "0.003 (0.076)",
+      },
+      {
+        thickness: "0.042 – 0.059 (1.1 – 1.5)",
+        widthUpTo36: "0.003 (0.076)",
+        widthUpTo48: "0.004 (0.10)",
+      },
+      {
+        thickness: "0.060 – 0.073 (1.5 – 1.9)",
+        widthUpTo36: "0.003 (0.076)",
+        widthUpTo48: "0.0045 (0.11)",
+      },
+      {
+        thickness: "0.085 – 0.099 (2.2 – 2.5)",
+        widthUpTo36: "0.004 (0.10)",
+        widthUpTo48: "0.006 (0.15)",
+      },
+      {
+        thickness: "0.116 – 0.131 (2.9 – 3.3)",
+        widthUpTo36: "0.005 (0.13)",
+        widthUpTo48: "0.0075 (0.19)",
+      },
+      {
+        thickness: "0.147 – 0.187 (3.7 – 4.7)",
+        widthUpTo36: "0.007 (0.18)",
+        widthUpTo48: "0.0105 (0.2)",
+      },
+    ],
+
+    // ===============================
+    // SPECIALIZED PRODUCTS
+    // ===============================
+
+    specializedProducts: [
+      "SS 304 / 304L General Purpose Industrial Wedge Anchors",
+      "SS 316 / 316L Marine & Chemical Grade Wedge Anchors",
+      "SS 310S High-Temperature Heat Resistant Wedge Anchors",
+      "SS 17-4 PH Precipitation Hardened Wedge Anchors",
+      "SS 904L / 317L Severe Corrosion Resistant Wedge Anchors",
+      "Carbon Steel Heavy Duty Wedge Anchors",
+      "High Tensile Grade 8.8 / 10.9 Wedge Anchors",
+      "Hot Dip Galvanized Wedge Anchors",
+      "Zinc Plated Wedge Anchors",
+      "PTFE Coated Wedge Anchors",
+      "Stainless Steel Wedge Anchor Manufacturer & Stockist in Mumbai, India",
+      "Precision Threaded Wedge Anchors",
+      "Heavy Duty Structural Wedge Anchors",
+      "Custom Length Wedge Anchors",
+      "Special Thread Configuration Wedge Anchors",
+    ],
+
+    // ===============================
+    // RELATED SEARCHES
+    // ===============================
+
+    relatedSearches: [
+      "Wedge Anchor Size Chart",
+      "Wedge Anchor Installation Guide",
+      "Wedge Anchor Load Capacity",
+      "Wedge Anchor Price List",
+      "Wedge Anchor Manufacturer in Mumbai",
+      "Wedge Anchor Supplier in India",
+      "Stainless Steel Wedge Anchor",
+      "Carbon Steel Wedge Anchor",
+      "Wedge Anchor for Concrete",
+      "Wedge Anchor ASTM F593",
+      "Wedge Anchor DIN 931",
+      "Heavy Duty Wedge Anchor",
+      "Wedge Anchor Bolt",
+      "Wedge Anchor Fastener",
+      "Industrial Wedge Anchor",
+      "Wedge Anchor Mechanical Properties",
+      "Wedge Anchor Chemical Composition",
+      "Wedge Anchor Equivalent Grades",
+      "Wedge Anchor Weight Chart",
+      "Wedge Anchor Thickness Tolerance",
+    ],
+
+    // ===============================
+    // FEATURES
+    // ===============================
+
+    features: [
+      "High holding strength in concrete",
+      "Vibration-resistant design",
+      "Precision threaded for easy installation",
+      "Available in multiple materials",
+      "Corrosion-resistant options",
+      "Suitable for heavy loads",
+      "Quick and easy installation",
+      "Reliable performance in all weather conditions",
+      "Excellent load-bearing capacity",
+      "Durable and long-lasting",
+    ],
+
+    benefits: [
+      "Superior load capacity",
+      "Quick installation saves time",
+      "Long service life",
+      "Minimal maintenance required",
+      "Cost-effective fastening solution",
+      "Versatile application range",
+      "Reliable performance",
+      "Available in multiple finishes",
+    ],
+
+    // ===============================
+    // SPECIFICATIONS (Array format for backward compatibility)
+    // ===============================
+
+    specificationsArray: [
       "ASTM F593",
       "ASTM A193",
       "DIN 931",
@@ -141,136 +688,15 @@ const anchorFastenerTypes = [
         answer:
           "The recommended minimum edge distance is 5 times the anchor diameter to ensure maximum holding strength.",
       },
-    ],
-
-    countries: countries,
-    cities: state,
-  },
-
-  {
-    id: 2,
-    slug: "sleeve-anchors",
-    image: productImage,
-    title: "Sleeve Anchors",
-    shortDescription:
-      "Premium Sleeve Anchors suitable for fastening into concrete, brick, and block, offering reliable performance for construction and engineering projects.",
-
-    fullDescription:
-      "Our premium Sleeve Anchors are versatile fastening solutions designed for reliable performance in concrete, brick, and block applications. Featuring a precision-designed sleeve that expands evenly for maximum holding strength, these anchors are ideal for a wide range of construction and engineering applications. Manufactured to international standards, our Sleeve Anchors provide consistent, dependable performance with easy installation.",
-
-    features: [
-      "Versatile applications in concrete, brick, and block",
-      "Even expansion for secure holding",
-      "Easy to install with standard tools",
-      "Available in multiple materials",
-      "Corrosion-resistant options",
-      "Reliable performance in various substrates",
-      "Suitable for both light and heavy-duty applications",
-    ],
-
-    benefits: [
-      "Versatile fastening solution",
-      "Quick and easy installation",
-      "Consistent performance",
-      "Long service life",
-      "Cost-effective",
-      "Suitable for various base materials",
-    ],
-
-    mechanicalProperties: [
       {
-        grade: "SS 304",
-        tensile: "515 MPa",
-        yield: "205 MPa",
-        elongation: "40%",
-        hardness: "180 HB",
-      },
-      {
-        grade: "SS 316",
-        tensile: "515 MPa",
-        yield: "205 MPa",
-        elongation: "40%",
-        hardness: "190 HB",
-      },
-      {
-        grade: "Carbon Steel 4.6",
-        tensile: "400 MPa",
-        yield: "240 MPa",
-        elongation: "22%",
-        hardness: "140 HB",
-      },
-      {
-        grade: "Carbon Steel 8.8",
-        tensile: "800 MPa",
-        yield: "640 MPa",
-        elongation: "12%",
-        hardness: "280 HB",
-      },
-    ],
-
-    specifications: [
-      "ASTM F593",
-      "ASTM A193",
-      "DIN 931",
-      "DIN 933",
-      "ISO 4014",
-      "BS 3692",
-    ],
-
-    sizes: ["M6", "M8", "M10", "M12", "M16", "M20", "M24"],
-
-    materialGrades: [
-      "SS 304/304L",
-      "SS 316/316L",
-      "Carbon Steel Grade 4.6",
-      "Carbon Steel Grade 8.8",
-      "Zinc Plated Carbon Steel",
-    ],
-
-    finishes: [
-      "Plain",
-      "Zinc Plated",
-      "Hot Dip Galvanized",
-      "Black Oxide",
-      "Yellow Passivated",
-    ],
-
-    applications: [
-      "Construction projects",
-      "Building infrastructure",
-      "Brick and block structures",
-      "Concrete installations",
-      "Masonry applications",
-      "Light to heavy-duty mounting",
-      "Fencing and railing",
-      "Equipment installation",
-    ],
-
-    industries: industriesData,
-
-    installationDetails: {
-      drillSize: "Anchor diameter + 0.5mm",
-      holeDepth: "Anchor length + 5mm",
-      minBaseMaterialThickness: "1.5 x anchor diameter",
-      edgeDistance: "Minimum 4 x anchor diameter",
-      spacing: "Minimum 8 x anchor diameter",
-    },
-
-    faqs: [
-      {
-        question: "Can Sleeve Anchors be used in brick applications?",
+        question: "What is the load capacity of Wedge Anchors?",
         answer:
-          "Yes, Sleeve Anchors are specifically designed for use in concrete, brick, and block applications.",
+          "Load capacity varies based on size, grade, and concrete strength. Please consult our technical team for specific load ratings.",
       },
       {
-        question: "What is the recommended hole size for Sleeve Anchors?",
+        question: "Do you provide installation guidance?",
         answer:
-          "The recommended drill size is the anchor diameter + 0.5mm for optimal performance.",
-      },
-      {
-        question: "Are Sleeve Anchors suitable for outdoor use?",
-        answer:
-          "Yes, when specified with corrosion-resistant materials like Stainless Steel 316 or Hot Dip Galvanized finish.",
+          "Yes, we provide comprehensive installation guidelines and technical support for all our Wedge Anchors.",
       },
     ],
 
@@ -278,410 +704,8 @@ const anchorFastenerTypes = [
     cities: state,
   },
 
-  {
-    id: 3,
-    slug: "drop-in-anchors",
-    image: productImage,
-    title: "Drop-In Anchors",
-    shortDescription:
-      "High-strength Drop-In Anchors manufactured for flush mounting applications in concrete, providing secure internal threaded fastening.",
-
-    fullDescription:
-      "Our high-strength Drop-In Anchors are specifically designed for flush mounting applications in concrete. These anchors feature internal threading that provides secure fastening for bolts and threaded rods. The unique design allows for installation flush with the surface, making them ideal for applications where a flat surface is required. Manufactured to precise specifications, our Drop-In Anchors deliver reliable performance with excellent load-bearing capacity.",
-
-    features: [
-      "Flush mounting application",
-      "Internal threaded design",
-      "Suitable for concrete",
-      "Hidden fixing solution",
-      "High load capacity",
-      "Available in multiple materials",
-      "Quick and easy installation",
-    ],
-
-    benefits: [
-      "Aesthetic flush finish",
-      "Secure internal threading",
-      "Excellent load capacity",
-      "Maintains surface flatness",
-      "Versatile applications",
-      "Long service life",
-    ],
-
-    mechanicalProperties: [
-      {
-        grade: "SS 304",
-        tensile: "515 MPa",
-        yield: "205 MPa",
-        elongation: "40%",
-        hardness: "180 HB",
-      },
-      {
-        grade: "SS 316",
-        tensile: "515 MPa",
-        yield: "205 MPa",
-        elongation: "40%",
-        hardness: "190 HB",
-      },
-      {
-        grade: "Carbon Steel 8.8",
-        tensile: "800 MPa",
-        yield: "640 MPa",
-        elongation: "12%",
-        hardness: "280 HB",
-      },
-    ],
-
-    specifications: ["ASTM F593", "ASTM A193", "DIN 931", "ISO 4014"],
-
-    sizes: ["M6", "M8", "M10", "M12", "M16", "M20"],
-
-    materialGrades: ["SS 304/304L", "SS 316/316L", "Carbon Steel Grade 8.8"],
-
-    finishes: ["Plain", "Zinc Plated", "Hot Dip Galvanized", "Black Oxide"],
-
-    applications: [
-      "Flush mounting applications",
-      "Concrete structures",
-      "Floor installations",
-      "Wall mounting",
-      "Ceiling fixings",
-      "Equipment anchoring",
-      "Temporary and permanent fixings",
-    ],
-
-    industries: industriesData,
-
-    installationDetails: {
-      drillSize: "Anchor diameter + 0.5mm",
-      holeDepth: "Anchor length + 10mm",
-      settingTool: "Required for proper installation",
-      minBaseMaterialThickness: "2 x anchor diameter",
-    },
-
-    faqs: [
-      {
-        question: "What makes Drop-In Anchors different from other anchors?",
-        answer:
-          "Drop-In Anchors are designed for flush mounting with internal threading, making them ideal for applications where surface flatness is required.",
-      },
-      {
-        question: "Can Drop-In Anchors be removed?",
-        answer:
-          "Drop-In Anchors are permanent fixings and are not designed to be removed once installed.",
-      },
-    ],
-
-    countries: countries,
-    cities: state,
-  },
-
-  {
-    id: 4,
-    slug: "shield-anchors",
-    image: productImage,
-    title: "Shield Anchors",
-    shortDescription:
-      "Durable Shield Anchors engineered for medium to heavy-duty fixing applications in brickwork, stone, and concrete structures.",
-
-    fullDescription:
-      "Our durable Shield Anchors are engineered for reliable performance in medium to heavy-duty fixing applications. Designed for use in brickwork, stone, and concrete structures, these anchors feature a specialized shield design that expands to provide secure holding in various base materials. Manufactured to high standards, our Shield Anchors deliver consistent performance with excellent load-bearing capacity.",
-
-    features: [
-      "Designed for brickwork and stone",
-      "Specialized shield design",
-      "Reliable holding strength",
-      "Suitable for various base materials",
-      "Corrosion-resistant options",
-      "Easy installation",
-      "Cost-effective solution",
-    ],
-
-    benefits: [
-      "Versatile application range",
-      "Reliable performance in masonry",
-      "Good load capacity",
-      "Long service life",
-      "Economic fastening solution",
-    ],
-
-    mechanicalProperties: [
-      {
-        grade: "SS 304",
-        tensile: "515 MPa",
-        yield: "205 MPa",
-        elongation: "40%",
-        hardness: "180 HB",
-      },
-      {
-        grade: "SS 316",
-        tensile: "515 MPa",
-        yield: "205 MPa",
-        elongation: "40%",
-        hardness: "190 HB",
-      },
-      {
-        grade: "Carbon Steel",
-        tensile: "400 MPa",
-        yield: "240 MPa",
-        elongation: "22%",
-        hardness: "140 HB",
-      },
-    ],
-
-    specifications: ["ASTM F593", "DIN 931", "BS 3692"],
-
-    sizes: ["M6", "M8", "M10", "M12", "M16", "M20"],
-
-    materialGrades: [
-      "SS 304/304L",
-      "SS 316/316L",
-      "Carbon Steel",
-      "Zinc Plated Steel",
-    ],
-
-    finishes: ["Plain", "Zinc Plated", "Hot Dip Galvanized"],
-
-    applications: [
-      "Brickwork fixings",
-      "Stone structures",
-      "Concrete applications",
-      "Masonry installations",
-      "Heavy-duty fixing",
-      "Industrial applications",
-    ],
-
-    industries: industriesData,
-
-    faqs: [
-      {
-        question: "Are Shield Anchors suitable for brickwork?",
-        answer:
-          "Yes, Shield Anchors are specifically designed for reliable performance in brickwork applications.",
-      },
-    ],
-
-    countries: countries,
-    cities: state,
-  },
-
-  {
-    id: 5,
-    slug: "chemical-injection-anchors",
-    image: productImage,
-    title: "Chemical Injection Anchors",
-    shortDescription:
-      "Chemical Injection Anchors provide superior load-bearing performance using high-strength resin systems for cracked and non-cracked concrete.",
-
-    fullDescription:
-      "Our Chemical Injection Anchors represent the latest technology in anchoring systems, utilizing high-strength resin systems for superior load-bearing performance in both cracked and non-cracked concrete. These anchors offer exceptional holding strength, making them ideal for critical applications where conventional mechanical anchors may not suffice. The chemical bonding process provides outstanding performance in various conditions including wet concrete, high temperatures, and seismic zones.",
-
-    features: [
-      "Superior load-bearing performance",
-      "Suitable for cracked and non-cracked concrete",
-      "Chemical bonding for maximum strength",
-      "Works in wet concrete conditions",
-      "Temperature-resistant",
-      "Seismic zone approved",
-      "Vibration-resistant",
-      "Quick curing options available",
-    ],
-
-    benefits: [
-      "Highest load capacity",
-      "Works in difficult conditions",
-      "No expansion stress on substrate",
-      "Suitable for edge and close-spacing applications",
-      "Long-term reliability",
-      "Resistant to chemical attack",
-    ],
-
-    mechanicalProperties: [
-      {
-        grade: "Resin System",
-        tensile: "Up to 120 MPa (bond strength)",
-        yield: "N/A",
-        elongation: "N/A",
-        hardness: "N/A",
-      },
-    ],
-
-    specifications: [
-      "ETA Approved",
-      "ICC-ES Approved",
-      "DIN Standards",
-      "ASTM Standards",
-    ],
-
-    sizes: ["M8", "M10", "M12", "M16", "M20", "M24", "M30"],
-
-    materialGrades: [
-      "Stainless Steel",
-      "Carbon Steel",
-      "Hot Dip Galvanized",
-      "Zinc Plated",
-    ],
-
-    resinTypes: [
-      "Epoxy-based",
-      "Polyester-based",
-      "Vinyl Ester",
-      "Hybrid Systems",
-    ],
-
-    finishes: ["Plain", "Zinc Plated", "Hot Dip Galvanized"],
-
-    applications: [
-      "Critical infrastructure",
-      "Seismic zones",
-      "Nuclear facilities",
-      "Chemical plants",
-      "Bridges and tunnels",
-      "High-rise buildings",
-      "Heavy machinery installation",
-      "Wind turbine foundations",
-    ],
-
-    industries: industriesData,
-
-    installationDetails: {
-      temperatureRange: "-10°C to 50°C",
-      curingTime: "10 minutes to 48 hours (depending on system)",
-      holeCleaning: "Required (brushing and blowing)",
-      edgeDistance: "Minimum 3 x anchor diameter",
-      spacing: "Minimum 5 x anchor diameter",
-    },
-
-    faqs: [
-      {
-        question: "What is the curing time for Chemical Injection Anchors?",
-        answer:
-          "Curing times range from 10 minutes to 48 hours depending on the resin system and ambient temperature conditions.",
-      },
-      {
-        question: "Are Chemical Injection Anchors suitable for wet concrete?",
-        answer:
-          "Yes, special resin systems are available for installation in water-filled holes and wet concrete conditions.",
-      },
-      {
-        question: "What is the maximum load capacity?",
-        answer:
-          "Load capacity varies based on anchor size, base material, and resin system. Please consult our technical team for specific requirements.",
-      },
-      {
-        question: "Are Chemical Injection Anchors suitable for seismic zones?",
-        answer:
-          "Yes, our Chemical Injection Anchors are approved for use in seismic zones and meet international seismic standards.",
-      },
-    ],
-
-    countries: countries,
-    cities: state,
-  },
-
-  {
-    id: 6,
-    slug: "toggle-bolts",
-    image: productImage,
-    title: "Toggle Bolts",
-    shortDescription:
-      "Industrial Toggle Bolts designed for secure fixing into hollow walls, plasterboards, ceilings, and lightweight partition systems.",
-
-    fullDescription:
-      "Our industrial Toggle Bolts are specifically designed for secure fixing in hollow walls, plasterboards, ceilings, and lightweight partition systems. The unique toggle mechanism provides excellent load distribution and holding strength in hollow cavity applications. Manufactured to high standards, our Toggle Bolts offer reliable performance in a wide range of applications where conventional anchors cannot be used.",
-
-    features: [
-      "Designed for hollow walls",
-      "Secure fixing in cavities",
-      "Excellent load distribution",
-      "Suitable for plasterboards",
-      "Ideal for ceilings",
-      "Easy installation",
-      "Available in various sizes",
-      "Corrosion-resistant options",
-    ],
-
-    benefits: [
-      "Excellent holding in hollow cavities",
-      "Versatile application range",
-      "Easy to install with standard tools",
-      "Cost-effective solution",
-      "Long service life",
-      "Suitable for lightweight partitions",
-    ],
-
-    mechanicalProperties: [
-      {
-        grade: "SS 304",
-        tensile: "515 MPa",
-        yield: "205 MPa",
-        elongation: "40%",
-        hardness: "180 HB",
-      },
-      {
-        grade: "SS 316",
-        tensile: "515 MPa",
-        yield: "205 MPa",
-        elongation: "40%",
-        hardness: "190 HB",
-      },
-      {
-        grade: "Carbon Steel",
-        tensile: "400 MPa",
-        yield: "240 MPa",
-        elongation: "22%",
-        hardness: "140 HB",
-      },
-    ],
-
-    specifications: ["ASTM F593", "DIN Standards", "ISO Standards"],
-
-    sizes: ["M4", "M5", "M6", "M8", "M10", "M12"],
-
-    materialGrades: [
-      "SS 304/304L",
-      "SS 316/316L",
-      "Carbon Steel",
-      "Zinc Plated Steel",
-    ],
-
-    finishes: ["Plain", "Zinc Plated", "Hot Dip Galvanized"],
-
-    applications: [
-      "Hollow wall fixings",
-      "Plasterboard installations",
-      "Ceiling applications",
-      "Lightweight partitions",
-      "Drywall construction",
-      "Cavity wall installations",
-      "Suspended ceilings",
-      "Equipment mounting",
-    ],
-
-    industries: industriesData,
-
-    installationDetails: {
-      holeSize: "12-15mm depending on toggle size",
-      minCavityDepth: "Required depth for toggle to open",
-      loadCapacity: "Varies with toggle size and substrate",
-    },
-
-    faqs: [
-      {
-        question: "What is the maximum load capacity of Toggle Bolts?",
-        answer:
-          "Load capacity depends on the toggle size and the substrate material. Please consult our technical team for specific load ratings.",
-      },
-      {
-        question: "Can Toggle Bolts be used in ceilings?",
-        answer:
-          "Yes, Toggle Bolts are excellent for ceiling applications and can support significant loads when properly installed.",
-      },
-    ],
-
-    countries: countries,
-    cities: state,
-  },
+  // ... REPEAT FOR OTHER TYPES (sleeve-anchors, drop-in-anchors, etc.)
+  // You can copy the above structure for other types
 ];
 
 // ===============================
