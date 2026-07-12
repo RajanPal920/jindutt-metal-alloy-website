@@ -1,22 +1,29 @@
+import HastelloyTubes from "../../data/productMaterials/HastelloyTubes";
 import Alloy20Pipes from "./Alloy20Pipes";
 import Alloy28Coils from "./Alloy28Coils";
 import Alloy28Pipes from "./Alloy28Pipes";
+import Alloy28Plates from "./Alloy28Plates";
 import Alloy28RoundBars from "./Alloy28RoundBars";
 import Alloy28Sheets from "./Alloy28Sheets";
+import Alloy28Tubes from "./Alloy28Tubes";
 import Alloy28Wires from "./Alloy28Wires";
 import CopperNickel7030Pipes from "./CopperNickel7030Pipes";
 import CopperNickelPipes from "./CopperNickel9010Pipes";
 import CopperNickel9010Pipes from "./CopperNickel9010Pipes";
 import CopperNickelCoils from "./CopperNickelCoils";
+import CopperNickelPlates from "./CopperNickelPlates";
 import CopperNickelRoundBars from "./CopperNickelRoundBars";
 import CopperNickelSheets from "./CopperNickelSheets";
+import CopperNickelTubes from "./CopperNickelTubes";
 import CopperNickelWires from "./CopperNickelWires";
 import DuplexSteelCoils from "./DuplexSteelCoils";
+import DuplexSteelPlates from "./DuplexSteelPlates";
 import DuplexSteelRoundBars from "./DuplexSteelRoundBars";
 import DuplexSteelS31803S32205 from "./DuplexSteelS31803S32205";
 import DuplexSteelSheets from "./DuplexSteelSheets ";
 import DuplexSteelWires from "./DuplexSteelWires";
 import DuplexSuperDuplexPipes from "./DuplexSuperDuplexPipes";
+import DuplexSuperDuplexTubes from "./DuplexSuperDuplexTubes";
 import HastelloyB2Pipes from "./HastelloyB2Pipes";
 import HastelloyB3Pipes from "./HastelloyB3Pipes";
 import HastelloyC2000C59C4HN from "./HastelloyC2000C59C4HN";
@@ -24,6 +31,7 @@ import HastelloyC22Pipes from "./HastelloyC22Pipes";
 import HastelloyC276Pipes from "./HastelloyC276Pipes";
 import HastelloyCoils from "./HastelloyCoils ";
 import HastelloyPipes from "./HastelloyPipes";
+import HastelloyPlates from "./HastelloyPlates ";
 import HastelloyRoundBars from "./HastelloyRoundBars";
 import HastelloySheets from "./HastelloySheets ";
 import HastelloyWires from "./HastelloyWires ";
@@ -32,6 +40,7 @@ import HighPerformanceAlloyPipes from "./HighPerformanceAlloyPipes";
 import HighPerformanceAlloyPlates from "./HighPerformanceAlloyPlates ";
 import HighPerformanceAlloyRoundBars from "./HighPerformanceAlloyRoundBars";
 import HighPerformanceAlloySheets from "./HighPerformanceAlloySheets";
+import HighPerformanceAlloyTubes from "./HighPerformanceAlloyTubes";
 import HighPerformanceAlloyWires from "./HighPerformanceAlloyWires";
 import IncloneyWires from "./IncloneyWires";
 import Incoloy800DS330Pipes from "./Incoloy800DS330Pipes";
@@ -39,8 +48,10 @@ import Incoloy800H800HTPipes from "./Incoloy800H800HTPipes";
 import Incoloy825Pipes from "./Incoloy825Pipes";
 import IncoloyCoils from "./IncoloyCoils";
 import IncoloyPipes from "./IncoloyPipes";
+import IncoloyPlates from "./IncoloyPlates";
 import IncoloyRoundBars from "./IncoloyRoundBars";
 import IncoloySheets from "./IncoloySheets";
+import IncoloyTubes from "./IncoloyTubes";
 import Inconel600Pipes from "./Inconel600Pipes";
 import Inconel601Pipes from "./Inconel601Pipes";
 import Inconel625Pipes from "./Inconel625Pipes";
@@ -48,26 +59,34 @@ import Inconel690Pipes from "./Inconel690Pipes";
 import Inconel718Pipes from "./Inconel718Pipes";
 import InconelCoils from "./InconelCoils";
 import InconelPipes from "./InconelPipes";
+import InconelPlates from "./InconelPlates";
 import InconelRoundBars from "./InconelRoundBars";
 import InconelSheets from "./InconelSheets";
+import InconelTubes from "./InconelTubes";
 import InconelWires from "./InconelWires";
 import InconelX750Pipes from "./InconelX750Pipes";
 import Monel400Coils from "./Monel400Coils";
 import Monel400Pipes from "./Monel400Pipes";
+import Monel400Plates from "./Monel400Plates";
 import Monel400Sheets from "./Monel400Sheets";
+import Monel400Tubes from "./Monel400Tubes";
 import MonelPipes from "./MonelPipes";
 import MonelRoundBars from "./MonelRoundBars";
 import MonelWires from "./MonelWires ";
 import NickelAlloy200201Pipes from "./NickelAlloy200201Pipes";
 import NickelAlloy200Coils from "./NickelAlloy200Coils";
+import NickelAlloy200Plates from "./NickelAlloy200Plates ";
 import NickelAlloy200RoundBars from "./NickelAlloy200RoundBars";
 import NickelAlloy200Sheets from "./NickelAlloy200Sheets";
+import NickelAlloy200Tubes from "./NickelAlloy200Tubes";
 import NickelAlloy200Wires from "./NickelAlloy200Wires";
 import NickelAlloyPipes from "./NickelAlloyPipes";
 import SMO254Pipes from "./SMO254Pipes";
 import SpecialAlloyCoils from "./SpecialAlloyCoils";
+import SpecialAlloyPlates from "./SpecialAlloyPlates";
 import SpecialAlloyRoundBars from "./SpecialAlloyRoundBars";
 import SpecialAlloySheets from "./SpecialAlloySheets";
+import SpecialAlloyTubes from "./SpecialAlloyTubes";
 import SpecialAlloyWires from "./SpecialAlloyWires ";
 import StainlessSteel304304LPipes from "./StainlessSteel304304LPipes";
 import StainlessSteel310SPipes from "./StainlessSteel310SPipes";
@@ -81,6 +100,7 @@ import StainlessSteelPipes from "./StainlessSteelPipes";
 import StainlessSteelPlates from "./StainlessSteelPlates";
 import StainlessSteelRoundBars from "./StainlessSteelRoundBars";
 import StainlessSteelSheets from "./StainlessSteelSheets";
+import StainlessSteelTubes from "./StainlessSteelTubes";
 import StainlessSteelWires from "./StainlessSteelWires";
 import SuperDuplexS32750F53 from "./SuperDuplexS32750F53";
 import SuperDuplexS32760F55 from "./SuperDuplexS32760F55";
@@ -89,6 +109,7 @@ import TitaniumGrade2Grade5Pipes from "./TitaniumGrade2Grade5Pipes";
 import TitaniumPlates from "./TitaniumPlates ";
 import TitaniumRoundBars from "./TitaniumRoundBars";
 import TitaniumSheets from "./TitaniumSheets";
+import TitaniumTubes from "./TitaniumTubes";
 import TitaniumWires from "./TitaniumWires";
 
 export const productComponentMap = {
@@ -183,6 +204,27 @@ export const productComponentMap = {
   "titanium-plates": TitaniumPlates,
   "stainless-steel-plates": StainlessSteelPlates,
   "high-performance-alloy-plates": HighPerformanceAlloyPlates,
+  "alloy-28-plates": Alloy28Plates,
+  "special-alloy-plates": SpecialAlloyPlates,
+  "nickel-alloy-200-201-plates": NickelAlloy200Plates,
+  "monel-400-plates": Monel400Plates,
+  "inconel-plates": InconelPlates,
+  "incoloy-plates": IncoloyPlates,
+  "hastelloy-plates": HastelloyPlates,
+  "duplex-super-duplex-steel-plates": DuplexSteelPlates,
+  "copper-nickel-plates": CopperNickelPlates,
+  "titanium-tubes": TitaniumTubes,
+  "stainless-steel-tubes": StainlessSteelTubes,
+  "high-performance-alloy-tubes": HighPerformanceAlloyTubes,
+  "alloy-28-tubes": Alloy28Tubes,
+  "special-alloy-tubes": SpecialAlloyTubes,
+  "nickel-alloy-200-201-tubes": NickelAlloy200Tubes,
+  "monel-400-tubes": Monel400Tubes,
+  "inconel-tubes": InconelTubes,
+  "incoloy-tubes": IncoloyTubes,
+  "hastelloy-tubes": HastelloyTubes,
+  "duplex-super-duplex-steel-tubes": DuplexSuperDuplexTubes,
+  "copper-nickel-tubes": CopperNickelTubes,
 };
 
 export const getProductComponent = (slug) => {
