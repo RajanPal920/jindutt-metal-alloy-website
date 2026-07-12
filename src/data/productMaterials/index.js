@@ -27,7 +27,7 @@ import wires from "./wires";
 const productMaterials = {
   coils,
   flanges,
-  "rod-bars": rodBars,
+  "round-bars": rodBars,
   strips,
   "anchor-fastener": anchorFastener,
   "buttweld-fittings": buttweldFitting,

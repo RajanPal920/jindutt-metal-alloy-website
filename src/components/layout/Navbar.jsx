@@ -182,7 +182,7 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center">
           <Link
             to="/contact"
-            className="rounded-xl bg-sky-500 px-6 py-2.5 text-white font-semibold hover:bg-blue-700 transition-all hover:shadow-lg hover:shadow-sky-200"
+            className="rounded-xl bg-[#0a1a52] px-6 py-2.5 text-white font-semibold hover:bg-blue-700 transition-all hover:shadow-lg hover:shadow-sky-200"
           >
             Talk To Us
           </Link>

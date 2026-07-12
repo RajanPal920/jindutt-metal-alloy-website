@@ -13,9 +13,9 @@ const pipes = [
 
   {
     id: 2,
-    slug: "stainless-steel-304-304l-pipes",
+    slug: "stainless-steel-316-316l-pipes",
     image: pipeImage,
-    title: "Stainless Steel 304 / 304L Pipes Supplier",
+    title: "Stainless Steel 316 / 316L Pipes Supplier",
     shortDescription:
       "Premium Stainless Steel 304 and 304L pipes offering excellent corrosion resistance for food processing, chemical, and engineering industries.",
   },

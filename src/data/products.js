@@ -85,7 +85,7 @@ const products = [
   {
     id: 4,
     name: "Rod & Round Bars",
-    slug: "rod-bars",
+    slug: "round-bars",
     image: roundBarsImg,
     icon: Circle,
     category: "Bars & Rods",
