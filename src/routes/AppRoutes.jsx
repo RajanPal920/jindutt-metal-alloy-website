@@ -1,3 +1,4 @@
+// src/routes/AppRoutes.jsx
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
@@ -13,6 +14,7 @@ import MaterialDetail from "../pages/Materials/MaterialDetail";
 import Certificates from "../pages/Certificates/Certificates";
 import CertificateDetails from "../pages/Certificates/CertificateDetails";
 
+import ProductList from "../pages/Products/ProductList";
 import ProductMaterials from "../pages/Products/ProductMaterials";
 import ProductDetails from "../pages/Products/ProductDetails";
 import DimensionViewer from "../pages/Dimensions/DimensionViewer";
@@ -26,10 +28,9 @@ const AppRoutes = () => {
       {/* About */}
       <Route path="/about" element={<About />} />
 
-      {/* Product Category Page */}
+      {/* Products */}
+      <Route path="/products" element={<ProductList />} />
       <Route path="/products/:category" element={<ProductMaterials />} />
-
-      {/* Individual Product Details */}
       <Route path="/products/:category/:slug" element={<ProductDetails />} />
 
       {/* Materials */}

@@ -8,15 +8,6 @@ import weld from "../../assets/images/stock/welded-tubes.jpg";
 
 const tubes = [
   {
-    id: 1,
-    slug: "titanium-tubes",
-    image: seam,
-    title: "Titanium Tubes Supplier – Grade 2 & Grade 5",
-    shortDescription:
-      "Titanium tubes offering exceptional corrosion resistance, lightweight strength, and superior performance for aerospace, marine, and chemical processing industries.",
-  },
-
-  {
     id: 2,
     slug: "stainless-steel-tubes",
     image: weld,

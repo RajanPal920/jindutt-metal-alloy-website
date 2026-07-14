@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import countries from "../../data/countries.js";
@@ -28,7 +27,8 @@ const DuplexSteelRoundBars = () => {
   // ===============================
 
   const productData = {
-    title: "Duplex & Super Duplex Steel Round Bars Supplier – S31803, S32205, S32750, S32760, S32550",
+    title:
+      "Duplex & Super Duplex Steel Round Bars Supplier – S31803, S32205, S32750, S32760, S32550",
     subtitle:
       "Premium Quality ASTM A276 / ASME SA276 Duplex & Super Duplex Steel Round Bars – Dual-Phase Microstructure for Superior Corrosion Resistance, High Strength & Stress Corrosion Cracking Resistance in Aggressive Environments",
 
@@ -41,22 +41,26 @@ const DuplexSteelRoundBars = () => {
     gradeBreakdown: [
       {
         title: "Duplex Steel S31803 and S32205 Round Bars (Alloy 2205)",
-        description: "Duplex S31803 (F51) and the nitrogen-enhanced S32205 (F60) are the most widely utilized duplex grades. They are engineered to provide superior resistance to localized corrosion compared to 316L.",
+        description:
+          "Duplex S31803 (F51) and the nitrogen-enhanced S32205 (F60) are the most widely utilized duplex grades. They are engineered to provide superior resistance to localized corrosion compared to 316L.",
         items: [
           "Corrosion Profile: Exceptional resistance to pitting and crevice corrosion in chloride-bearing environments. Highly resistant to stress corrosion cracking (SCC) in temperatures up to 150°C.",
           "Mechanical Strength: High yield strength and excellent fatigue resistance, making them ideal for shafting and structural fasteners.",
         ],
-        keyApplications: "Pump shafts, valve components, boat shafts, and high-strength structural bolts for marine infrastructure.",
+        keyApplications:
+          "Pump shafts, valve components, boat shafts, and high-strength structural bolts for marine infrastructure.",
       },
       {
         title: "Super Duplex Steel S32750, S32760, and S32550 Round Bars",
-        description: "Super Duplex round bars are highly alloyed grades designed for the most aggressive corrosive service, such as warm seawater and acidic chemical streams. These grades feature a Pitting Resistance Equivalent Number (PREN) of >40.",
+        description:
+          "Super Duplex round bars are highly alloyed grades designed for the most aggressive corrosive service, such as warm seawater and acidic chemical streams. These grades feature a Pitting Resistance Equivalent Number (PREN) of >40.",
         items: [
           "S32750 (UNS S32750 / F53): Features 25% Chromium and 4% Molybdenum. Specifically designed for high-strength applications in extremely corrosive conditions where weight-to-strength ratios are critical.",
           "S32760 (UNS S32760 / F55): Includes deliberate additions of Copper and Tungsten. Enhances its resistance to mineral acids like sulfuric and hydrochloric acid, particularly in contaminated media.",
           "S32550 (UNS S32550 / F61 / Ferralium 255): A high-copper super duplex grade offering superior erosion-corrosion resistance and high hardness, making it ideal for rotating parts in abrasive slurries.",
         ],
-        keyApplications: "Subsea hardware, desalination equipment, chemical process valves, and high-pressure oil and gas components.",
+        keyApplications:
+          "Subsea hardware, desalination equipment, chemical process valves, and high-pressure oil and gas components.",
       },
     ],
 
@@ -170,12 +174,19 @@ const DuplexSteelRoundBars = () => {
     specifications: {
       standards: "ASTM A276 / ASME SA276, A479, EN 10088-3",
       sizeRange: "Round: 4mm-500mm | Hex: 18mm-57mm | Square: 18mm-47mm",
-      finishLength: "Bright Polished, Black, Rough Turned, NO.4, Matt | 1 to 6 Meters",
-      availableForms: "Round, Square, Hex (A/F), Rectangle, Flat, Billet, Ingot, Forged",
+      finishLength:
+        "Bright Polished, Black, Rough Turned, NO.4, Matt | 1 to 6 Meters",
+      availableForms:
+        "Round, Square, Hex (A/F), Rectangle, Flat, Billet, Ingot, Forged",
     },
 
     equivalentGrades: {
-      headers: ["Grade Series", "UNS Number", "Werkstoff Nr.", "Common Designation"],
+      headers: [
+        "Grade Series",
+        "UNS Number",
+        "Werkstoff Nr.",
+        "Common Designation",
+      ],
       rows: [
         ["Duplex Steel", "S31803 / S32205", "1.4462", "F51 / F60 | 2205"],
         ["Super Duplex", "S32750", "1.4410", "F53 | 2507"],
@@ -187,16 +198,57 @@ const DuplexSteelRoundBars = () => {
     chemicalComposition: {
       headers: ["Grade", "Cr", "Ni", "Mo", "N", "PREN (min)"],
       rows: [
-        ["S31803 (F51)", "21.0 – 23.0", "4.5 – 6.5", "2.5 – 3.5", "0.08 – 0.20", "31"],
-        ["S32205 (F60)", "22.0 – 23.0", "4.5 – 6.5", "3.0 – 3.5", "0.14 – 0.20", "34"],
-        ["S32750 (F53)", "24.0 – 26.0", "6.0 – 8.0", "3.0 – 5.0", "0.24 – 0.32", "40"],
-        ["S32760 (F55)", "24.0 – 26.0", "6.0 – 8.0", "3.0 – 4.0", "0.20 – 0.30", "40"],
-        ["S32550 (F61)", "24.0 – 27.0", "4.5 – 6.5", "2.9 – 3.9", "0.10 – 0.25", "40"],
+        [
+          "S31803 (F51)",
+          "21.0 – 23.0",
+          "4.5 – 6.5",
+          "2.5 – 3.5",
+          "0.08 – 0.20",
+          "31",
+        ],
+        [
+          "S32205 (F60)",
+          "22.0 – 23.0",
+          "4.5 – 6.5",
+          "3.0 – 3.5",
+          "0.14 – 0.20",
+          "34",
+        ],
+        [
+          "S32750 (F53)",
+          "24.0 – 26.0",
+          "6.0 – 8.0",
+          "3.0 – 5.0",
+          "0.24 – 0.32",
+          "40",
+        ],
+        [
+          "S32760 (F55)",
+          "24.0 – 26.0",
+          "6.0 – 8.0",
+          "3.0 – 4.0",
+          "0.20 – 0.30",
+          "40",
+        ],
+        [
+          "S32550 (F61)",
+          "24.0 – 27.0",
+          "4.5 – 6.5",
+          "2.9 – 3.9",
+          "0.10 – 0.25",
+          "40",
+        ],
       ],
     },
 
     mechanicalProperties: {
-      headers: ["Grade", "Tensile (MPa)", "Yield (MPa)", "Elongation (%)", "Density (g/cm³)"],
+      headers: [
+        "Grade",
+        "Tensile (MPa)",
+        "Yield (MPa)",
+        "Elongation (%)",
+        "Density (g/cm³)",
+      ],
       rows: [
         ["S31803 / S32205", "620 min", "450 min", "25%", "7.80"],
         ["S32750 / S32760", "750 – 800", "550 min", "15 – 25%", "7.81"],
@@ -205,7 +257,14 @@ const DuplexSteelRoundBars = () => {
     },
 
     sizeChart: {
-      headers: ["Metric Size (mm)", "Diameter (mm)", "US Rods (ASTM/Canadian)", "Diameter (Inch)", "Japanese Rods (mm²)", "Diameter (mm)"],
+      headers: [
+        "Metric Size (mm)",
+        "Diameter (mm)",
+        "US Rods (ASTM/Canadian)",
+        "Diameter (Inch)",
+        "Japanese Rods (mm²)",
+        "Diameter (mm)",
+      ],
       rows: [
         ["5", "5", "#2", "0.250", "10M", "10"],
         ["6", "6", "#3", "0.375", "15M", "13"],
@@ -227,18 +286,18 @@ const DuplexSteelRoundBars = () => {
     weightChart: {
       headers: ["Size", "Kgs / Mtr", "Size", "Kgs / Mtr", "Size", "Kgs / Mtr"],
       rows: [
-        ["3mm", "0.055", "20mm", "2.470", "3\"", "35.762"],
-        ["1/8\"", "0.062", "22mm", "2.979", "3-1/4\"", "41.996"],
-        ["4mm", "0.098", "25mm", "3.871", "3-1/2\"", "48.772"],
-        ["3/16\"", "0.141", "1\"", "3.970", "4\"", "63.340"],
-        ["1/4\"", "0.249", "1-1/8\"", "5.033", "4-1/2\"", "80.340"],
-        ["8mm", "0.398", "1-1/4\"", "6.349", "5\"", "99.940"],
-        ["3/8\"", "0.557", "1-1/2\"", "8.951", "6\"", "143.900"],
-        ["10mm", "0.620", "40mm", "9.872", "8\"", "254.550"],
-        ["1/2\"", "0.994", "1-3/4\"", "12.179", "10\"", "397.140"],
-        ["15mm", "1.391", "50mm", "15.414", "12\"", "571.800"],
-        ["5/8\"", "1.551", "2\"", "15.906", "-", "-"],
-        ["3/4\"", "2.237", "2-1/2\"", "24.856", "-", "-"],
+        ["3mm", "0.055", "20mm", "2.470", '3"', "35.762"],
+        ['1/8"', "0.062", "22mm", "2.979", '3-1/4"', "41.996"],
+        ["4mm", "0.098", "25mm", "3.871", '3-1/2"', "48.772"],
+        ['3/16"', "0.141", '1"', "3.970", '4"', "63.340"],
+        ['1/4"', "0.249", '1-1/8"', "5.033", '4-1/2"', "80.340"],
+        ["8mm", "0.398", '1-1/4"', "6.349", '5"', "99.940"],
+        ['3/8"', "0.557", '1-1/2"', "8.951", '6"', "143.900"],
+        ["10mm", "0.620", "40mm", "9.872", '8"', "254.550"],
+        ['1/2"', "0.994", '1-3/4"', "12.179", '10"', "397.140"],
+        ["15mm", "1.391", "50mm", "15.414", '12"', "571.800"],
+        ['5/8"', "1.551", '2"', "15.906", "-", "-"],
+        ['3/4"', "2.237", '2-1/2"', "24.856", "-", "-"],
       ],
     },
 
@@ -314,21 +373,21 @@ const DuplexSteelRoundBars = () => {
     ourProducts: [
       { name: "Coils", slug: "coils" },
       { name: "Pipes", slug: "pipes" },
-      { name: "Flutes", slug: "flutes" },
+      { name: "Plates", slug: "plates" },
       { name: "Round Bars", slug: "round-bars" },
       { name: "Sheets", slug: "sheets" },
       { name: "Tubes", slug: "tubes" },
       { name: "Wires", slug: "wires" },
-      { name: "Industrial Flanges", slug: "industrial-flanges" },
+      { name: "Industrial Flanges", slug: "flanges" },
       { name: "Buttweld Fittings", slug: "buttweld-fittings" },
       { name: "Angle & Channels", slug: "angle-channels" },
       { name: "Forged Fittings", slug: "forged-fittings" },
-      { name: "Industrial Fasteners", slug: "industrial-fasteners" },
-      { name: "Industrial Valves", slug: "industrial-valves" },
-      { name: "Flats & Pairs", slug: "flats-pairs" },
-      { name: "Industrial Rings", slug: "industrial-rings" },
-      { name: "Industrial Circles", slug: "industrial-circles" },
-      { name: "Industrial Strips", slug: "industrial-strips" },
+      { name: "Industrial Fasteners", slug: "fasteners" },
+      { name: "Industrial Valves", slug: "valves" },
+      { name: "Patta & Patti", slug: "patta-patti" },
+      { name: "Industrial Rings", slug: "rings" },
+      { name: "Industrial Circles", slug: "circles" },
+      { name: "Industrial Strips", slug: "strips" },
     ],
 
     shopByMaterial: [
@@ -471,13 +530,20 @@ const DuplexSteelRoundBars = () => {
 
             {/* Grade Breakdown */}
             <section className="mb-8">
-              <SectionTitle>Duplex & Super Duplex Grades & Applications</SectionTitle>
+              <SectionTitle>
+                Duplex & Super Duplex Grades & Applications
+              </SectionTitle>
               {productData.gradeBreakdown.map((section, idx) => (
-                <div key={idx} className="mb-4 p-4 bg-white border border-gray-200 rounded-lg">
+                <div
+                  key={idx}
+                  className="mb-4 p-4 bg-white border border-gray-200 rounded-lg"
+                >
                   <h3 className="text-lg font-semibold text-[#0a1a52] mb-2">
                     {section.title}
                   </h3>
-                  <p className="text-gray-700 text-sm mb-2">{section.description}</p>
+                  <p className="text-gray-700 text-sm mb-2">
+                    {section.description}
+                  </p>
                   <ul className="list-disc pl-5 space-y-1 mb-2">
                     {section.items.map((item, i) => (
                       <li key={i} className="text-gray-700 text-sm">
@@ -486,8 +552,12 @@ const DuplexSteelRoundBars = () => {
                     ))}
                   </ul>
                   <div className="mt-2 p-2 bg-gray-50 rounded border border-gray-200">
-                    <span className="font-semibold text-sm text-[#0a1a52]">Key Applications: </span>
-                    <span className="text-gray-700 text-sm">{section.keyApplications}</span>
+                    <span className="font-semibold text-sm text-[#0a1a52]">
+                      Key Applications:{" "}
+                    </span>
+                    <span className="text-gray-700 text-sm">
+                      {section.keyApplications}
+                    </span>
                   </div>
                 </div>
               ))}
@@ -495,7 +565,9 @@ const DuplexSteelRoundBars = () => {
 
             {/* Manufacturing Standards */}
             <section className="mb-8">
-              <SectionTitle>{productData.manufacturingStandards.title}</SectionTitle>
+              <SectionTitle>
+                {productData.manufacturingStandards.title}
+              </SectionTitle>
               <p className="text-gray-700 leading-relaxed mb-3">
                 {productData.manufacturingStandards.description}
               </p>
@@ -545,7 +617,9 @@ const DuplexSteelRoundBars = () => {
 
             {/* Stock Availability */}
             <section className="mb-8">
-              <SectionTitle>Stock Availability of Duplex / Super Duplex Steel Round Bars</SectionTitle>
+              <SectionTitle>
+                Stock Availability of Duplex / Super Duplex Steel Round Bars
+              </SectionTitle>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {Object.entries(productData.stockAvailability).map(
                   ([key, stock]) => (
@@ -582,7 +656,9 @@ const DuplexSteelRoundBars = () => {
 
             {/* Specifications */}
             <section className="mb-8">
-              <SectionTitle>Technical Specifications: Duplex / Super Duplex Steel Round Bars</SectionTitle>
+              <SectionTitle>
+                Technical Specifications: Duplex / Super Duplex Steel Round Bars
+              </SectionTitle>
               <div className="bg-white border border-gray-200 rounded-lg p-5">
                 <ul className="space-y-2">
                   {Object.entries(productData.specifications).map(
@@ -634,7 +710,9 @@ const DuplexSteelRoundBars = () => {
 
             {/* Size Chart */}
             <section className="mb-8">
-              <SectionTitle>Size and Dimensions of Duplex / Super Duplex Steel Round Bars</SectionTitle>
+              <SectionTitle>
+                Size and Dimensions of Duplex / Super Duplex Steel Round Bars
+              </SectionTitle>
               <Table
                 headers={productData.sizeChart.headers}
                 rows={productData.sizeChart.rows}
@@ -643,7 +721,9 @@ const DuplexSteelRoundBars = () => {
 
             {/* Weight Chart */}
             <section className="mb-8">
-              <SectionTitle>Duplex / Super Duplex Steel Round Bars Weight Chart</SectionTitle>
+              <SectionTitle>
+                Duplex / Super Duplex Steel Round Bars Weight Chart
+              </SectionTitle>
               <Table
                 headers={productData.weightChart.headers}
                 rows={productData.weightChart.rows}
@@ -652,7 +732,9 @@ const DuplexSteelRoundBars = () => {
 
             {/* Specialized Products */}
             <section className="mb-8">
-              <SectionTitle>Specialized in Duplex & Super Duplex Steel Round Bars</SectionTitle>
+              <SectionTitle>
+                Specialized in Duplex & Super Duplex Steel Round Bars
+              </SectionTitle>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {productData.specializedProducts.map((product, index) => (
                   <div
@@ -668,7 +750,9 @@ const DuplexSteelRoundBars = () => {
 
             {/* Related Searches */}
             <section className="mb-8">
-              <SectionTitle>Searches Related to Duplex / Super Duplex Round Bars</SectionTitle>
+              <SectionTitle>
+                Searches Related to Duplex / Super Duplex Round Bars
+              </SectionTitle>
               <ChipList items={productData.relatedSearches} />
             </section>
           </div>

@@ -1,87 +1,124 @@
+// src/data/productMaterials/pharmaFitting.js
 import pharmaImage from "../../assets/images/productImage/pharma-fittings.webp";
+import high from "../../assets/images/stock/high-purity-pharma-fittings.jpg"
+import tc from "../../assets/images/stock/tc-clamps-ferrules.jpg"
+import asme from "../../assets/images/stock/asme-bpe-sanitary-tubing.jpg"
+import val from "../../assets/images/stock/pneumatic-butterfly-valves.jpg"
+import family from "../../assets/images/stock/Diaphragm-Valve-Family.jpg"
+import housing from "../../assets/images/stock/ss-filter-housings.jpg"
+import gmp from "../../assets/images/stock/gmp-floor-drain-traps.jpg"
+import sms from "../../assets/images/stock/sms-din-union-fittings.jpg"
 
 const pharmaFitting = [
   {
     id: 1,
     slug: "high-purity-pharma-fittings",
-    image: pharmaImage,
+    image: high,
     title: "High Purity Pharma Fittings",
     shortDescription:
-      "High Purity Pharma Fittings manufactured with sanitary-grade stainless steel for pharmaceutical, biotech, food processing, and sterile process applications.",
+      "Electropolished & Mirror Finish, CIP / SIP Compatible, High Purity SS 316L Construction.",
+    materialGroup: "ASME BPE",
+    standards: "ASME BPE, GMP, High Purity SS 316L",
+    forms: "Electropolished & Mirror Finish Fittings",
+    application: "Pharmaceutical, Biotech, and Cleanroom Environments",
   },
-
   {
     id: 2,
     slug: "tc-clamps-ferrules",
-    image: pharmaImage,
-    title: "TC (Tri-Clamp) Clamps & Ferrules",
+    image: tc,
+    title: "TC (Tri-Clover) Clamps & Ferrules",
     shortDescription:
-      "Precision-engineered Tri-Clamp Clamps and Ferrules designed for leak-proof, hygienic pipeline connections in pharmaceutical and dairy industries.",
+      "Quick-connect hygienic fittings for sterile pipeline systems.",
+    materialGroup: "Tri-Clover",
+    standards: "Sanitary Grade Stainless Steel",
+    forms: "Clamps & Ferrules",
+    application:
+      "Pharmaceutical, Biotech, Food Processing, and Sterile Process Applications",
   },
-
   {
     id: 3,
     slug: "asme-bpe-sanitary-tubing",
-    image: pharmaImage,
+    image: asme,
     title: "ASME BPE Sanitary Tubing",
     shortDescription:
-      "ASME BPE certified sanitary tubing manufactured with high surface finish for sterile fluid transfer in pharmaceutical and biotechnology plants.",
+      "High purity tubing designed for pharmaceutical-grade applications.",
+    materialGroup: "ASME BPE",
+    standards: "ASME BPE Certified, High Surface Finish",
+    forms: "Sanitary Tubing",
+    application:
+      "Sterile Fluid Transfer in Pharmaceutical and Biotechnology Plants",
   },
-
   {
     id: 4,
     slug: "pneumatic-butterfly-valves",
-    image: pharmaImage,
+    image: val,
     title: "Pneumatic Butterfly Valves",
-    shortDescription:
-      "Sanitary Pneumatic Butterfly Valves offering automated flow control with reliable sealing for hygienic process systems.",
+    shortDescription: "Automated flow control valves for cleanroom operations.",
+    materialGroup: "Sanitary Valves",
+    standards: "Sanitary Grade, Automated Control",
+    forms: "Pneumatic Butterfly Valves",
+    application: "Hygienic Process Systems",
   },
-
   {
     id: 5,
     slug: "diaphragm-valves-pharma-grade",
-    image: pharmaImage,
+    image: family,
     title: "Diaphragm Valves (Pharma Grade)",
     shortDescription:
-      "Pharma Grade Diaphragm Valves engineered for contamination-free operation and precise flow control in sterile processing environments.",
+      "Sterile valves ensuring zero contamination in fluid handling.",
+    materialGroup: "Pharma Grade",
+    standards: "Sterile, Contamination-Free Operation",
+    forms: "Diaphragm Valves",
+    application: "Sterile Processing Environments",
   },
-
   {
     id: 6,
     slug: "ss-filter-housings",
-    image: pharmaImage,
+    image: housing,
     title: "SS Filter Housings",
     shortDescription:
-      "Stainless Steel Filter Housings designed for high-purity filtration applications in pharmaceutical, food, beverage, and chemical industries.",
+      "Efficient filtration units for removing contaminants in pipelines.",
+    materialGroup: "Filtration",
+    standards: "Stainless Steel, High Purity",
+    forms: "Filter Housings",
+    application: "Pharmaceutical, Food, Beverage, and Chemical Industries",
   },
-
   {
     id: 7,
     slug: "gmp-floor-drain-traps",
-    image: pharmaImage,
+    image: gmp,
     title: "GMP Floor Drain Traps",
     shortDescription:
-      "GMP compliant Stainless Steel Floor Drain Traps providing efficient drainage while maintaining hygienic conditions in cleanroom facilities.",
+      "Hygienic drainage solutions for pharmaceutical facilities.",
+    materialGroup: "GMP Compliant",
+    standards: "GMP Standards, Stainless Steel",
+    forms: "Floor Drain Traps",
+    application: "Cleanroom Facilities",
   },
-
   {
     id: 8,
     slug: "sms-din-union-fittings",
-    image: pharmaImage,
+    image: sms,
     title: "SMS / DIN Union Fittings",
     shortDescription:
-      "SMS and DIN Union Fittings manufactured to international sanitary standards for secure and hygienic piping system connections.",
+      "Easy dismantling connections for maintenance and cleaning.",
+    materialGroup: "Sanitary Connections",
+    standards: "SMS, DIN Standards",
+    forms: "Union Fittings",
+    application: "Hygienic Piping System Connections",
   },
-
   {
     id: 9,
     slug: "electropolished-ep-pipes",
     image: pharmaImage,
     title: "Electropolished (EP) Pipes",
     shortDescription:
-      "Electropolished Stainless Steel Pipes with ultra-smooth internal surfaces for ultra-clean pharmaceutical, semiconductor, and biotech applications.",
+      "Ultra-smooth surface pipes ensuring high purity flow systems.",
+    materialGroup: "Electropolished",
+    standards: "Ultra-Smooth Internal Surface, High Purity",
+    forms: "Electropolished Pipes",
+    application: "Pharmaceutical, Semiconductor, and Biotech Applications",
   },
 ];
 
 export default pharmaFitting;
-

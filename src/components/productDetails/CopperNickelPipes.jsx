@@ -10,7 +10,7 @@ import WhatsAppIcon from "../../assets/images/icons/WhatsAppIcon.jsx";
 import CallIcon from "../../assets/images/icons/CallIcon.jsx";
 
 // Sample image imports (replace with your actual image paths)
-import productImage from "../../assets/images/productImage/copper-nickel-pipes.webp";
+import productImage from "../../assets/images/productImage/pipes.webp";
 import bannerImage from "../../assets/images/productImage/banner-industrial.webp";
 
 // Stock Availability Images (replace with actual images)
@@ -218,21 +218,21 @@ const CopperNickelPipes = () => {
     ourProducts: [
       { name: "Coils", slug: "coils" },
       { name: "Pipes", slug: "pipes" },
-      { name: "Flutes", slug: "flutes" },
+      { name: "Plates", slug: "plates" },
       { name: "Round Bars", slug: "round-bars" },
       { name: "Sheets", slug: "sheets" },
       { name: "Tubes", slug: "tubes" },
       { name: "Wires", slug: "wires" },
-      { name: "Industrial Flanges", slug: "industrial-flanges" },
+      { name: "Industrial Flanges", slug: "flanges" },
       { name: "Buttweld Fittings", slug: "buttweld-fittings" },
       { name: "Angle & Channels", slug: "angle-channels" },
       { name: "Forged Fittings", slug: "forged-fittings" },
-      { name: "Industrial Fasteners", slug: "industrial-fasteners" },
-      { name: "Industrial Valves", slug: "industrial-valves" },
-      { name: "Flats & Pairs", slug: "flats-pairs" },
-      { name: "Industrial Rings", slug: "industrial-rings" },
-      { name: "Industrial Circles", slug: "industrial-circles" },
-      { name: "Industrial Strips", slug: "industrial-strips" },
+      { name: "Industrial Fasteners", slug: "fasteners" },
+      { name: "Industrial Valves", slug: "valves" },
+      { name: "Patta & Patti", slug: "Patta-patti" },
+      { name: "Industrial Rings", slug: "rings" },
+      { name: "Industrial Circles", slug: "circles" },
+      { name: "Industrial Strips", slug: "strips" },
     ],
 
     shopByMaterial: [

@@ -1,3 +1,4 @@
+// src/data/materials.js
 import {
   ShieldCheck,
   Layers,
@@ -22,7 +23,55 @@ import ringImg from "../assets/images/productImage/rings.webp";
 import circleImg from "../assets/images/productImage/circles.webp";
 import stripImg from "../assets/images/productImage/strips.webp";
 
-const buildItems = (image, items) => items.map((item) => ({ ...item, image }));
+// Stock images for different product types
+import tubesStockImg from "../assets/images/stock/instrumentation-tubes.jpg";
+import roundBarsStockImg from "../assets/images/stock/round-bars.jpg";
+import sheetsStockImg from "../assets/images/stock/titanium-sheets.jpg";
+import platesStockImg from "../assets/images/stock/cold-rolled-plates.jpg";
+import wiresStockImg from "../assets/images/stock/coil-wire.jpg";
+import coilsStockImg from "../assets/images/stock/alloy-28-coils.jpg";
+import pipesStockImg from "../assets/images/stock/alloy-28-pipes.jpg";
+import flangesStockImg from "../assets/images/stock/carbon-steel-flanges.jpg";
+import valvesStockImg from "../assets/images/stock/high-purity-ball-valves.jpg";
+import ringsStockImg from "../assets/images/stock/nickel-alloy-rings.jpg";
+import circlesStockImg from "../assets/images/stock/machined-forged-circles.jpg";
+import stripsStockImg from "../assets/images/stock/nickel-alloy-strips.jpg";
+
+// Helper function to assign different images to items
+const buildItemsWithImages = (items) => {
+  return items.map((item) => {
+    let image = item.image;
+    const slug = item.slug || "";
+
+    if (slug.includes("tubes") || slug.includes("tube")) {
+      image = tubesStockImg;
+    } else if (slug.includes("round-bars") || slug.includes("round-bar")) {
+      image = roundBarsStockImg;
+    } else if (slug.includes("sheets") || slug.includes("sheet")) {
+      image = sheetsStockImg;
+    } else if (slug.includes("plates") || slug.includes("plate")) {
+      image = platesStockImg;
+    } else if (slug.includes("wires") || slug.includes("wire")) {
+      image = wiresStockImg;
+    } else if (slug.includes("coils") || slug.includes("coil")) {
+      image = coilsStockImg;
+    } else if (slug.includes("pipes") || slug.includes("pipe")) {
+      image = pipesStockImg;
+    } else if (slug.includes("flanges") || slug.includes("flange")) {
+      image = flangesStockImg;
+    } else if (slug.includes("valves") || slug.includes("valve")) {
+      image = valvesStockImg;
+    } else if (slug.includes("rings") || slug.includes("ring")) {
+      image = ringsStockImg;
+    } else if (slug.includes("circles") || slug.includes("circle")) {
+      image = circlesStockImg;
+    } else if (slug.includes("strips") || slug.includes("strip")) {
+      image = stripsStockImg;
+    }
+
+    return { ...item, image };
+  });
+};
 
 const materials = [
   {
@@ -39,41 +88,145 @@ const materials = [
       "Clean finishing",
       "High weldability",
     ],
-    items: buildItems(coilImg, [
+    items: buildItemsWithImages([
       {
-        title: "304 / 304L Stainless Steel",
-        slug: "304-304l-stainless-steel",
+        title: "Stainless Steel Tubes",
+        slug: "stainless-steel-tubes",
         shortDescription:
-          "General-purpose stainless steel for structural and sanitary applications.",
+          "Stainless Steel Tubes Supplier – 304, 304L, 316, 316L, 310S, 904L & More",
         description:
-          "Used widely for piping, tanks, and architectural trim where corrosion resistance and clean appearance matter.",
+          "Premium stainless steel tubes available in grades 304, 304L, 316, 316L, 310S, 904L for heat exchangers, instrumentation, and high-temperature applications.",
         properties: [
-          "Good formability",
-          "Superior corrosion resistance",
-          "Easy fabrication",
+          "Excellent corrosion resistance",
+          "High strength-to-weight ratio",
+          "Good weldability",
+          "Temperature resistance",
         ],
         applications: [
-          "Food processing",
-          "Architectural trim",
-          "General fabrication",
+          "Heat exchangers",
+          "Instrumentation",
+          "High-temperature applications",
+          "Chemical processing",
         ],
       },
       {
-        title: "316 / 316L Stainless Steel",
-        slug: "316-316l-stainless-steel",
+        title: "Stainless Steel Round Bars",
+        slug: "stainless-steel-round-bars",
         shortDescription:
-          "Enhanced molybdenum-bearing grade for marine and chemical environments.",
+          "Stainless Steel Round Bars Supplier – 304, 304L, 316, 316L, 310S, 904L & More",
         description:
-          "Preferred for marine components, pharmaceutical equipment, and chloride-exposed environments.",
+          "Precision-engineered stainless steel round bars in grades 304, 304L, 316, 316L, 310S, 904L for machining, fabrication, and structural applications.",
         properties: [
-          "Improved chloride resistance",
-          "Excellent hygiene",
-          "High durability",
+          "High tensile strength",
+          "Excellent machinability",
+          "Corrosion resistance",
+          "Dimensional accuracy",
         ],
         applications: [
-          "Marine hardware",
-          "Pharma systems",
-          "Chemical processing",
+          "Machining",
+          "Fabrication",
+          "Structural applications",
+          "Shafts and fasteners",
+        ],
+      },
+      {
+        title: "Stainless Steel Sheets",
+        slug: "stainless-steel-sheets",
+        shortDescription:
+          "Stainless Steel Sheets Supplier – 304, 304L, 316, 316L, 310S, 904L & More",
+        description:
+          "High-quality stainless steel sheets available in grades 304, 304L, 316, 316L, 310S, 904L for industrial fabrication, architectural, and food processing applications.",
+        properties: [
+          "Excellent formability",
+          "Superior surface finish",
+          "Corrosion resistance",
+          "Wide size range",
+        ],
+        applications: [
+          "Industrial fabrication",
+          "Architectural cladding",
+          "Food processing equipment",
+          "Tanks and vessels",
+        ],
+      },
+      {
+        title: "Stainless Steel Plates",
+        slug: "stainless-steel-plates",
+        shortDescription:
+          "Stainless Steel Plates Supplier – 304, 304L, 316, 316L, 310S, 904L & More",
+        description:
+          "Heavy-duty stainless steel plates in grades 304, 304L, 316, 316L, 310S, 904L for pressure vessels, structural fabrication, and heavy engineering.",
+        properties: [
+          "High strength",
+          "Excellent impact resistance",
+          "Corrosion resistance",
+          "Weldability",
+        ],
+        applications: [
+          "Pressure vessels",
+          "Structural fabrication",
+          "Heavy engineering",
+          "Offshore platforms",
+        ],
+      },
+      {
+        title: "Stainless Steel Wires",
+        slug: "stainless-steel-wires",
+        shortDescription:
+          "Stainless Steel Wires Supplier – 304, 304L, 316, 316L, 310S, 904L & More",
+        description:
+          "Premium stainless steel wires in grades 304, 304L, 316, 316L, 310S, 904L for welding, fasteners, springs, and industrial applications.",
+        properties: [
+          "High tensile strength",
+          "Good ductility",
+          "Corrosion resistance",
+          "Consistent quality",
+        ],
+        applications: [
+          "Welding electrodes",
+          "Fasteners",
+          "Springs",
+          "Wire mesh",
+        ],
+      },
+      {
+        title: "Stainless Steel Coils",
+        slug: "stainless-steel-coils",
+        shortDescription:
+          "Stainless Steel Coils Supplier – 304, 304L, 316, 316L, 310S, 904L & More",
+        description:
+          "High-quality stainless steel coils available in grades 304, 304L, 316, 316L, 310S, 904L for stamping, forming, and continuous processing applications.",
+        properties: [
+          "Excellent formability",
+          "Uniform thickness",
+          "Corrosion resistance",
+          "Consistent quality",
+        ],
+        applications: [
+          "Stamping",
+          "Forming",
+          "Continuous processing",
+          "Automotive components",
+        ],
+      },
+      {
+        title: "Stainless Steel Pipes",
+        slug: "stainless-steel-pipes",
+        shortDescription:
+          "Stainless Steel Pipes Supplier – 304, 304L, 316, 316L, 310S, 904L & More",
+        description:
+          "Seamless and welded stainless steel pipes in grades 304, 304L, 316, 316L, 310S, 904L for fluid transport, structural, and industrial applications.",
+        properties: [
+          "High pressure resistance",
+          "Excellent corrosion resistance",
+          "Good weldability",
+          "Temperature resistance",
+        ],
+        applications: [
+          "Fluid transport",
+          "Structural applications",
+          "Industrial processing",
+          "Oil and gas",
         ],
       },
     ]),
@@ -92,18 +245,19 @@ const materials = [
       "Excellent pitting resistance",
       "Good fatigue performance",
     ],
-    items: buildItems(plateImg, [
+    items: buildItemsWithImages([
       {
-        title: "2205 Duplex Stainless",
-        slug: "2205-duplex-stainless",
+        title: "Duplex Steel Tubes",
+        slug: "duplex-steel-tubes",
         shortDescription:
-          "A workhorse alloy for pressure vessels and offshore piping.",
+          "Duplex Steel Tubes Supplier – 2205, 2507, S31803, S32205 & More",
         description:
-          "Combines high strength with strong resistance to chloride stress corrosion cracking.",
+          "High-strength duplex steel tubes for offshore, chemical, and pressure applications with excellent corrosion resistance.",
         properties: [
-          "High mechanical strength",
+          "High strength",
           "Excellent chloride resistance",
           "Good weldability",
+          "Corrosion resistance",
         ],
         applications: [
           "Offshore piping",
@@ -112,18 +266,107 @@ const materials = [
         ],
       },
       {
-        title: "2507 Super Duplex",
-        slug: "2507-super-duplex",
+        title: "Duplex Steel Round Bars",
+        slug: "duplex-steel-round-bars",
         shortDescription:
-          "Premium grade for highly corrosive service and severe conditions.",
+          "Duplex Steel Round Bars Supplier – 2205, 2507, S31803, S32205 & More",
         description:
-          "Selected for aggressive seawater and chemical service where long-term reliability is critical.",
+          "Precision duplex steel round bars for high-strength applications in marine, chemical, and oil & gas industries.",
         properties: [
-          "Excellent pitting resistance",
-          "High toughness",
-          "Superior strength",
+          "High mechanical strength",
+          "Excellent corrosion resistance",
+          "Good machinability",
+          "Dimensional accuracy",
         ],
-        applications: ["Desalination", "Marine platforms", "Chemical plants"],
+        applications: [
+          "Fasteners",
+          "Shafts",
+          "Marine components",
+          "Valve stems",
+        ],
+      },
+      {
+        title: "Duplex Steel Sheets",
+        slug: "duplex-steel-sheets",
+        shortDescription:
+          "Duplex Steel Sheets Supplier – 2205, 2507, S31803, S32205 & More",
+        description:
+          "High-quality duplex steel sheets for structural and corrosion-resistant applications in demanding environments.",
+        properties: [
+          "Excellent strength",
+          "Corrosion resistance",
+          "Good formability",
+          "Weldability",
+        ],
+        applications: [
+          "Structural fabrication",
+          "Chemical tanks",
+          "Marine structures",
+        ],
+      },
+      {
+        title: "Duplex Steel Plates",
+        slug: "duplex-steel-plates",
+        shortDescription:
+          "Duplex Steel Plates Supplier – 2205, 2507, S31803, S32205 & More",
+        description:
+          "Heavy-duty duplex steel plates for pressure vessels, structural fabrication, and heavy engineering applications.",
+        properties: [
+          "High strength",
+          "Excellent corrosion resistance",
+          "Impact resistance",
+          "Weldability",
+        ],
+        applications: [
+          "Pressure vessels",
+          "Offshore platforms",
+          "Structural steel",
+        ],
+      },
+      {
+        title: "Duplex Steel Wires",
+        slug: "duplex-steel-wires",
+        shortDescription:
+          "Duplex Steel Wires Supplier – 2205, 2507, S31803, S32205 & More",
+        description:
+          "Premium duplex steel wires for welding, fasteners, and specialized industrial applications.",
+        properties: [
+          "High tensile strength",
+          "Corrosion resistance",
+          "Good ductility",
+          "Consistent quality",
+        ],
+        applications: ["Welding electrodes", "Fasteners", "Springs"],
+      },
+      {
+        title: "Duplex Steel Coils",
+        slug: "duplex-steel-coils",
+        shortDescription:
+          "Duplex Steel Coils Supplier – 2205, 2507, S31803, S32205 & More",
+        description:
+          "High-quality duplex steel coils for continuous processing, forming, and structural applications.",
+        properties: [
+          "Excellent formability",
+          "Uniform thickness",
+          "Corrosion resistance",
+          "Strength",
+        ],
+        applications: ["Stamping", "Forming", "Structural components"],
+      },
+      {
+        title: "Duplex Steel Pipes",
+        slug: "duplex-steel-pipes",
+        shortDescription:
+          "Duplex Steel Pipes Supplier – 2205, 2507, S31803, S32205 & More",
+        description:
+          "Seamless and welded duplex steel pipes for fluid transport, structural, and industrial applications.",
+        properties: [
+          "High pressure resistance",
+          "Excellent corrosion resistance",
+          "Good weldability",
+          "Strength",
+        ],
+        applications: ["Oil and gas", "Chemical processing", "Fluid transport"],
       },
     ]),
   },
@@ -141,38 +384,119 @@ const materials = [
       "Excellent chemical resistance",
       "Stable under thermal cycling",
     ],
-    items: buildItems(tubeImg, [
+    items: buildItemsWithImages([
       {
-        title: "Nickel 200 / 201",
-        slug: "nickel-200-201",
+        title: "Nickel Alloy Tubes",
+        slug: "nickel-alloy-tubes",
         shortDescription:
-          "Commercially pure nickel grades for corrosion resistance and electrical use.",
+          "Nickel Alloy Tubes Supplier – 200, 201, 600, 625 & More",
         description:
-          "Used in caustic and alkaline service where purity and reliability matter.",
+          "Premium nickel alloy tubes for heat exchangers, instrumentation, and high-temperature applications.",
         properties: [
-          "High ductility",
-          "Excellent thermal conductivity",
-          "Good corrosion resistance",
+          "Excellent corrosion resistance",
+          "High temperature strength",
+          "Good weldability",
+          "Thermal stability",
+        ],
+        applications: ["Heat exchangers", "Instrumentation", "Chemical plants"],
+      },
+      {
+        title: "Nickel Alloy Round Bars",
+        slug: "nickel-alloy-round-bars",
+        shortDescription:
+          "Nickel Alloy Round Bars Supplier – 200, 201, 600, 625 & More",
+        description:
+          "Precision nickel alloy round bars for high-strength applications in demanding environments.",
+        properties: [
+          "High tensile strength",
+          "Corrosion resistance",
+          "Good machinability",
+          "Temperature resistance",
+        ],
+        applications: ["Fasteners", "Shafts", "Valve components"],
+      },
+      {
+        title: "Nickel Alloy Sheets",
+        slug: "nickel-alloy-sheets",
+        shortDescription:
+          "Nickel Alloy Sheets Supplier – 200, 201, 600, 625 & More",
+        description:
+          "High-quality nickel alloy sheets for chemical processing, aerospace, and industrial applications.",
+        properties: [
+          "Excellent corrosion resistance",
+          "High temperature stability",
+          "Good formability",
+          "Weldability",
         ],
         applications: [
-          "Electrochemical use",
-          "Alkali service",
-          "Specialty piping",
+          "Chemical processing",
+          "Aerospace components",
+          "Industrial fabrication",
         ],
       },
       {
-        title: "Nickel Alloy 600",
-        slug: "nickel-alloy-600",
+        title: "Nickel Alloy Plates",
+        slug: "nickel-alloy-plates",
         shortDescription:
-          "High-strength nickel alloy for heating and chemical processing systems.",
+          "Nickel Alloy Plates Supplier – 200, 201, 600, 625 & More",
         description:
-          "Suitable for elevated temperatures, furnace components, and aggressive chemical environments.",
+          "Heavy-duty nickel alloy plates for pressure vessels, heat exchangers, and structural applications.",
         properties: [
-          "Heat resistance",
-          "Oxidation resistance",
-          "Good creep strength",
+          "High strength",
+          "Corrosion resistance",
+          "Temperature resistance",
+          "Weldability",
         ],
-        applications: ["Furnace parts", "Heat exchangers", "Reactor internals"],
+        applications: [
+          "Pressure vessels",
+          "Heat exchangers",
+          "Structural steel",
+        ],
+      },
+      {
+        title: "Nickel Alloy Wires",
+        slug: "nickel-alloy-wires",
+        shortDescription:
+          "Nickel Alloy Wires Supplier – 200, 201, 600, 625 & More",
+        description:
+          "Premium nickel alloy wires for welding, fasteners, and specialized industrial applications.",
+        properties: [
+          "High tensile strength",
+          "Corrosion resistance",
+          "Good ductility",
+          "Consistent quality",
+        ],
+        applications: ["Welding electrodes", "Fasteners", "Springs"],
+      },
+      {
+        title: "Nickel Alloy Coils",
+        slug: "nickel-alloy-coils",
+        shortDescription:
+          "Nickel Alloy Coils Supplier – 200, 201, 600, 625 & More",
+        description:
+          "High-quality nickel alloy coils for continuous processing and forming applications.",
+        properties: [
+          "Excellent formability",
+          "Uniform thickness",
+          "Corrosion resistance",
+          "Strength",
+        ],
+        applications: ["Stamping", "Forming", "Industrial components"],
+      },
+      {
+        title: "Nickel Alloy Pipes",
+        slug: "nickel-alloy-pipes",
+        shortDescription:
+          "Nickel Alloy Pipes Supplier – 200, 201, 600, 625 & More",
+        description:
+          "Seamless and welded nickel alloy pipes for fluid transport, structural, and industrial applications.",
+        properties: [
+          "High pressure resistance",
+          "Corrosion resistance",
+          "Temperature resistance",
+          "Weldability",
+        ],
+        applications: ["Chemical processing", "Fluid transport", "Oil and gas"],
       },
     ]),
   },
@@ -190,34 +514,103 @@ const materials = [
       "Low marine growth",
       "Good thermal transfer",
     ],
-    items: buildItems(pipeImg, [
+    items: buildItemsWithImages([
       {
-        title: "CuNi 90/10",
-        slug: "cuni-90-10",
-        shortDescription:
-          "Balanced alloy for marine piping and heat exchange systems.",
+        title: "Copper Nickel Tubes",
+        slug: "copper-nickel-tubes",
+        shortDescription: "Copper Nickel Tubes Supplier – 90/10, 70/30 & More",
         description:
-          "Common in seawater service, condensers, and offshore cooling systems.",
+          "Premium copper nickel tubes for marine heat exchangers, condensers, and seawater applications.",
         properties: [
-          "Excellent biofouling resistance",
-          "Good ductility",
-          "Reliable corrosion behavior",
+          "Excellent seawater resistance",
+          "Good thermal conductivity",
+          "Anti-fouling properties",
+          "Durability",
         ],
-        applications: ["Marine piping", "Heat exchangers", "Cooling systems"],
+        applications: [
+          "Marine heat exchangers",
+          "Condensers",
+          "Seawater piping",
+        ],
       },
       {
-        title: "CuNi 70/30",
-        slug: "cuni-70-30",
-        shortDescription:
-          "Higher nickel content alloy for harsher seawater service.",
+        title: "Copper Nickel Pipes",
+        slug: "copper-nickel-pipes",
+        shortDescription: "Copper Nickel Pipes Supplier – 90/10, 70/30 & More",
         description:
-          "Used in demanding marine and desalination equipment where durability is essential.",
+          "Seamless and welded copper nickel pipes for marine and offshore applications.",
         properties: [
-          "Strong seawater resistance",
-          "Good mechanical stability",
-          "Excellent service life",
+          "Seawater resistance",
+          "Good mechanical properties",
+          "Weldability",
+          "Corrosion resistance",
         ],
-        applications: ["Desalination", "Ship systems", "Offshore platforms"],
+        applications: ["Marine piping", "Offshore platforms", "Shipbuilding"],
+      },
+      {
+        title: "Copper Nickel Sheets",
+        slug: "copper-nickel-sheets",
+        shortDescription: "Copper Nickel Sheets Supplier – 90/10, 70/30 & More",
+        description:
+          "High-quality copper nickel sheets for marine and industrial applications.",
+        properties: [
+          "Corrosion resistance",
+          "Good formability",
+          "Thermal conductivity",
+          "Durability",
+        ],
+        applications: [
+          "Marine fabrication",
+          "Heat exchangers",
+          "Industrial equipment",
+        ],
+      },
+      {
+        title: "Copper Nickel Plates",
+        slug: "copper-nickel-plates",
+        shortDescription: "Copper Nickel Plates Supplier – 90/10, 70/30 & More",
+        description:
+          "Heavy-duty copper nickel plates for marine and offshore applications.",
+        properties: [
+          "Seawater resistance",
+          "High strength",
+          "Good weldability",
+          "Thermal conductivity",
+        ],
+        applications: [
+          "Offshore platforms",
+          "Marine equipment",
+          "Shipbuilding",
+        ],
+      },
+      {
+        title: "Copper Nickel Round Bars",
+        slug: "copper-nickel-round-bars",
+        shortDescription:
+          "Copper Nickel Round Bars Supplier – 90/10, 70/30 & More",
+        description:
+          "Precision copper nickel round bars for marine and industrial applications.",
+        properties: [
+          "Corrosion resistance",
+          "Good machinability",
+          "Strength",
+          "Durability",
+        ],
+        applications: ["Shafts", "Fasteners", "Marine components"],
+      },
+      {
+        title: "Copper Nickel Coils",
+        slug: "copper-nickel-coils",
+        shortDescription: "Copper Nickel Coils Supplier – 90/10, 70/30 & More",
+        description:
+          "High-quality copper nickel coils for continuous processing and forming.",
+        properties: [
+          "Corrosion resistance",
+          "Good formability",
+          "Uniform thickness",
+          "Thermal conductivity",
+        ],
+        applications: ["Stamping", "Forming", "Marine components"],
       },
     ]),
   },
@@ -235,37 +628,123 @@ const materials = [
       "Excellent resistance to oxidizers",
       "Long service life",
     ],
-    items: buildItems(roundBarImg, [
+    items: buildItemsWithImages([
       {
-        title: "Hastelloy C-276",
-        slug: "hastelloy-c-276",
-        shortDescription:
-          "Versatile alloy suited for process equipment and scrubbers.",
+        title: "Hastelloy Tubes",
+        slug: "hastelloy-tubes",
+        shortDescription: "Hastelloy Tubes Supplier – C276, C22, B2, B3 & More",
         description:
-          "Widely used for acidic and chloride-rich service where resistance is critical.",
+          "Premium Hastelloy tubes for chemical processing, pollution control, and high-temperature applications.",
         properties: [
           "Outstanding corrosion resistance",
-          "Good fabricability",
-          "High reliability",
+          "High temperature strength",
+          "Good weldability",
+          "Chemical resistance",
         ],
         applications: [
           "Chemical processing",
           "Pollution control",
-          "Pulp and paper",
+          "Heat exchangers",
         ],
       },
       {
-        title: "Hastelloy B-3",
-        slug: "hastelloy-b-3",
-        shortDescription: "Specialized grade for reducing acid environments.",
+        title: "Hastelloy Pipes",
+        slug: "hastelloy-pipes",
+        shortDescription: "Hastelloy Pipes Supplier – C276, C22, B2, B3 & More",
         description:
-          "Selected for hydrochloric acid and related reducing service conditions.",
+          "Seamless and welded Hastelloy pipes for aggressive chemical and high-temperature service.",
         properties: [
-          "Excellent reducing acid resistance",
-          "Thermal stability",
-          "Durable performance",
+          "Corrosion resistance",
+          "High temperature strength",
+          "Pressure resistance",
+          "Weldability",
         ],
-        applications: ["Acid plants", "Reactors", "Heat transfer equipment"],
+        applications: ["Chemical plants", "Petrochemical", "Pollution control"],
+      },
+      {
+        title: "Hastelloy Round Bars",
+        slug: "hastelloy-round-bars",
+        shortDescription:
+          "Hastelloy Round Bars Supplier – C276, C22, B2, B3 & More",
+        description:
+          "Precision Hastelloy round bars for high-performance applications in corrosive environments.",
+        properties: [
+          "High strength",
+          "Corrosion resistance",
+          "Good machinability",
+          "Temperature resistance",
+        ],
+        applications: ["Fasteners", "Shafts", "Valve components"],
+      },
+      {
+        title: "Hastelloy Sheets",
+        slug: "hastelloy-sheets",
+        shortDescription:
+          "Hastelloy Sheets Supplier – C276, C22, B2, B3 & More",
+        description:
+          "High-quality Hastelloy sheets for chemical processing and corrosion-resistant applications.",
+        properties: [
+          "Excellent corrosion resistance",
+          "High temperature stability",
+          "Good formability",
+          "Weldability",
+        ],
+        applications: [
+          "Chemical tanks",
+          "Process equipment",
+          "Industrial fabrication",
+        ],
+      },
+      {
+        title: "Hastelloy Plates",
+        slug: "hastelloy-plates",
+        shortDescription:
+          "Hastelloy Plates Supplier – C276, C22, B2, B3 & More",
+        description:
+          "Heavy-duty Hastelloy plates for pressure vessels, heat exchangers, and structural applications.",
+        properties: [
+          "High strength",
+          "Corrosion resistance",
+          "Temperature resistance",
+          "Weldability",
+        ],
+        applications: [
+          "Pressure vessels",
+          "Heat exchangers",
+          "Chemical reactors",
+        ],
+      },
+      {
+        title: "Hastelloy Wires",
+        slug: "hastelloy-wires",
+        shortDescription: "Hastelloy Wires Supplier – C276, C22, B2, B3 & More",
+        description:
+          "Premium Hastelloy wires for welding and specialized industrial applications.",
+        properties: [
+          "High tensile strength",
+          "Corrosion resistance",
+          "Good ductility",
+          "Consistent quality",
+        ],
+        applications: [
+          "Welding electrodes",
+          "Fasteners",
+          "Specialized hardware",
+        ],
+      },
+      {
+        title: "Hastelloy Coils",
+        slug: "hastelloy-coils",
+        shortDescription: "Hastelloy Coils Supplier – C276, C22, B2, B3 & More",
+        description:
+          "High-quality Hastelloy coils for continuous processing and forming applications.",
+        properties: [
+          "Excellent formability",
+          "Uniform thickness",
+          "Corrosion resistance",
+          "Strength",
+        ],
+        applications: ["Stamping", "Forming", "Industrial components"],
       },
     ]),
   },
@@ -283,34 +762,123 @@ const materials = [
       "Carburization resistance",
       "Thermal stability",
     ],
-    items: buildItems(sheetImg, [
+    items: buildItemsWithImages([
       {
-        title: "Incoloy 800",
-        slug: "incoloy-800",
+        title: "Incoloy Tubes",
+        slug: "incoloy-tubes",
         shortDescription:
-          "High-temperature alloy for heat transfer and process components.",
+          "Incoloy Tubes Supplier – 800, 800H, 800HT, 825 & More",
         description:
-          "Engineered for reliability in furnace and petrochemical environments.",
+          "Premium Incoloy tubes for heat exchangers, furnace components, and high-temperature applications.",
         properties: [
-          "Good creep strength",
-          "High oxidation resistance",
-          "Stable in service",
+          "High temperature strength",
+          "Oxidation resistance",
+          "Good weldability",
+          "Creep strength",
         ],
-        applications: ["Petrochemical", "Power plants", "Furnace components"],
+        applications: [
+          "Heat exchangers",
+          "Furnace components",
+          "Petrochemical",
+        ],
       },
       {
-        title: "Incoloy 825",
-        slug: "incoloy-825",
+        title: "Incoloy Pipes",
+        slug: "incoloy-pipes",
         shortDescription:
-          "Alloy for harsh acidic and chloride-containing environments.",
+          "Incoloy Pipes Supplier – 800, 800H, 800HT, 825 & More",
         description:
-          "A strong option for chemical processing and sour service where corrosion is severe.",
+          "Seamless and welded Incoloy pipes for high-temperature and corrosive service.",
         properties: [
-          "Excellent pitting resistance",
-          "Good weldability",
-          "High toughness",
+          "Temperature resistance",
+          "Corrosion resistance",
+          "Pressure resistance",
+          "Weldability",
         ],
-        applications: ["Chemical plants", "Pollution control", "Oil & gas"],
+        applications: ["Petrochemical", "Power plants", "Process piping"],
+      },
+      {
+        title: "Incoloy Round Bars",
+        slug: "incoloy-round-bars",
+        shortDescription:
+          "Incoloy Round Bars Supplier – 800, 800H, 800HT, 825 & More",
+        description:
+          "Precision Incoloy round bars for high-temperature and corrosion-resistant applications.",
+        properties: [
+          "High tensile strength",
+          "Temperature resistance",
+          "Good machinability",
+          "Corrosion resistance",
+        ],
+        applications: ["Fasteners", "Shafts", "Valve components"],
+      },
+      {
+        title: "Incoloy Sheets",
+        slug: "incoloy-sheets",
+        shortDescription:
+          "Incoloy Sheets Supplier – 800, 800H, 800HT, 825 & More",
+        description:
+          "High-quality Incoloy sheets for thermal processing and high-temperature applications.",
+        properties: [
+          "Oxidation resistance",
+          "High temperature stability",
+          "Good formability",
+          "Weldability",
+        ],
+        applications: [
+          "Furnace components",
+          "Thermal processing",
+          "Industrial fabrication",
+        ],
+      },
+      {
+        title: "Incoloy Plates",
+        slug: "incoloy-plates",
+        shortDescription:
+          "Incoloy Plates Supplier – 800, 800H, 800HT, 825 & More",
+        description:
+          "Heavy-duty Incoloy plates for pressure vessels, heat exchangers, and high-temperature applications.",
+        properties: [
+          "High strength",
+          "Temperature resistance",
+          "Corrosion resistance",
+          "Weldability",
+        ],
+        applications: [
+          "Pressure vessels",
+          "Heat exchangers",
+          "Furnace components",
+        ],
+      },
+      {
+        title: "Incoloy Wires",
+        slug: "incoloy-wires",
+        shortDescription:
+          "Incoloy Wires Supplier – 800, 800H, 800HT, 825 & More",
+        description:
+          "Premium Incoloy wires for welding and specialized high-temperature applications.",
+        properties: [
+          "High tensile strength",
+          "Temperature resistance",
+          "Good ductility",
+          "Consistent quality",
+        ],
+        applications: ["Welding electrodes", "Fasteners", "Springs"],
+      },
+      {
+        title: "Incoloy Coils",
+        slug: "incoloy-coils",
+        shortDescription:
+          "Incoloy Coils Supplier – 800, 800H, 800HT, 825 & More",
+        description:
+          "High-quality Incoloy coils for continuous processing and forming.",
+        properties: [
+          "Excellent formability",
+          "Uniform thickness",
+          "Temperature resistance",
+          "Corrosion resistance",
+        ],
+        applications: ["Stamping", "Forming", "Industrial components"],
       },
     ]),
   },
@@ -328,38 +896,115 @@ const materials = [
       "Excellent creep strength",
       "Reliable under pressure",
     ],
-    items: buildItems(wireImg, [
+    items: buildItemsWithImages([
       {
-        title: "Inconel 600",
-        slug: "inconel-600",
+        title: "Inconel Tubes",
+        slug: "inconel-tubes",
         shortDescription:
-          "Classic superalloy for oxidation and corrosion resistance at elevated temperatures.",
+          "Inconel Tubes Supplier – 600, 601, 625, 718, X-750 & More",
         description:
-          "Used in furnace parts, chemical processing, and aerospace hardware.",
+          "Premium Inconel tubes for aerospace, chemical processing, and high-temperature applications.",
         properties: [
-          "High temperature stability",
-          "Good oxidation resistance",
-          "Strong mechanical integrity",
-        ],
-        applications: ["Aerospace", "Heating systems", "Process equipment"],
-      },
-      {
-        title: "Inconel 625",
-        slug: "inconel-625",
-        shortDescription:
-          "High-strength alloy for severe environments and marine use.",
-        description:
-          "Preferred for exhaust systems, marine components, and high-performance engineering.",
-        properties: [
-          "Outstanding fatigue strength",
-          "Excellent chloride resistance",
+          "High temperature strength",
+          "Oxidation resistance",
           "Good weldability",
+          "Creep strength",
         ],
         applications: [
-          "Marine engineering",
-          "Exhaust systems",
-          "Critical hardware",
+          "Aerospace",
+          "Chemical processing",
+          "Furnace components",
         ],
+      },
+      {
+        title: "Inconel Pipes",
+        slug: "inconel-pipes",
+        shortDescription:
+          "Inconel Pipes Supplier – 600, 601, 625, 718, X-750 & More",
+        description:
+          "Seamless and welded Inconel pipes for extreme temperature and pressure applications.",
+        properties: [
+          "Temperature resistance",
+          "Pressure resistance",
+          "Corrosion resistance",
+          "Weldability",
+        ],
+        applications: ["Aerospace", "Power generation", "Chemical processing"],
+      },
+      {
+        title: "Inconel Round Bars",
+        slug: "inconel-round-bars",
+        shortDescription:
+          "Inconel Round Bars Supplier – 600, 601, 625, 718, X-750 & More",
+        description:
+          "Precision Inconel round bars for high-performance applications in extreme environments.",
+        properties: [
+          "High tensile strength",
+          "Temperature resistance",
+          "Good machinability",
+          "Corrosion resistance",
+        ],
+        applications: ["Fasteners", "Shafts", "Aerospace components"],
+      },
+      {
+        title: "Inconel Sheets",
+        slug: "inconel-sheets",
+        shortDescription:
+          "Inconel Sheets Supplier – 600, 601, 625, 718, X-750 & More",
+        description:
+          "High-quality Inconel sheets for extreme temperature and corrosive applications.",
+        properties: [
+          "High temperature stability",
+          "Oxidation resistance",
+          "Good formability",
+          "Weldability",
+        ],
+        applications: ["Aerospace", "Heat treatment", "Industrial fabrication"],
+      },
+      {
+        title: "Inconel Plates",
+        slug: "inconel-plates",
+        shortDescription:
+          "Inconel Plates Supplier – 600, 601, 625, 718, X-750 & More",
+        description:
+          "Heavy-duty Inconel plates for pressure vessels, turbines, and high-temperature applications.",
+        properties: [
+          "High strength",
+          "Temperature resistance",
+          "Corrosion resistance",
+          "Weldability",
+        ],
+        applications: ["Pressure vessels", "Turbines", "Heat exchangers"],
+      },
+      {
+        title: "Inconel Wires",
+        slug: "inconel-wires",
+        shortDescription:
+          "Inconel Wires Supplier – 600, 601, 625, 718, X-750 & More",
+        description:
+          "Premium Inconel wires for welding and specialized high-temperature applications.",
+        properties: [
+          "High tensile strength",
+          "Temperature resistance",
+          "Good ductility",
+          "Consistent quality",
+        ],
+        applications: ["Welding electrodes", "Fasteners", "Springs"],
+      },
+      {
+        title: "Inconel Coils",
+        slug: "inconel-coils",
+        shortDescription:
+          "Inconel Coils Supplier – 600, 601, 625, 718, X-750 & More",
+        description:
+          "High-quality Inconel coils for continuous processing and forming.",
+        properties: [
+          "Excellent formability",
+          "Uniform thickness",
+          "Temperature resistance",
+          "Corrosion resistance",
+        ],
+        applications: ["Stamping", "Forming", "Industrial components"],
       },
     ]),
   },
@@ -377,38 +1022,116 @@ const materials = [
       "Good ductility",
       "Strong acid resistance",
     ],
-    items: buildItems(flangeImg, [
+    items: buildItemsWithImages([
       {
-        title: "Monel 400",
-        slug: "monel-400",
-        shortDescription:
-          "General-purpose nickel-copper alloy for marine and chemical work.",
+        title: "Monel Tubes",
+        slug: "monel-tubes",
+        shortDescription: "Monel Tubes Supplier – 400, K500 & More",
         description:
-          "Known for strong resistance to flowing seawater and many corrosive media.",
+          "Premium Monel tubes for marine, chemical, and heat exchanger applications.",
         properties: [
-          "Good mechanical strength",
-          "Excellent corrosion behavior",
+          "Seawater resistance",
+          "Corrosion resistance",
           "Good weldability",
+          "Strength",
         ],
         applications: [
-          "Marine fasteners",
-          "Pump components",
-          "Chemical handling",
+          "Marine heat exchangers",
+          "Condensers",
+          "Chemical plants",
         ],
       },
       {
-        title: "Monel K-500",
-        slug: "monel-k-500",
-        shortDescription:
-          "Precipitation-hardened grade for higher strength and wear resistance.",
+        title: "Monel Pipes",
+        slug: "monel-pipes",
+        shortDescription: "Monel Pipes Supplier – 400, K500 & More",
         description:
-          "Common in shafts, pump parts, and equipment exposed to marine and chemical environments.",
+          "Seamless and welded Monel pipes for marine and chemical applications.",
+        properties: [
+          "Seawater resistance",
+          "Pressure resistance",
+          "Corrosion resistance",
+          "Weldability",
+        ],
+        applications: ["Marine piping", "Chemical processing", "Oil and gas"],
+      },
+      {
+        title: "Monel Round Bars",
+        slug: "monel-round-bars",
+        shortDescription: "Monel Round Bars Supplier – 400, K500 & More",
+        description:
+          "Precision Monel round bars for marine and chemical applications.",
         properties: [
           "High strength",
-          "Good corrosion resistance",
-          "Excellent wear tolerance",
+          "Corrosion resistance",
+          "Good machinability",
+          "Seawater resistance",
         ],
-        applications: ["Pump shafts", "Propeller components", "Valves"],
+        applications: ["Shafts", "Fasteners", "Pump components"],
+      },
+      {
+        title: "Monel Sheets",
+        slug: "monel-sheets",
+        shortDescription: "Monel Sheets Supplier – 400, K500 & More",
+        description:
+          "High-quality Monel sheets for marine and chemical applications.",
+        properties: [
+          "Corrosion resistance",
+          "Seawater resistance",
+          "Good formability",
+          "Weldability",
+        ],
+        applications: [
+          "Marine fabrication",
+          "Chemical tanks",
+          "Industrial equipment",
+        ],
+      },
+      {
+        title: "Monel Plates",
+        slug: "monel-plates",
+        shortDescription: "Monel Plates Supplier – 400, K500 & More",
+        description:
+          "Heavy-duty Monel plates for marine, offshore, and chemical applications.",
+        properties: [
+          "Seawater resistance",
+          "High strength",
+          "Corrosion resistance",
+          "Weldability",
+        ],
+        applications: [
+          "Offshore platforms",
+          "Marine equipment",
+          "Chemical plants",
+        ],
+      },
+      {
+        title: "Monel Wires",
+        slug: "monel-wires",
+        shortDescription: "Monel Wires Supplier – 400, K500 & More",
+        description:
+          "Premium Monel wires for welding and specialized marine applications.",
+        properties: [
+          "High tensile strength",
+          "Corrosion resistance",
+          "Good ductility",
+          "Consistent quality",
+        ],
+        applications: ["Welding electrodes", "Fasteners", "Marine hardware"],
+      },
+      {
+        title: "Monel Coils",
+        slug: "monel-coils",
+        shortDescription: "Monel Coils Supplier – 400, K500 & More",
+        description:
+          "High-quality Monel coils for continuous processing and forming.",
+        properties: [
+          "Corrosion resistance",
+          "Good formability",
+          "Uniform thickness",
+          "Strength",
+        ],
+        applications: ["Stamping", "Forming", "Marine components"],
       },
     ]),
   },
@@ -426,42 +1149,113 @@ const materials = [
       "Excellent corrosion resistance",
       "Biocompatible",
     ],
-    items: buildItems(valveImg, [
+    items: buildItemsWithImages([
       {
-        title: "Grade 2 Titanium",
-        slug: "grade-2-titanium",
-        shortDescription:
-          "Commercially pure titanium for corrosion-sensitive applications.",
+        title: "Titanium Tubes",
+        slug: "titanium-tubes",
+        shortDescription: "Titanium Tubes Supplier – Grade 1, 2, 5, 7 & More",
         description:
-          "Selected for marine, chemical, and heat-exchanger duty where corrosion resistance matters.",
+          "Premium titanium tubes for aerospace, marine, and heat exchanger applications.",
         properties: [
-          "Excellent ductility",
-          "Very good corrosion resistance",
           "Lightweight",
+          "Corrosion resistance",
+          "High strength-to-weight ratio",
+          "Good weldability",
+        ],
+        applications: ["Aerospace", "Marine equipment", "Heat exchangers"],
+      },
+      {
+        title: "Titanium Pipes",
+        slug: "titanium-pipes",
+        shortDescription: "Titanium Pipes Supplier – Grade 1, 2, 5, 7 & More",
+        description:
+          "Seamless and welded titanium pipes for aerospace, marine, and chemical applications.",
+        properties: [
+          "High strength-to-weight ratio",
+          "Corrosion resistance",
+          "Pressure resistance",
+          "Weldability",
+        ],
+        applications: ["Aerospace", "Marine piping", "Chemical processing"],
+      },
+      {
+        title: "Titanium Round Bars",
+        slug: "titanium-round-bars",
+        shortDescription:
+          "Titanium Round Bars Supplier – Grade 1, 2, 5, 7 & More",
+        description:
+          "Precision titanium round bars for aerospace, marine, and medical applications.",
+        properties: [
+          "High strength",
+          "Lightweight",
+          "Corrosion resistance",
+          "Good machinability",
+        ],
+        applications: ["Aerospace components", "Medical devices", "Fasteners"],
+      },
+      {
+        title: "Titanium Sheets",
+        slug: "titanium-sheets",
+        shortDescription: "Titanium Sheets Supplier – Grade 1, 2, 5, 7 & More",
+        description:
+          "High-quality titanium sheets for aerospace, marine, and industrial applications.",
+        properties: [
+          "Lightweight",
+          "Corrosion resistance",
+          "Good formability",
+          "Weldability",
         ],
         applications: [
-          "Marine equipment",
-          "Heat exchangers",
-          "Chemical vessels",
+          "Aerospace",
+          "Marine fabrication",
+          "Industrial equipment",
         ],
       },
       {
-        title: "Grade 5 Titanium",
-        slug: "grade-5-titanium",
-        shortDescription:
-          "High-strength titanium alloy for aerospace and performance engineering.",
+        title: "Titanium Plates",
+        slug: "titanium-plates",
+        shortDescription: "Titanium Plates Supplier – Grade 1, 2, 5, 7 & More",
         description:
-          "Widely used in structural aerospace and advanced industrial assemblies.",
+          "Heavy-duty titanium plates for aerospace, marine, and structural applications.",
         properties: [
-          "High specific strength",
-          "Excellent fatigue resistance",
-          "Low density",
+          "High strength-to-weight ratio",
+          "Corrosion resistance",
+          "Temperature resistance",
+          "Weldability",
+        ],
+        applications: ["Aerospace", "Offshore platforms", "Marine equipment"],
+      },
+      {
+        title: "Titanium Wires",
+        slug: "titanium-wires",
+        shortDescription: "Titanium Wires Supplier – Grade 1, 2, 5, 7 & More",
+        description:
+          "Premium titanium wires for welding and specialized aerospace applications.",
+        properties: [
+          "High tensile strength",
+          "Corrosion resistance",
+          "Lightweight",
+          "Good ductility",
         ],
         applications: [
-          "Aerospace components",
-          "High-performance structures",
-          "Medical systems",
+          "Welding electrodes",
+          "Aerospace hardware",
+          "Medical devices",
         ],
+      },
+      {
+        title: "Titanium Coils",
+        slug: "titanium-coils",
+        shortDescription: "Titanium Coils Supplier – Grade 1, 2, 5, 7 & More",
+        description:
+          "High-quality titanium coils for continuous processing and forming.",
+        properties: [
+          "Lightweight",
+          "Corrosion resistance",
+          "Good formability",
+          "Uniform thickness",
+        ],
+        applications: ["Stamping", "Forming", "Industrial components"],
       },
     ]),
   },
@@ -479,38 +1273,112 @@ const materials = [
       "High process reliability",
       "Strong weldability",
     ],
-    items: buildItems(ringImg, [
+    items: buildItemsWithImages([
       {
-        title: "Sanicro 28",
-        slug: "sanicro-28",
-        shortDescription:
-          "High-alloy stainless grade for severe chemical and acid service.",
+        title: "Alloy 28 Tubes",
+        slug: "alloy-28-tubes",
+        shortDescription: "Alloy 28 Tubes Supplier – High-Alloy Stainless",
         description:
-          "Typically specified in sulfuric and phosphoric acid environments where durability is essential.",
+          "Premium Alloy 28 (Sanicro 28) tubes for heat exchangers, condensers, and high-temperature acid service applications.",
         properties: [
-          "Superior acid resistance",
-          "Excellent mechanical integrity",
-          "Good process reliability",
+          "Excellent acid resistance",
+          "High strength",
+          "Good weldability",
+          "Corrosion resistance",
         ],
-        applications: ["Acid plants", "Chemical systems", "Process piping"],
+        applications: ["Heat exchangers", "Condensers", "Chemical processing"],
       },
       {
-        title: "Sanicro 31",
-        slug: "sanicro-31",
-        shortDescription:
-          "Advanced stainless grade designed for aggressive process conditions.",
+        title: "Alloy 28 Round Bars",
+        slug: "alloy-28-round-bars",
+        shortDescription: "Alloy 28 Round Bars Supplier – High-Alloy Stainless",
         description:
-          "Provides strong performance in demanding corrosive environments with high uptime expectations.",
+          "High-quality Alloy 28 (Sanicro 28) round bars for fasteners, shafts, and structural components in corrosive environments.",
         properties: [
+          "High tensile strength",
           "Excellent corrosion resistance",
-          "High thermal stability",
-          "Reliable fabrication",
+          "Good machinability",
+          "Dimensional accuracy",
+        ],
+        applications: ["Fasteners", "Shafts", "Valve components"],
+      },
+      {
+        title: "Alloy 28 Sheets",
+        slug: "alloy-28-sheets",
+        shortDescription: "Alloy 28 Sheets Supplier – High-Alloy Stainless",
+        description:
+          "Premium Alloy 28 (Sanicro 28) sheets for industrial fabrication, acid plants, and chemical processing equipment.",
+        properties: [
+          "Excellent acid resistance",
+          "Good formability",
+          "Superior surface finish",
+          "Weldability",
         ],
         applications: [
-          "Process equipment",
-          "Chemical reactors",
-          "Critical piping",
+          "Industrial fabrication",
+          "Acid plants",
+          "Chemical equipment",
         ],
+      },
+      {
+        title: "Alloy 28 Plates",
+        slug: "alloy-28-plates",
+        shortDescription: "Alloy 28 Plates Supplier – High-Alloy Stainless",
+        description:
+          "Heavy-duty Alloy 28 (Sanicro 28) plates for pressure vessels, chemical reactors, and structural applications.",
+        properties: [
+          "High strength",
+          "Excellent acid resistance",
+          "Impact resistance",
+          "Weldability",
+        ],
+        applications: [
+          "Pressure vessels",
+          "Chemical reactors",
+          "Structural fabrication",
+        ],
+      },
+      {
+        title: "Alloy 28 Wires",
+        slug: "alloy-28-wires",
+        shortDescription: "Alloy 28 Wires Supplier – High-Alloy Stainless",
+        description:
+          "Premium Alloy 28 (Sanicro 28) wires for welding, fasteners, and specialized industrial applications.",
+        properties: [
+          "High tensile strength",
+          "Corrosion resistance",
+          "Good ductility",
+          "Consistent quality",
+        ],
+        applications: ["Welding electrodes", "Fasteners", "Springs"],
+      },
+      {
+        title: "Alloy 28 Coils",
+        slug: "alloy-28-coils",
+        shortDescription: "Alloy 28 Coils Supplier – High-Alloy Stainless",
+        description:
+          "High-quality Alloy 28 (Sanicro 28) coils for continuous processing, forming, and industrial applications.",
+        properties: [
+          "Excellent formability",
+          "Uniform thickness",
+          "Corrosion resistance",
+          "Strength",
+        ],
+        applications: ["Stamping", "Forming", "Industrial components"],
+      },
+      {
+        title: "Alloy 28 Pipes",
+        slug: "alloy-28-pipes",
+        shortDescription: "Alloy 28 Pipes Supplier – High-Alloy Stainless",
+        description:
+          "Seamless and welded Alloy 28 (Sanicro 28) pipes for fluid transport, structural, and industrial applications.",
+        properties: [
+          "High pressure resistance",
+          "Excellent corrosion resistance",
+          "Good weldability",
+          "Temperature resistance",
+        ],
+        applications: ["Acid plants", "Chemical processing", "Fluid transport"],
       },
     ]),
   },
@@ -528,41 +1396,145 @@ const materials = [
       "Application-specific grades",
       "Project engineering support",
     ],
-    items: buildItems(circleImg, [
+    items: buildItemsWithImages([
       {
-        title: "Custom Alloy Solutions",
-        slug: "custom-alloy-solutions",
+        title: "High-Performance Alloy Pipes",
+        slug: "high-performance-alloy-pipes",
         shortDescription:
-          "Special alloy sourcing for unique specifications and critical applications.",
+          "High-Performance Alloy Pipes Supplier – Nimonic, Nichrome, Nitronic, Nilo & Alloy",
         description:
-          "We support engineering teams with tailored alloy selection when standard grades are not enough.",
+          "Premium high-performance alloy pipes in grades including Nimonic, Nichrome, Nitronic, and Nilo alloys for extreme temperature, corrosion-resistant, and high-stress applications.",
         properties: [
-          "Application-focused selection",
-          "Expert guidance",
-          "Project-specific sourcing",
+          "High temperature resistance",
+          "Excellent corrosion resistance",
+          "High strength",
+          "Good weldability",
         ],
         applications: [
-          "Custom fabrication",
-          "Specialized plants",
-          "Prototype development",
+          "Aerospace",
+          "Power generation",
+          "Chemical processing",
+          "High-temperature systems",
         ],
       },
       {
-        title: "High-Performance Specials",
-        slug: "high-performance-specials",
+        title: "High-Performance Alloy Tubes",
+        slug: "high-performance-alloy-tubes",
         shortDescription:
-          "Specialty materials for extreme service conditions and advanced equipment.",
+          "High-Performance Alloy Tubes Supplier – Nimonic, Nichrome, Nitronic, Nilo & Alloy",
         description:
-          "Selected for high-demand industrial and energy environments where performance is non-negotiable.",
+          "Premium high-performance alloy tubes in grades including Nimonic, Nichrome, Nitronic, and Nilo alloys for heat exchangers, instrumentation, and high-temperature applications.",
         properties: [
-          "Customized specifications",
-          "Long-term reliability",
-          "Engineering support",
+          "High temperature strength",
+          "Excellent oxidation resistance",
+          "Good weldability",
+          "Corrosion resistance",
         ],
         applications: [
-          "Energy systems",
-          "Research projects",
-          "Critical infrastructure",
+          "Heat exchangers",
+          "Instrumentation",
+          "Aerospace components",
+          "Chemical processing",
+        ],
+      },
+      {
+        title: "High-Performance Alloy Round Bars",
+        slug: "high-performance-alloy-round-bars",
+        shortDescription:
+          "High-Performance Alloy Round Bars Supplier – Nimonic, Nichrome, Nitronic & Alloy",
+        description:
+          "Precision-engineered high-performance alloy round bars in grades including Nimonic, Nichrome, and Nitronic alloys for machining, fabrication, and structural applications.",
+        properties: [
+          "High tensile strength",
+          "Temperature resistance",
+          "Good machinability",
+          "Corrosion resistance",
+        ],
+        applications: [
+          "Fasteners",
+          "Shafts",
+          "Aerospace components",
+          "Valve stems",
+        ],
+      },
+      {
+        title: "High-Performance Alloy Sheets",
+        slug: "high-performance-alloy-sheets",
+        shortDescription:
+          "High-Performance Alloy Sheets – Nimonic, Nichrome, Nitronic, Nilo & Alloy",
+        description:
+          "High-quality high-performance alloy sheets in grades including Nimonic, Nichrome, Nitronic, and Nilo alloys for industrial fabrication, aerospace, and high-temperature applications.",
+        properties: [
+          "High temperature stability",
+          "Excellent oxidation resistance",
+          "Good formability",
+          "Weldability",
+        ],
+        applications: [
+          "Aerospace",
+          "Heat treatment",
+          "Industrial fabrication",
+          "Chemical processing",
+        ],
+      },
+      {
+        title: "High-Performance Alloy Plates",
+        slug: "high-performance-alloy-plates",
+        shortDescription:
+          "High-Performance Alloy Plates – Nimonic, Nichrome, Nitronic, Nilo & Alloy",
+        description:
+          "Heavy-duty high-performance alloy plates in grades including Nimonic, Nichrome, Nitronic, and Nilo alloys for pressure vessels, structural applications, and high-temperature environments.",
+        properties: [
+          "High strength",
+          "Temperature resistance",
+          "Corrosion resistance",
+          "Weldability",
+        ],
+        applications: [
+          "Pressure vessels",
+          "Turbines",
+          "Heat exchangers",
+          "Structural steel",
+        ],
+      },
+      {
+        title: "High-Performance Alloy Wires",
+        slug: "high-performance-alloy-wires",
+        shortDescription:
+          "High-Performance Alloy Wires Supplier – Nimonic, Nichrome, Nitronic, Nilo & Alloy",
+        description:
+          "Premium high-performance alloy wires in grades including Nimonic, Nichrome, Nitronic, and Nilo alloys for welding, fasteners, and specialized high-temperature applications.",
+        properties: [
+          "High tensile strength",
+          "Temperature resistance",
+          "Good ductility",
+          "Corrosion resistance",
+        ],
+        applications: [
+          "Welding electrodes",
+          "Fasteners",
+          "Springs",
+          "Heating elements",
+        ],
+      },
+      {
+        title: "High-Performance Alloy Coils",
+        slug: "high-performance-alloy-coils",
+        shortDescription:
+          "High-Performance Alloy Coils Supplier – Nimonic, Nichrome, Nitronic, Nilo & Alloy",
+        description:
+          "High-quality high-performance alloy coils in grades including Nimonic, Nichrome, Nitronic, and Nilo alloys for continuous processing, forming, and industrial applications.",
+        properties: [
+          "Excellent formability",
+          "Uniform thickness",
+          "Temperature resistance",
+          "Corrosion resistance",
+        ],
+        applications: [
+          "Stamping",
+          "Forming",
+          "Industrial components",
+          "Automotive",
         ],
       },
     ]),
@@ -581,41 +1553,138 @@ const materials = [
       "Cost-effective options",
       "Fast sourcing",
     ],
-    items: buildItems(stripImg, [
+    items: buildItemsWithImages([
       {
-        title: "Carbon Steel Grades",
-        slug: "carbon-steel-grades",
+        title: "Special Alloy Tubes",
+        slug: "special-alloy-tubes",
         shortDescription:
-          "Reliable structural and engineering carbon steel options.",
+          "Special Alloy Tubes Supplier – SMO 254 (F44) & Alloy 20",
         description:
-          "Suitable for standard industrial fabrication, construction, and utility use.",
+          "Premium special alloy tubes in SMO 254 (F44) and Alloy 20 grades for heat exchangers, instrumentation, and high-temperature applications.",
         properties: [
-          "Cost effective",
-          "Excellent availability",
-          "Easy fabrication",
+          "Excellent corrosion resistance",
+          "High strength",
+          "Good weldability",
+          "Temperature resistance",
         ],
         applications: [
-          "Construction",
-          "General fabrication",
-          "Industrial structures",
+          "Heat exchangers",
+          "Instrumentation",
+          "Chemical processing",
+          "High-temperature applications",
         ],
       },
       {
-        title: "Alloy Steel Grades",
-        slug: "alloy-steel-grades",
+        title: "Special Alloy Round Bars",
+        slug: "special-alloy-round-bars",
         shortDescription:
-          "Enhanced steel grades for higher mechanical performance and wear resistance.",
+          "Special Alloy Round Bars Supplier – SMO 254 & Alloy 20",
         description:
-          "Chosen for demanding structural and mechanical applications where added strength matters.",
+          "Precision-engineered special alloy round bars in SMO 254 (F44) and Alloy 20 grades for machining, fabrication, and structural applications.",
         properties: [
-          "Higher strength",
-          "Wear resistance",
+          "High tensile strength",
+          "Excellent corrosion resistance",
           "Good machinability",
+          "Dimensional accuracy",
+        ],
+        applications: ["Machining", "Fabrication", "Fasteners", "Shafts"],
+      },
+      {
+        title: "Special Alloy Sheets",
+        slug: "special-alloy-sheets",
+        shortDescription:
+          "Special Alloy Sheets Supplier – SMO 254 (F44) & Alloy 20",
+        description:
+          "High-quality special alloy sheets in SMO 254 (F44) and Alloy 20 grades for industrial fabrication, chemical processing, and corrosion-resistant applications.",
+        properties: [
+          "Excellent corrosion resistance",
+          "Good formability",
+          "Superior surface finish",
+          "Weldability",
         ],
         applications: [
-          "Machinery",
-          "Heavy equipment",
-          "Engineering components",
+          "Industrial fabrication",
+          "Chemical processing",
+          "Food processing equipment",
+          "Tanks and vessels",
+        ],
+      },
+      {
+        title: "Special Alloy Plates",
+        slug: "special-alloy-plates",
+        shortDescription:
+          "Special Alloy Plates Supplier – SMO 254 (F44) & Alloy 20",
+        description:
+          "Heavy-duty special alloy plates in SMO 254 (F44) and Alloy 20 grades for pressure vessels, structural fabrication, and heavy engineering.",
+        properties: [
+          "High strength",
+          "Excellent impact resistance",
+          "Corrosion resistance",
+          "Weldability",
+        ],
+        applications: [
+          "Pressure vessels",
+          "Structural fabrication",
+          "Heavy engineering",
+          "Chemical plants",
+        ],
+      },
+      {
+        title: "Special Alloy Wires",
+        slug: "special-alloy-wires",
+        shortDescription:
+          "Special Alloy Wires Supplier – SMO 254 (F44) & Alloy 20",
+        description:
+          "Premium special alloy wires in SMO 254 (F44) and Alloy 20 grades for welding, fasteners, springs, and industrial applications.",
+        properties: [
+          "High tensile strength",
+          "Corrosion resistance",
+          "Good ductility",
+          "Consistent quality",
+        ],
+        applications: [
+          "Welding electrodes",
+          "Fasteners",
+          "Springs",
+          "Wire mesh",
+        ],
+      },
+      {
+        title: "Special Alloy Coils",
+        slug: "special-alloy-coils",
+        shortDescription: "Special Alloy Coils Supplier – SMO 254 & Alloy 20",
+        description:
+          "High-quality special alloy coils in SMO 254 (F44) and Alloy 20 grades for stamping, forming, and continuous processing applications.",
+        properties: [
+          "Excellent formability",
+          "Uniform thickness",
+          "Corrosion resistance",
+          "Consistent quality",
+        ],
+        applications: [
+          "Stamping",
+          "Forming",
+          "Continuous processing",
+          "Automotive components",
+        ],
+      },
+      {
+        title: "SMO 254 Pipes",
+        slug: "smo-254-pipes",
+        shortDescription: "SMO 254 Pipes Supplier – High-Alloy Stainless",
+        description:
+          "Specialized SMO 254 (F44) pipes designed for high corrosion resistance, particularly in chloride-containing environments, and sulfuric acid service.",
+        properties: [
+          "High corrosion resistance",
+          "Excellent chloride resistance",
+          "Good weldability",
+          "Temperature resistance",
+        ],
+        applications: [
+          "Chemical processing",
+          "Desalination plants",
+          "Heat exchangers",
+          "Sulfuric acid service",
         ],
       },
     ]),

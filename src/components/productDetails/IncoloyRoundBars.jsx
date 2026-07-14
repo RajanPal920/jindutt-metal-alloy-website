@@ -1,3 +1,4 @@
+// src/components/productDetails/IncoloyRoundBars.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 import countries from "../../data/countries.js";
@@ -38,6 +39,7 @@ const IncoloyRoundBars = () => {
         "Incoloy round bars are nickel-iron-chromium superalloys engineered to provide a high-performance solution for environments requiring both high-temperature strength and resistance to various forms of corrosion. These alloys act as a bridge between standard stainless steels and high-nickel superalloys, offering excellent oxidation resistance and structural stability. By balancing nickel and iron content, Incoloy bars maintain their mechanical properties under prolonged thermal stress and aggressive chemical exposure.",
     },
 
+    // ✅ Make sure gradeBreakdown is properly defined as an array
     gradeBreakdown: [
       {
         title: "Incoloy 800, 800H, and 800HT Round Bars",
@@ -64,6 +66,7 @@ const IncoloyRoundBars = () => {
         title: "Incoloy 825 and 925 Round Bars (Corrosion Resistant)",
         description:
           "Incoloy 825 (UNS N08825): A titanium-stabilized alloy with added molybdenum and copper. It provides exceptional resistance to many corrosive environments, particularly sulfuric and phosphoric acids. It is virtually immune to chloride-ion stress corrosion cracking. Incoloy 925 (UNS N09925): An age-hardenable version of Alloy 825. It provides the same superior corrosion resistance but with much higher mechanical strength and hardness through precipitation hardening.",
+        items: [],
         keyApplications:
           "Oil and gas downhole equipment, acid production valves, and high-strength marine pump shafts.",
       },
@@ -79,6 +82,7 @@ const IncoloyRoundBars = () => {
       ],
     },
 
+    // ✅ Make sure keyFeatures is properly defined as an array
     keyFeatures: [
       "Nickel-iron-chromium superalloys bridging cost and performance",
       "Excellent high-temperature strength and oxidation resistance",
@@ -93,6 +97,7 @@ const IncoloyRoundBars = () => {
       "Complies with ASTM B408, B425, B564 / ASME SB408, SB425, SB564",
     ],
 
+    // ✅ Make sure applications is properly defined as an array
     applications: [
       "Heat treat furnace components and steam generator tubing support",
       "Petrochemical process piping internals",
@@ -368,51 +373,66 @@ const IncoloyRoundBars = () => {
     <h2 className="text-3xl font-bold text-[#0a1a52] mb-6">{children}</h2>
   );
 
-  const Table = ({ headers, rows }) => (
-    <div className="overflow-x-auto rounded-lg border border-gray-200">
-      <table className="min-w-full divide-y divide-gray-200">
-        <thead className="bg-gray-50">
-          <tr>
-            {headers.map((header, index) => (
-              <th
-                key={index}
-                className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-              >
-                {header}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody className="bg-white divide-y divide-gray-200">
-          {rows.map((row, index) => (
-            <tr
-              key={index}
-              className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
-            >
-              {row.map((cell, cellIndex) => (
-                <td key={cellIndex} className="px-4 py-3 text-sm text-gray-700">
-                  {cell}
-                </td>
+  const Table = ({ headers, rows }) => {
+    // ✅ Add safety check for rows
+    if (!rows || rows.length === 0) {
+      return <p className="text-gray-500 text-sm">No data available</p>;
+    }
+    return (
+      <div className="overflow-x-auto rounded-lg border border-gray-200">
+        <table className="min-w-full divide-y divide-gray-200">
+          <thead className="bg-gray-50">
+            <tr>
+              {headers.map((header, index) => (
+                <th
+                  key={index}
+                  className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
+                  {header}
+                </th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
+          </thead>
+          <tbody className="bg-white divide-y divide-gray-200">
+            {rows.map((row, index) => (
+              <tr
+                key={index}
+                className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
+              >
+                {row.map((cell, cellIndex) => (
+                  <td
+                    key={cellIndex}
+                    className="px-4 py-3 text-sm text-gray-700"
+                  >
+                    {cell}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  };
 
-  const ChipList = ({ items }) => (
-    <div className="flex flex-wrap gap-2">
-      {items.map((item, index) => (
-        <span
-          key={index}
-          className="px-3 py-1 rounded-full text-sm bg-gray-100 text-gray-700 border border-gray-200"
-        >
-          {item}
-        </span>
-      ))}
-    </div>
-  );
+  const ChipList = ({ items }) => {
+    // ✅ Add safety check for items
+    if (!items || items.length === 0) {
+      return <p className="text-gray-500 text-sm">No items available</p>;
+    }
+    return (
+      <div className="flex flex-wrap gap-2">
+        {items.map((item, index) => (
+          <span
+            key={index}
+            className="px-3 py-1 rounded-full text-sm bg-gray-100 text-gray-700 border border-gray-200"
+          >
+            {item}
+          </span>
+        ))}
+      </div>
+    );
+  };
 
   // ===============================
   // MAIN COMPONENT
@@ -482,36 +502,43 @@ const IncoloyRoundBars = () => {
             {/* Grade Breakdown */}
             <section className="mb-8">
               <SectionTitle>Incoloy Alloy Grades & Applications</SectionTitle>
-              {productData.gradeBreakdown.map((section, idx) => (
-                <div
-                  key={idx}
-                  className="mb-4 p-4 bg-white border border-gray-200 rounded-lg"
-                >
-                  <h3 className="text-lg font-semibold text-[#0a1a52] mb-2">
-                    {section.title}
-                  </h3>
-                  <p className="text-gray-700 text-sm mb-2">
-                    {section.description}
-                  </p>
-                  <ul className="list-disc pl-5 space-y-1 mb-2">
-                    {section.items.map((item, i) => (
-                      <li key={i} className="text-gray-700 text-sm">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  {section.keyApplications && (
-                    <div className="mt-2 p-2 bg-gray-50 rounded border border-gray-200">
-                      <span className="font-semibold text-sm text-[#0a1a52]">
-                        Key Applications:{" "}
-                      </span>
-                      <span className="text-gray-700 text-sm">
-                        {section.keyApplications}
-                      </span>
-                    </div>
-                  )}
-                </div>
-              ))}
+              {productData.gradeBreakdown &&
+              productData.gradeBreakdown.length > 0 ? (
+                productData.gradeBreakdown.map((section, idx) => (
+                  <div
+                    key={idx}
+                    className="mb-4 p-4 bg-white border border-gray-200 rounded-lg"
+                  >
+                    <h3 className="text-lg font-semibold text-[#0a1a52] mb-2">
+                      {section.title}
+                    </h3>
+                    <p className="text-gray-700 text-sm mb-2">
+                      {section.description}
+                    </p>
+                    {section.items && section.items.length > 0 && (
+                      <ul className="list-disc pl-5 space-y-1 mb-2">
+                        {section.items.map((item, i) => (
+                          <li key={i} className="text-gray-700 text-sm">
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {section.keyApplications && (
+                      <div className="mt-2 p-2 bg-gray-50 rounded border border-gray-200">
+                        <span className="font-semibold text-sm text-[#0a1a52]">
+                          Key Applications:{" "}
+                        </span>
+                        <span className="text-gray-700 text-sm">
+                          {section.keyApplications}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                ))
+              ) : (
+                <p className="text-gray-500">No grade information available</p>
+              )}
             </section>
 
             {/* Manufacturing Standards */}

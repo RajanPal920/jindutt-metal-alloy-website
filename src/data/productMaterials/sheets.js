@@ -1,10 +1,19 @@
-import sheetsImage from "../../assets/images/productImage/sheets.webp";
+
+import tita from "../../assets/images/stock/titanium-sheets.jpg"
+import stain from "../../assets/images/stock/stainless-steel-sheets.jpg"
+import high from "../../assets/images/stock/high-performance-alloy-sheets.jpg"
+import ally28 from "../../assets/images/stock/alloy-28-sheets.jpg"
+import special from "../../assets/images/stock/special-alloy-sheets.jpg"
+import ally200  from "../../assets/images/stock/nickel-alloy-200-201-sheets.jpg"
+import mon from "../../assets/images/stock/monel-400-sheets.jpg"
+import inc from "../../assets/images/stock/inconel-sheets.jpg"
+import cop from "../../assets/images/stock/copper-nickel-sheets.jpg"
 
 const sheets = [
   {
     id: 1,
     slug: "titanium-sheets",
-    image: sheetsImage,
+    image: tita,
     title: "Titanium Sheets Supplier – Grade 2 & Grade 5",
     shortDescription:
       "Titanium Sheets offering exceptional strength, lightweight properties, and superior corrosion resistance for aerospace, marine, and chemical industries.",
@@ -13,7 +22,7 @@ const sheets = [
   {
     id: 2,
     slug: "stainless-steel-sheets",
-    image: sheetsImage,
+    image: stain,
     title:
       "Stainless Steel Sheets Supplier – 304, 304L, 316, 316L, 310S, 904L & More",
     shortDescription:
@@ -23,7 +32,7 @@ const sheets = [
   {
     id: 3,
     slug: "high-performance-alloy-sheets",
-    image: sheetsImage,
+    image: high,
     title:
       "High-Performance Alloy Sheets Supplier – Nimonic, Nichrome, Nitronic, Nilo & Alloy",
     shortDescription:
@@ -33,7 +42,7 @@ const sheets = [
   {
     id: 4,
     slug: "alloy-28-sheets",
-    image: sheetsImage,
+    image: ally28,
     title: "Alloy 28 Sheets Supplier",
     shortDescription:
       "Alloy 28 Sheets offering excellent resistance to pitting, crevice corrosion, and aggressive chemical processing environments.",
@@ -42,7 +51,7 @@ const sheets = [
   {
     id: 5,
     slug: "special-alloy-sheets",
-    image: sheetsImage,
+    image: special,
     title: "Special Alloy Sheets Supplier – SMO 254 (F44) & Alloy 20",
     shortDescription:
       "Special Alloy Sheets manufactured for outstanding corrosion resistance in offshore, marine, and chemical processing industries.",
@@ -51,7 +60,7 @@ const sheets = [
   {
     id: 6,
     slug: "nickel-alloy-200-201-sheets",
-    image: sheetsImage,
+    image: ally200,
     title: "Nickel Alloy 200 / 201 Sheets Supplier",
     shortDescription:
       "Nickel Alloy 200/201 Sheets providing excellent thermal conductivity and corrosion resistance for industrial and chemical applications.",
@@ -60,7 +69,7 @@ const sheets = [
   {
     id: 7,
     slug: "monel-400-sheets",
-    image: sheetsImage,
+    image: mon,
     title: "Monel 400 Sheets Supplier",
     shortDescription:
       "Monel 400 Sheets designed for superior resistance to seawater, acids, alkalis, and harsh marine environments.",
@@ -69,7 +78,7 @@ const sheets = [
   {
     id: 8,
     slug: "inconel-sheets",
-    image: sheetsImage,
+    image:  inc, 
     title: "Inconel Sheets Supplier – 600, 601, 625, 690, 718, 725 & X-750",
     shortDescription:
       "Inconel Sheets engineered for high-temperature strength, oxidation resistance, and demanding industrial applications.",
@@ -78,7 +87,7 @@ const sheets = [
   {
     id: 9,
     slug: "incoloy-sheets",
-    image: sheetsImage,
+    image: special,
     title:
       "Incoloy Sheets Supplier – 800, 800H, 800HT, 825, 925 & 330 (DS 330)",
     shortDescription:
@@ -88,7 +97,7 @@ const sheets = [
   {
     id: 10,
     slug: "hastelloy-sheets",
-    image: sheetsImage,
+    image: high,
     title: "Hastelloy Sheets Supplier – C22, C276, B2, B3, C2000, C59, C4 & HN",
     shortDescription:
       "Hastelloy Sheets providing exceptional corrosion resistance in highly aggressive chemical and industrial environments.",
@@ -97,7 +106,7 @@ const sheets = [
   {
     id: 11,
     slug: "duplex-super-duplex-steel-sheets",
-    image: sheetsImage,
+    image: ally28,
     title:
       "Duplex & Super Duplex Steel Sheets Supplier – S31803, S32205, S32750 & S32760",
     shortDescription:
@@ -107,7 +116,7 @@ const sheets = [
   {
     id: 12,
     slug: "copper-nickel-sheets",
-    image: sheetsImage,
+    image: cop,
     title: "Copper Nickel Sheets Supplier",
     shortDescription:
       "Copper Nickel Sheets manufactured for marine engineering, desalination plants, heat exchangers, condensers, and seawater piping systems.",

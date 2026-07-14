@@ -1,0 +1,109 @@
+// src/components/Product/ProductCard.jsx
+import React from "react";
+import { Link } from "react-router-dom";
+import { FaArrowRight, FaCheckCircle, FaStar } from "react-icons/fa";
+import "./ProductCard.css";
+
+const Card = ({
+  item,
+  showBadge = true,
+  showStandards = true,
+  badgeLabel = "Material Group",
+  ctaText = "Request Quote",
+  pricingText = "Get Instant Pricing",
+  cardClassName = "",
+  imageClassName = "",
+  bodyClassName = "",
+  titleClassName = "",
+  descriptionClassName = "",
+  badgeClassName = "",
+  standardsClassName = "",
+  ctaClassName = "",
+  buttonClassName = "",
+  pricingClassName = "",
+}) => {
+  return (
+    <div className={`product-card group ${cardClassName}`}>
+      {/* Image */}
+      <div className={`product-card-image ${imageClassName}`}>
+        <img src={item.image} alt={item.title} loading="lazy" />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a1a52]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        {/* Quick View Badge */}
+        <div className="absolute bottom-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-[#0a1a52] shadow-sm opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+          Quick View
+        </div>
+      </div>
+
+      {/* Card Content */}
+      <div className={`product-card-body ${bodyClassName}`}>
+        <h3 className={`product-card-title ${titleClassName}`}>{item.title}</h3>
+
+        {/* Material Group / Badge */}
+        {showBadge && item.materialGroup && (
+          <div className="mb-3">
+            <span className={`product-card-badge ${badgeClassName}`}>
+              {item.materialGroup}
+            </span>
+          </div>
+        )}
+
+        {/* Description */}
+        <p className={`product-card-description ${descriptionClassName}`}>
+          {item.shortDescription}
+        </p>
+
+        {/* Standards */}
+        {showStandards && item.standards && (
+          <p className={`product-card-standards ${standardsClassName}`}>
+            <span className="inline-block bg-blue-50 text-blue-700 text-[10px] font-medium px-2 py-0.5 rounded-full mr-1.5">
+              ✓
+            </span>
+            {item.standards}
+          </p>
+        )}
+
+        {/* Additional Fields - Flexible */}
+        {item.application && (
+          <p className="product-card-application">
+            <strong>Application:</strong> {item.application}
+          </p>
+        )}
+
+        {item.forms && (
+          <p className="product-card-forms">
+            <strong>Forms:</strong> {item.forms}
+          </p>
+        )}
+
+        {/* Rating */}
+        <div className="flex items-center gap-1.5 mt-1">
+          <div className="flex items-center gap-0.5">
+            <FaStar className="w-3 h-3 text-[#d79b20] fill-[#d79b20]" />
+            <FaStar className="w-3 h-3 text-[#d79b20] fill-[#d79b20]" />
+            <FaStar className="w-3 h-3 text-[#d79b20] fill-[#d79b20]" />
+            <FaStar className="w-3 h-3 text-[#d79b20] fill-[#d79b20]" />
+            <FaStar className="w-3 h-3 text-[#d79b20] fill-[#d79b20]" />
+          </div>
+          <span className="text-[10px] text-gray-400">Premium Quality</span>
+        </div>
+
+        {/* Button / CTA */}
+        <div className={`product-card-cta ${ctaClassName}`}>
+          <Link
+            to={`/products/${item.slug}`}
+            className={`product-card-button ${buttonClassName}`}
+          >
+            {ctaText}
+            <FaArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
+          <span className={`product-card-pricing ${pricingClassName}`}>
+            {pricingText}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Card;

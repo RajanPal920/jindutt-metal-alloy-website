@@ -38,7 +38,6 @@ const countries = [
   { name: "Indonesia", code: "id" },
   { name: "Philippines", code: "ph" },
   { name: "Sri Lanka", code: "lk" },
-  { name: "Bangladesh", code: "bd" },
   { name: "Nepal", code: "np" },
   { name: "Bhutan", code: "bt" },
   { name: "United Arab Emirates", code: "ae" },
