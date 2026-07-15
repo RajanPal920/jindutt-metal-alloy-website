@@ -9,6 +9,13 @@ import "flag-icons/css/flag-icons.min.css";
 import WhatsAppIcon from "../../assets/images/icons/WhatsAppIcon.jsx";
 import CallIcon from "../../assets/images/icons/CallIcon.jsx";
 
+// Import contact helpers (same as Tubes component)
+import {
+  getWhatsAppUrl,
+  getMailToUrl,
+  getTelUrl,
+} from "../../utils/contactHelpers";
+
 // Unified image imports (same for all product pages)
 import productImage from "../../assets/images/productImage/wires.webp";
 import bannerImage from "../../assets/images/productImage/banner-industrial.webp";
@@ -625,7 +632,7 @@ const CopperNickelWires = () => {
               </div>
             </div>
 
-            {/* Get A Quote */}
+            {/* Get A Quote - UPDATED */}
             <div className="bg-[#0a1a52] rounded-lg p-6 text-center">
               <h2 className="text-2xl font-bold text-white mb-3">
                 Get A Quote
@@ -634,7 +641,7 @@ const CopperNickelWires = () => {
                 Email us for a quote or contact us for more information.
               </p>
               <a
-                href={`mailto:${contact.email || "info@alloypipe.com"}`}
+                href={getMailToUrl(contact)}
                 className="inline-block bg-[#d79b20] hover:bg-[#c08a1a] text-white font-semibold px-6 py-2.5 rounded-lg transition text-sm"
               >
                 Email Us Now
@@ -706,12 +713,12 @@ const CopperNickelWires = () => {
       </div>
 
       {/* =============================== */}
-      {/* FLOATING WHATSAPP & CALL BUTTONS */}
+      {/* FLOATING WHATSAPP & CALL BUTTONS - UPDATED */}
       {/* =============================== */}
       <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
         {/* WhatsApp Button */}
         <a
-          href={`https://wa.me/${(contact.whatsapp || contact.phone || "917045517104").replace(/[^0-9]/g, "")}`}
+          href={getWhatsAppUrl(contact)}
           target="_blank"
           rel="noopener noreferrer"
           className="flex h-14 w-14 items-center justify-center rounded-full bg-green-500 shadow-lg hover:scale-110 transition duration-300 hover:shadow-xl"
@@ -722,7 +729,7 @@ const CopperNickelWires = () => {
 
         {/* Call Button */}
         <a
-          href={`tel:${(contact.phone || "917045517104").replace(/[^0-9]/g, "")}`}
+          href={getTelUrl(contact)}
           className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-600 shadow-lg hover:scale-110 transition duration-300 hover:shadow-xl"
           aria-label="Call us"
         >

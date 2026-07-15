@@ -13,6 +13,12 @@ import CallIcon from "../../assets/images/icons/CallIcon.jsx";
 import productImage from "../../assets/images/productImage/pipes.webp";
 import bannerImage from "../../assets/images/productImage/banner-industrial.webp";
 
+import {
+  getWhatsAppUrl,
+  getMailToUrl,
+  getTelUrl,
+} from "../../utils/contactHelpers";
+
 // Stock Availability Images
 import seamlessImage from "../../assets/images/stock/seamless.jpg";
 import weldedImage from "../../assets/images/stock/welded.jpg";
@@ -1352,7 +1358,7 @@ const Inconel690Pipes = () => {
       <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
         {/* WhatsApp Button */}
         <a
-          href={`https://wa.me/${(contact.whatsapp || contact.phone || "917045517104").replace(/[^0-9]/g, "")}`}
+          href={getWhatsAppUrl(contact)}
           target="_blank"
           rel="noopener noreferrer"
           className="flex h-14 w-14 items-center justify-center rounded-full bg-green-500 shadow-lg hover:scale-110 transition duration-300 hover:shadow-xl"
@@ -1363,7 +1369,7 @@ const Inconel690Pipes = () => {
 
         {/* Call Button */}
         <a
-          href={`tel:${(contact.phone || "917045517104").replace(/[^0-9]/g, "")}`}
+          href={getTelUrl(contact)}
           className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-600 shadow-lg hover:scale-110 transition duration-300 hover:shadow-xl"
           aria-label="Call us"
         >

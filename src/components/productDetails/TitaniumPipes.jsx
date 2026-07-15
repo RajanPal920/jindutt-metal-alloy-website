@@ -14,6 +14,12 @@ import CallIcon from "../../assets/images/icons/CallIcon.jsx";
 import productImage from "../../assets/images/productImage/pipes.webp";
 import bannerImage from "../../assets/images/productImage/banner-industrial.webp";
 
+import {
+  getWhatsAppUrl,
+  getMailToUrl,
+  getTelUrl,
+} from "../../utils/contactHelpers";
+
 // Stock Availability Images (using pipe-specific or unified images)
 import seamlessPipesImage from "../../assets/images/stock/seamless.jpg";
 import weldedPipesImage from "../../assets/images/stock/welded.jpg";
@@ -800,7 +806,7 @@ const TitaniumPipes = () => {
 
         {/* Call Button */}
         <a
-          href={`tel:${(contact.phone || "917045517104").replace(/[^0-9]/g, "")}`}
+          href={getTelUrl(contact)}
           className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-600 shadow-lg hover:scale-110 transition duration-300 hover:shadow-xl"
           aria-label="Call us"
         >

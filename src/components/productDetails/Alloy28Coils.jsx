@@ -1,9 +1,13 @@
+// src/components/productDetails/Alloy28Coils.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 import countries from "../../data/countries.js";
 import state from "../../data/state.js";
 import contact from "../../data/contact";
 import "flag-icons/css/flag-icons.min.css";
+
+// ✅ Import contact helpers
+import contactHelpers from "../../utils/contactHelpers";
 
 // Import WhatsApp and Call Icons
 import WhatsAppIcon from "../../assets/images/icons/WhatsAppIcon.jsx";
@@ -19,6 +23,9 @@ import crCoilsImage from "../../assets/images/stock/cr-coils.jpg";
 import slitCoilsImage from "../../assets/images/stock/slit-coils.jpg";
 
 const Alloy28Coils = () => {
+  // ✅ Get all contact info at once
+  const { phone, whatsapp, email } = contactHelpers.getContactInfo();
+
   // ===============================
   // DATA - From raymondispat.com
   // ===============================
@@ -757,7 +764,7 @@ const Alloy28Coils = () => {
               </div>
             </div>
 
-            {/* Get A Quote */}
+            {/* Get A Quote - ✅ UPDATED with email variable */}
             <div className="bg-[#0a1a52] rounded-lg p-6 text-center">
               <h2 className="text-2xl font-bold text-white mb-3">
                 Get A Quote
@@ -766,7 +773,7 @@ const Alloy28Coils = () => {
                 Email us for a quote or contact us for more information.
               </p>
               <a
-                href={`mailto:${contact.email || "info@alloypipe.com"}`}
+                href={`mailto:${email}`}
                 className="inline-block bg-[#d79b20] hover:bg-[#c08a1a] text-white font-semibold px-6 py-2.5 rounded-lg transition text-sm"
               >
                 Email Us Now
@@ -838,12 +845,12 @@ const Alloy28Coils = () => {
       </div>
 
       {/* =============================== */}
-      {/* FLOATING WHATSAPP & CALL BUTTONS */}
+      {/* FLOATING WHATSAPP & CALL BUTTONS - ✅ UPDATED */}
       {/* =============================== */}
       <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
         {/* WhatsApp Button */}
         <a
-          href={`https://wa.me/${(contact.whatsapp || contact.phone || "917045517104").replace(/[^0-9]/g, "")}`}
+          href={`https://wa.me/${whatsapp}`}
           target="_blank"
           rel="noopener noreferrer"
           className="flex h-14 w-14 items-center justify-center rounded-full bg-green-500 shadow-lg hover:scale-110 transition duration-300 hover:shadow-xl"
@@ -854,7 +861,7 @@ const Alloy28Coils = () => {
 
         {/* Call Button */}
         <a
-          href={`tel:${(contact.phone || "917045517104").replace(/[^0-9]/g, "")}`}
+          href={`tel:${phone}`}
           className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-600 shadow-lg hover:scale-110 transition duration-300 hover:shadow-xl"
           aria-label="Call us"
         >

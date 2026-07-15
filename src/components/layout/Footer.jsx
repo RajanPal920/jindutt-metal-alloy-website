@@ -1,12 +1,8 @@
 ﻿// src/components/common/Footer.jsx
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  FaMapMarkerAlt,
-  FaPhone,
-  FaEnvelope,
-  FaWhatsapp,
-} from "react-icons/fa";
+import { MdCall } from "react-icons/md";
+import { FaMapMarkerAlt, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 import { HiChevronRight } from "react-icons/hi";
 import logo from "../../assets/images/logo/jindutt-logo.png";
 
@@ -75,7 +71,7 @@ const Footer = () => {
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <FaPhone className="w-5 h-5 text-[#d79b20] flex-shrink-0" />
+                <MdCall className="w-5 h-5 text-[#209dd7] flex-shrink-0" />
                 <div>
                   <a
                     href="tel:+919167631676"

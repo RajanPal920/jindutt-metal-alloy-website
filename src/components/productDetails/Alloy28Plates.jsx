@@ -1,3 +1,4 @@
+// src/components/productDetails/Alloy28RoundBars.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 import countries from "../../data/countries.js";
@@ -5,50 +6,59 @@ import state from "../../data/state.js";
 import contact from "../../data/contact";
 import "flag-icons/css/flag-icons.min.css";
 
+// ✅ Import contact helpers
+import contactHelpers from "../../utils/contactHelpers";
+
 // Import WhatsApp and Call Icons
 import WhatsAppIcon from "../../assets/images/icons/WhatsAppIcon.jsx";
 import CallIcon from "../../assets/images/icons/CallIcon.jsx";
 
 // Unified image imports (same for all product pages)
-import productImage from "../../assets/images/productImage/plates.webp";
+import productImage from "../../assets/images/productImage/rod.webp";
 import bannerImage from "../../assets/images/productImage/banner-industrial.webp";
 
-// Stock Availability Images (using plate-specific or unified images)
-import hotRolledPlatesImage from "../../assets/images/stock/hot-rolled-plates.jpg";
-import coldRolledPlatesImage from "../../assets/images/stock/cold-rolled-plates.jpg";
-import customPlatesImage from "../../assets/images/stock/custom-plates.jpg";
+// Unified Stock Availability Images (using same bar images)
+import roundBarsImage from "../../assets/images/stock/round-bars.jpg";
+import hexBarsImage from "../../assets/images/stock/hex-bars.jpg";
+import squareBarsImage from "../../assets/images/stock/square-bars.jpg";
+import flatBarsImage from "../../assets/images/stock/flat-bars.jpg";
+import brightBarsImage from "../../assets/images/stock/bright-bars.jpg";
+import rectangleBarsImage from "../../assets/images/stock/rectangle-bars.jpg";
 
-const Alloy28Plates = () => {
+const Alloy28RoundBars = () => {
+  // ✅ Get all contact info at once
+  const { phone, whatsapp, email } = contactHelpers.getContactInfo();
+
   // ===============================
   // DATA - From raymondispat.com
   // ===============================
 
   const productData = {
-    title: "Alloy 28 Plates Supplier",
+    title: "Alloy 28 Round Bars Supplier",
     subtitle:
-      "Premium Quality Alloy 28 (UNS N08028 / Sanicro 28) Plates – High-Alloy Super-Austenitic Stainless Steel for Exceptional Resistance to Phosphoric Acid, Sulfuric Acid, Pitting & Stress Corrosion Cracking",
+      "Premium Quality ASTM B668 / ASME SB668 Alloy 28 (UNS N08028 / Sanicro 28) Round Bars – High-Alloy Super-Austenitic Stainless Steel for Exceptional Resistance to Phosphoric Acid, Sulfuric Acid, Pitting & Stress Corrosion Cracking",
 
     technicalOverview: {
-      title: "Alloy 28 Plates: Technical Overview and Properties",
+      title: "Alloy 28 Round Bars: Technical Overview and Properties",
       description:
-        "Alloy 28 (UNS N08028 / Sanicro 28) is a high-alloy, super-austenitic stainless steel engineered for service in highly corrosive environments. Originally developed for the phosphoric acid industry, this nickel-iron-chromium alloy features significant additions of molybdenum and copper. This specific chemistry allows Alloy 28 plates to outperform standard 300-series stainless steels and even Alloy 904L when exposed to complex, mixed acid process streams.",
+        "Alloy 28 (UNS N08028 / Sanicro 28) is a high-alloy, super-austenitic stainless steel engineered for service in the most demanding corrosive environments. Developed primarily for the phosphoric acid industry, this nickel-iron-chromium alloy contains significant additions of molybdenum and copper. This unique chemistry allows Alloy 28 round bars to outperform standard 300-series stainless steels and even Alloy 904L in complex, mixed acid process streams.",
     },
 
     corrosionResistance: {
       title: "Superior Corrosion Resistance Profile",
       items: [
-        "Mixed Acid Specialist: Alloy 28 offers exceptional resistance to phosphoric acid, even when contaminated with chlorides and fluorides. It also performs reliably in sulfuric acid across a wide range of concentrations and temperatures.",
-        "Localized Attack Resistance: With a high Chromium (27%) and Molybdenum (3.5%) content, these plates provide a very high PREN (Pitting Resistance Equivalent Number), making them nearly immune to pitting and crevice corrosion in brackish water and brine.",
-        "Stress Corrosion Cracking (SCC): The high nickel content ensures that Alloy 28 plates are virtually immune to chloride-induced stress corrosion cracking, a common failure point for standard austenitic grades in high-temperature halide environments.",
+        "Mixed Acid Specialist: Alloy 28 provides exceptional resistance to phosphoric acid, even when contaminated with chlorides and fluorides. It also performs reliably in sulfuric acid across a wide range of concentrations.",
+        "Localized Attack Resistance: With high Chromium (27%) and Molybdenum (3.5%) content, these bars offer a high PREN (Pitting Resistance Equivalent Number), making them nearly immune to pitting and crevice corrosion in brackish water and high-chloride brines.",
+        "Stress Corrosion Cracking (SCC): The high nickel content ensures that Alloy 28 round bars are virtually immune to chloride-induced stress corrosion cracking, a common failure point for standard austenitic grades in high-temperature halide environments.",
       ],
     },
 
     keyApplications: {
       title: "Key Industrial Applications",
       items: [
-        "Chemical Processing: Fabrication of large-scale reactors and storage tanks for the production of compound fertilizers and superphosphates.",
-        "Oil & Gas: Used for structural components and pressure vessels in 'sour' gas wells containing hydrogen sulfide ($H_{2}S$), carbon dioxide ($CO_{2}$), and high chloride levels.",
-        "Marine & Desalination: High-strength plate components for desalination units and heat exchanger shells exposed to concentrated seawater.",
+        "Chemical Processing: Fabrication of specialized valve stems, pump shafts, and agitators for the production of compound fertilizers and superphosphates.",
+        "Oil & Gas: Used for downhole equipment and pressure vessel components in 'sour' gas wells containing hydrogen sulfide ($H_{2}S$), carbon dioxide ($CO_{2}$), and high chloride levels.",
+        "Marine & Desalination: High-strength components for desalination units and heat exchanger internals exposed to concentrated, warm seawater.",
       ],
     },
 
@@ -59,304 +69,222 @@ const Alloy28Plates = () => {
       "Virtually immune to chloride-induced stress corrosion cracking (SCC)",
       "High chromium (26-28%) and molybdenum (3-4%) content",
       "High nickel content (30-32%) for superior corrosion resistance",
-      "Thickness: 0.3 mm to 120 mm | Available in Heavy Plates",
-      "Width up to 3500mm | Length up to 6000mm+",
-      "Processing Types: Hot Rolled (HR), Cold Rolled (CR), Annealed & Pickled",
-      "Hardness & Temper: Soft, 1/4, 1/2, Hard, Spring Hard",
-      "Value Added Services: Waterjet/Laser Cutting, Bending, Forging, Edge Prep",
-      "Complies with ASTM B709 / ASME SB 709, API Dimensions",
+      "Available in Round, Hex, Square, Flat, Bright & Polished, Rectangle Bars & Billets",
+      "Round sizes: 4mm – 500mm | Hex: 18mm – 57mm | Square: 18mm – 47mm",
+      "Finishes: Bright, Black, Polished, Cold Drawn, Solution Annealed",
+      "Lengths: 1 to 6 Meters",
+      "Complies with ASTM B668, B709 / ASME SB668, SB709, EN 10088-3",
     ],
 
     applications: [
       "Phosphoric acid production and handling equipment",
       "Sulfuric acid processing components",
-      "Large-scale reactors and storage tanks",
-      "Structural components for sour gas wells",
+      "Specialized valve stems and pump shafts",
+      "Downhole equipment for sour gas wells",
       "Desalination unit components",
-      "Heat exchanger shells",
+      "Heat exchanger internals",
       "Chemical processing and fertilizer production",
       "Marine and high-chloride environments",
     ],
 
     stockAvailability: {
-      hotRolledPlates: {
-        title: "Hot Rolled (HR) Plates",
-        image: hotRolledPlatesImage,
+      roundBars: {
+        title: "Alloy 28 Round Bars",
+        image: roundBarsImage,
         items: [
-          "Alloy 28 UNS N08028 HR Plates",
-          "ASME SB 709 Alloy 28 HR Stock",
-          "High-Strength HR Alloy Plates",
+          "Alloy 28 (Sanicro 28) Round Bars",
+          "Nickel Alloy 28 Industrial Rods",
+          "ASTM B709 Alloy 28 Round Bars",
+          "Pure Alloy 28 Solution Annealed Bars",
+          "ASME SB709 Alloy 28 Rods",
         ],
       },
-      coldRolledPlates: {
-        title: "Cold Rolled (CR) Plates",
-        image: coldRolledPlatesImage,
+      hexBars: {
+        title: "Alloy 28 Hex Bars",
+        image: hexBarsImage,
         items: [
-          "Nickel Alloy 28 Cold Rolled Plates",
-          "ASME SB 709 Alloy 28 CR Sheets",
-          "UNS N08028 Precision CR Stock",
+          "Alloy 28 Hexagon Rod",
+          "UNS N08028 Hex Bar Stock",
+          "ASTM B709 Alloy 28 Hex Bars",
+          "ASME SB709 Alloy 28 Hex Rod",
+          "Special Alloy A/F Hex Rods",
         ],
       },
-      customPlates: {
-        title: "Custom & Specialty",
-        image: customPlatesImage,
+      squareBars: {
+        title: "Alloy 28 Square Bars",
+        image: squareBarsImage,
         items: [
-          "Alloy 28 Custom Sized Plates",
-          "UNS N08028 Custom Cut Profiles",
-          "Fabricated Alloy 28 Industrial Plates",
+          "Alloy 28 Square Bars",
+          "ASTM B709 Steel Square Bars",
+          "Alloy 28 Industrial Square Rods",
+          "UNS N08028 Stainless Square Bar",
+          "ASME SB709 Alloy 28 Square Rods",
+        ],
+      },
+      flatBars: {
+        title: "Alloy 28 Flat Bars",
+        image: flatBarsImage,
+        items: [
+          "Alloy 28 / UNS N08028 Flat Bars",
+          "Special Alloy Flat Bar Stock",
+          "ASTM B709 Alloy 28 Flat Bars",
+          "Alloy 28 High Performance Flats",
+          "ASME SB709 Alloy 28 Flat Rods",
+        ],
+      },
+      brightBars: {
+        title: "Alloy 28 Bright Bars",
+        image: brightBarsImage,
+        items: [
+          "Alloy 28 Bright Bars",
+          "Nickel Alloy 28 Bright Bar Rods",
+          "Alloy 28 Cold Drawn Rods",
+          "ASME SB709 Alloy 28 Bright Rods",
+          "ASTM B709 Steel Bright Bars",
+        ],
+      },
+      rectangleBars: {
+        title: "Alloy 28 Rectangle Bars",
+        image: rectangleBarsImage,
+        items: [
+          "Alloy 28 Rectangle Bars",
+          "Nickel Alloy Rectangular Bar",
+          "ASTM B709 Alloy 28 Rectangle Bars",
+          "UNS N08028 Rectangular Rods",
+          "ASME SB709 Alloy 28 Rectangle Bar",
         ],
       },
     },
 
     specifications: {
-      standardsSpecs: "ASTM B709 / ASME SB 709, API Dimensions",
-      thicknessRange: "0.3 mm to 120 mm | Available in Heavy Plates",
-      widthLength: "Width up to 3500mm | Length up to 6000mm+",
-      valueAddedServices: "Waterjet/Laser Cutting, Bending, Forging, Edge Prep",
-      processingTypes: "Hot Rolled (HR), Cold Rolled (CR), Annealed & Pickled",
-      hardnessTemper: "Soft, 1/4, 1/2, Hard, Spring Hard",
+      standards: "ASTM B668, B709 / ASME SB668, SB709, EN 10088-3",
+      sizeRange: "Round: 4mm-500mm | Hex: 18mm-57mm | Square: 18mm-47mm",
+      finishLength:
+        "Bright, Black, Polished, Cold Drawn, Solution Annealed | 1 to 6 Meters",
+      availableForms:
+        "Round, Square, Hex (A/F), Rectangle, Flat, Billet, Forging",
     },
 
     equivalentGrades: {
-      headers: ["GRADE", "UNS NO.", "WERKSTOFF NR.", "SIS / EN Standards"],
-      rows: [
-        [
-          "Alloy 28",
-          "N08028",
-          "1.4563",
-          "SIS 2368 | X1NiCrMoCu31-27-4 | Sanicro 28",
-        ],
+      headers: [
+        "Grade Series",
+        "UNS Number",
+        "Werkstoff Nr.",
+        "Common Designation",
       ],
+      rows: [["Alloy 28", "N08028", "1.4563", "Sanicro 28 | Nickel Alloy 28"]],
     },
 
     chemicalComposition: {
-      headers: [
-        "Grade",
-        "Ni",
-        "Cr",
-        "Mo",
-        "Cu",
-        "C (max)",
-        "Mn (max)",
-        "Others",
-      ],
+      headers: ["Grade", "Ni", "Cr", "Mo", "Cu", "Fe"],
       rows: [
-        [
-          "Alloy 28",
-          "30.0 – 32.0",
-          "26.0 – 28.0",
-          "3.0 – 4.0",
-          "0.7 – 1.5",
-          "0.02",
-          "2.00",
-          "Si: 0.70, P: 0.03, S: 0.01",
-        ],
+        ["Alloy 28", "30.0-32.0", "26.0-28.0", "3.0-4.0", "0.6-1.4", "Bal."],
       ],
     },
 
     mechanicalProperties: {
       headers: [
-        "Tensile Strength (MPa)",
-        "0.2% Yield Strength",
-        "Elongation (A5)",
-        "Hardness (HB)",
-        "Elastic Modulus",
+        "Grade",
+        "Tensile (MPa)",
+        "Yield (MPa)",
+        "Elongation (%)",
+        "Density (g/cm³)",
+      ],
+      rows: [["Alloy 28", "500 min", "214 min", "40% min", "8.00"]],
+    },
+
+    sizeChart: {
+      headers: [
+        "Metric Size (mm)",
+        "Diameter (mm)",
+        "US Rods (ASTM/Canadian)",
+        "Diameter (Inch)",
+        "Japanese Rods (mm²)",
+        "Diameter (mm)",
       ],
       rows: [
-        [
-          "500 - 750 N/mm²",
-          "? 220 N/mm²",
-          "30 - 35%",
-          "? 230 HB",
-          "195 kN/mm²",
-        ],
+        ["5", "5", "#2", "0.250", "10M", "10"],
+        ["6", "6", "#3", "0.375", "15M", "13"],
+        ["7", "7", "#4", "0.500", "20M", "16"],
+        ["8", "8", "#5", "0.625", "25M", "19"],
+        ["9", "9", "#6", "0.750", "30M", "22"],
+        ["10", "10", "#7", "0.875", "35M", "25"],
+        ["11", "11", "#8", "1.000", "45M", "29"],
+        ["12", "12", "#9", "1.125", "55M", "32"],
+        ["14", "14", "#10", "1.250", "-", "35"],
+        ["16", "16", "#11", "1.375", "-", "38"],
+        ["18", "18", "#12", "1.500", "-", "41"],
+        ["20", "20", "#14", "1.750", "-", "44"],
+        ["22", "22", "#15", "1.875", "-", "48"],
+        ["25", "25", "#16", "2.000", "-", "51"],
+        ["28", "28", "#18", "2.250", "-", "57"],
       ],
     },
 
     weightChart: {
-      headers: ["Thickness (Inches)", "Weight (lbs/in²)", "Weight (kg/m²)"],
+      headers: ["Size", "Kgs / Mtr", "Size", "Kgs / Mtr", "Size", "Kgs / Mtr"],
       rows: [
-        ['3/16"', "0.06000", "42.184176"],
-        ['1/4"', "0.08000", "56.245568"],
-        ['3/8"', "0.12100", "85.071421"],
-        ['1/2"', "0.16100", "113.194205"],
-        ['5/8"', "0.19600", "137.801641"],
-        ['3/4"', "0.23500", "165.221356"],
-        ['7/8"', "0.27400", "192.641070"],
-        ['1"', "0.31300", "220.060784"],
-        ['1 1/4"', "0.39100", "274.900213"],
-        ['1 1/2"', "0.47000", "330.442712"],
-        ['1 3/4"', "0.54900", "385.985210"],
-        ['2"', "0.62700", "440.824639"],
-        ['2 1/4"', "0.70500", "495.664068"],
-        ['2 1/2"', "0.78400", "551.206566"],
-        ['2 3/4"', "0.86200", "606.045995"],
-        ['3"', "0.94100", "661.588493"],
-      ],
-    },
-
-    stockedSizes: {
-      headers: ["Size (Inches)", "Size (mm)", "Size (Inches)", "Size (mm)"],
-      rows: [
-        ['.125"', "3.18mm", '.750"', "19.1mm"],
-        ['.134"', "3.40mm", '.875"', "22.2mm"],
-        ['.156"', "3.96mm", '1"', "25.4mm"],
-        ['.187"', "4.75mm", '1.125"', "28.6mm"],
-        ['.250"', "6.35mm", '1.250"', "31.8mm"],
-        ['.312"', "7.92mm", '1.500"', "38.1mm"],
-        ['.375"', "9.53mm", '1.750"', "44.5mm"],
-        ['.500"', "12.7mm", '2"', "50.8mm"],
-        ['.600"', "15.9mm", '3"', "76.2mm"],
-      ],
-    },
-
-    toleranceChart: {
-      headers: [
-        "Width w (mm)",
-        "Nominal Thickness t (mm) – 2.5-4.5",
-        "6.0",
-        "8.0",
-        "10.0",
-        "12.5",
-        "16.0",
-        "20.0",
-        "25.0",
-        "30.0",
-        "> 30",
-      ],
-      rows: [
-        [
-          "w < 1200",
-          "0.20",
-          "0.30",
-          "0.32",
-          "0.35",
-          "0.80",
-          "0.80",
-          "0.80",
-          "1.0",
-          "1.4",
-          "1.5",
-        ],
-        [
-          "1200 ≤ w < 1500",
-          "0.20",
-          "0.30",
-          "0.35",
-          "0.38",
-          "0.80",
-          "0.80",
-          "0.90",
-          "1.0",
-          "1.4",
-          "1.6",
-        ],
-        [
-          "1500 ≤ w < 1800",
-          "0.20",
-          "0.32",
-          "0.38",
-          "0.40",
-          "0.80",
-          "0.80",
-          "0.90",
-          "1.1",
-          "1.5",
-          "1.7",
-        ],
-        [
-          "1800 ≤ w < 2100",
-          "0.20",
-          "0.36",
-          "0.40",
-          "0.45",
-          "0.80",
-          "0.80",
-          "0.90",
-          "1.1",
-          "1.5",
-          "1.8",
-        ],
-        [
-          "2100 ≤ w < 2400",
-          "0.80",
-          "0.80",
-          "0.80",
-          "0.80",
-          "0.80",
-          "0.90",
-          "1.0",
-          "1.1",
-          "1.5",
-          "1.9",
-        ],
-        [
-          "2400 ≤ w < 2700",
-          "0.80",
-          "0.80",
-          "0.80",
-          "0.80",
-          "0.90",
-          "1.0",
-          "1.1",
-          "1.3",
-          "1.7",
-          "2.0",
-        ],
-        [
-          "2700 ≤ w < 3000",
-          "0.80",
-          "0.90",
-          "1.0",
-          "1.0",
-          "1.0",
-          "1.1",
-          "1.3",
-          "1.4",
-          "1.8",
-          "2.1",
-        ],
+        ["3mm", "0.055", "20mm", "2.470", '3"', "35.762"],
+        ['1/8"', "0.062", "22mm", "2.979", '3-1/4"', "41.996"],
+        ["4mm", "0.098", "25mm", "3.871", '3-1/2"', "48.772"],
+        ['3/16"', "0.141", '1"', "3.970", '4"', "63.340"],
+        ['1/4"', "0.249", '1-1/8"', "5.033", '4-1/2"', "80.340"],
+        ["8mm", "0.398", '1-1/4"', "6.349", '5"', "99.940"],
+        ['3/8"', "0.557", '1-1/2"', "8.951", '6"', "143.900"],
+        ["10mm", "0.620", "40mm", "9.872", '8"', "254.551"],
+        ['1/2"', "0.994", '1-3/4"', "12.179", '10"', "397.140"],
+        ["15mm", "1.391", "50mm", "15.414", '12"', "571.800"],
+        ['5/8"', "1.551", '2"', "15.906", "-", "-"],
+        ['3/4"', "2.237", '2-1/2"', "24.856", "-", "-"],
       ],
     },
 
     specializedProducts: [
-      "Alloy 28 (Sanicro 28) Corrosion Resistant Heavy Plates",
-      "ASTM B709 Alloy 28 Precision Cut-to-Size Plate Profiles",
-      "Alloy 1.4563 High-Alloy Austenitic Plates for Chemical Processing",
-      "Custom Fabricated Alloy 28 Plates for Phosphoric Acid Plants",
-      "ASME SB 709 Certified Alloy 28 Plates at Competitive Prices",
-      "Alloy 28 Hot Rolled (HR) & Cold Rolled (CR) Plate Stock",
-      "Half Hard, Quarter Hard & Soft Annealed Alloy 28 Sheets",
-      "Specialized Waterjet & Laser Cutting for Alloy UNS N08028",
-      "Leading Alloy 28 Plate Manufacturer & Exporter in Mumbai, India",
-      "Multi-Purpose Austenitic Alloy 28 Stockist for Global Shipping",
+      "Alloy 28 (Sanicro 28) High Acid Resistant Bar Dealer",
+      "UNS N08028 Severe Corrosion Bars Exporter",
+      "ASME SB709 Alloy 28 Round Bars at Best Price",
+      "Phosphoric & Sulphuric Acid Grade Supplier in India",
+      "Alloy 28 Precision Ground & Bright Bars",
+      "Chemical Process Industry Rods Stockist in Mumbai",
+      "ASTM B709 Alloy 28 Hex & Square Rods Stockist in India",
+      "Alloy 28 Cold Drawn & Polished Bars Supplier",
+      "Alloy 28 Black & Bright Round Bars Manufacturer",
+      "Specialized in Shailesh Pipe Fitting India Quality Standard",
     ],
 
     relatedSearches: [
-      "Alloy 28 Plate Price List 2026",
-      "Price List of Alloy 28 Plates in India",
-      "Alloy 28 Plate Exporter in Mumbai",
-      "Alloy 28 Plate Supplier in India",
-      "Alloy 28 Plates Manufacturer in Mumbai",
-      "ASME SB709 Alloy 28 Plate Weight Calculator",
-      "Alloy 28 Plate Stockist in Mumbai",
-      "Cost of Alloy 28 Plate per Kg",
-      "Alloy 28 Plate Price in India today",
-      "Alloy 28 Plate Dimensions Chart mm",
-      "Alloy 28 Plates in Mumbai Stockyards",
-      "Alloy 28 Plates Chemical Composition and Properties",
-      "Alloy 1.4563 Custom Plates Suppliers in Gujarat",
-      "Alloy 28 Plate Thickness Chart",
-      "Alloy 28 Cold Rolled (CR) Plates Best Price",
-      "Alloy 28 (HR) Hot Rolled Plates Price List",
-      "Alloy 28 Plate Specification PDF",
-      "ASTM B709 Alloy 28 Plate Thickness Tolerance",
-      "Alloy 28 Plates Equivalent Grades Chart",
-      "Alloy 28 Plates Manufacturers in India",
-      "Top 100 Alloy Plate Dealers in Pune",
-      "Alloy UNS N08028 Plate Stockholder India",
-      "Alloy 28 Plate Size and Length Chart",
-      "Sanicro 28 Plate Price in India",
+      "Alloy 28 Bars at Best Price",
+      "Alloy 28 Round Bars In Pune",
+      "ASTM B709 Alloy 28 Bars",
+      "Sanicro 28 Bar Stock Range",
+      "Cost Of Alloy 28 HR Bars Exporter",
+      "Alloy 28 Round Bars Latest Price",
+      "Special Alloy Bars Price List In India",
+      "UNS N08028 Round Bars Chemical Composition",
+      "Alloy 28 Round Bars Stockyards In India",
+      "Alloy 28 Round Bars Pdf",
+      "Alloy 28 Round Bars In Mumbai",
+      "Cost Of Alloy 28 Round Bars",
+      "Alloy 28 Equivalent Grades",
+      "Sanicro 28 Round Bars Price In India",
+      "Alloy 28 Forged Bars",
+      "Price Of Alloy 28 Round Bars",
+      "Alloy 28 Round Bars Specifications",
+      "Alloy 28 Hot Rolled bars Supplier",
+      "ASME SB709 Alloy 28 Bars",
+      "Alloy 28 Bars Supplier In Mumbai",
+      "Alloy 28 Round Bars Suppliers In Gujarat",
+      "Special Alloy Cold Drawn Bars Price List",
+      "Alloy 28 Alloy Round Bar",
+      "Alloy 28 Bars Catalogue",
+      "Alloy 28 Manufacturers",
+      "Alloy 28 Threaded Bars",
+      "Alloy 28 Round Bars Supplier In India",
+      "Alloy 28 Round Bars Price List in India",
+      "Alloy 28 Round Bars Dimensions",
+      "Alloy 28 Rods Stockist In Mumbai",
+      "Alloy 28 Round Bars Stocks",
+      "Alloy 28 Round Bars Weight Calculator",
     ],
 
     ourProducts: [
@@ -393,6 +321,7 @@ const Alloy28Plates = () => {
       { name: "Stainless Steel", slug: "stainless-steel" },
       { name: "Titanium", slug: "titanium" },
     ],
+
     countries: countries,
     cities: state,
   };
@@ -576,7 +505,9 @@ const Alloy28Plates = () => {
 
             {/* Stock Availability */}
             <section className="mb-8">
-              <SectionTitle>Stock Availability of Alloy 28 Plates</SectionTitle>
+              <SectionTitle>
+                Stock Availability of Alloy 28 Round Bars & Rods
+              </SectionTitle>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {Object.entries(productData.stockAvailability).map(
                   ([key, stock]) => (
@@ -614,7 +545,7 @@ const Alloy28Plates = () => {
             {/* Specifications */}
             <section className="mb-8">
               <SectionTitle>
-                Specification of Alloy 28 (Sanicro 28) Plates
+                Technical Specifications: Alloy 28 Round Bars
               </SectionTitle>
               <div className="bg-white border border-gray-200 rounded-lg p-5">
                 <ul className="space-y-2">
@@ -649,7 +580,7 @@ const Alloy28Plates = () => {
 
             {/* Chemical Composition */}
             <section className="mb-8">
-              <SectionTitle>Chemical Composition</SectionTitle>
+              <SectionTitle>Chemical Composition (%)</SectionTitle>
               <Table
                 headers={productData.chemicalComposition.headers}
                 rows={productData.chemicalComposition.rows}
@@ -665,47 +596,30 @@ const Alloy28Plates = () => {
               />
             </section>
 
-            {/* Weight Chart */}
+            {/* Size Chart */}
             <section className="mb-8">
               <SectionTitle>
-                Weight Chart: Alloy 28 (UNS N08028) Plates
+                Size and Dimensions of Alloy 28 Round Bars
               </SectionTitle>
+              <Table
+                headers={productData.sizeChart.headers}
+                rows={productData.sizeChart.rows}
+              />
+            </section>
+
+            {/* Weight Chart */}
+            <section className="mb-8">
+              <SectionTitle>Alloy 28 Round Bars Weight Chart</SectionTitle>
               <Table
                 headers={productData.weightChart.headers}
                 rows={productData.weightChart.rows}
               />
             </section>
 
-            {/* Stocked Sizes */}
-            <section className="mb-8">
-              <SectionTitle>
-                Available Stocked Sizes: Alloy 28 Plates
-              </SectionTitle>
-              <Table
-                headers={productData.stockedSizes.headers}
-                rows={productData.stockedSizes.rows}
-              />
-            </section>
-
-            {/* Tolerance Chart */}
-            <section className="mb-8">
-              <SectionTitle>
-                Thickness Tolerance: Alloy 28 (UNS N08028) Plates
-              </SectionTitle>
-              <p className="text-xs text-gray-500 mb-2">
-                ASTM B709 / ASME SB 709 | Tolerance over and under nominal
-                thickness t (mm)
-              </p>
-              <Table
-                headers={productData.toleranceChart.headers}
-                rows={productData.toleranceChart.rows}
-              />
-            </section>
-
             {/* Specialized Products */}
             <section className="mb-8">
               <SectionTitle>
-                Specialized in Alloy 28 (UNS N08028) Plate Solutions
+                Specialized in Alloy 28 Round Bars & Rods
               </SectionTitle>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {productData.specializedProducts.map((product, index) => (
@@ -722,7 +636,9 @@ const Alloy28Plates = () => {
 
             {/* Related Searches */}
             <section className="mb-8">
-              <SectionTitle>Searches Related to Alloy 28 Plates</SectionTitle>
+              <SectionTitle>
+                Searches Related to Alloy 28 Round Bars
+              </SectionTitle>
               <ChipList items={productData.relatedSearches} />
             </section>
           </div>
@@ -775,7 +691,7 @@ const Alloy28Plates = () => {
               </div>
             </div>
 
-            {/* Get A Quote */}
+            {/* Get A Quote - ✅ UPDATED with email variable */}
             <div className="bg-[#0a1a52] rounded-lg p-6 text-center">
               <h2 className="text-2xl font-bold text-white mb-3">
                 Get A Quote
@@ -784,7 +700,7 @@ const Alloy28Plates = () => {
                 Email us for a quote or contact us for more information.
               </p>
               <a
-                href={`mailto:${contact.email || "info@alloypipe.com"}`}
+                href={`mailto:${email}`}
                 className="inline-block bg-[#d79b20] hover:bg-[#c08a1a] text-white font-semibold px-6 py-2.5 rounded-lg transition text-sm"
               >
                 Email Us Now
@@ -856,12 +772,12 @@ const Alloy28Plates = () => {
       </div>
 
       {/* =============================== */}
-      {/* FLOATING WHATSAPP & CALL BUTTONS */}
+      {/* FLOATING WHATSAPP & CALL BUTTONS - ✅ UPDATED */}
       {/* =============================== */}
       <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
         {/* WhatsApp Button */}
         <a
-          href={`https://wa.me/${(contact.whatsapp || contact.phone || "917045517104").replace(/[^0-9]/g, "")}`}
+          href={`https://wa.me/${whatsapp}`}
           target="_blank"
           rel="noopener noreferrer"
           className="flex h-14 w-14 items-center justify-center rounded-full bg-green-500 shadow-lg hover:scale-110 transition duration-300 hover:shadow-xl"
@@ -872,7 +788,7 @@ const Alloy28Plates = () => {
 
         {/* Call Button */}
         <a
-          href={`tel:${(contact.phone || "917045517104").replace(/[^0-9]/g, "")}`}
+          href={`tel:${phone}`}
           className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-600 shadow-lg hover:scale-110 transition duration-300 hover:shadow-xl"
           aria-label="Call us"
         >
@@ -883,4 +799,4 @@ const Alloy28Plates = () => {
   );
 };
 
-export default Alloy28Plates;
+export default Alloy28RoundBars;

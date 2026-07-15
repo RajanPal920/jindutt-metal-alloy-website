@@ -18,6 +18,12 @@ import hotRolledSheetsImage from "../../assets/images/stock/hot-rolled-sheets.jp
 import coldRolledSheetsImage from "../../assets/images/stock/cold-rolled-sheets.jpg";
 import perforatedSheetsImage from "../../assets/images/stock/perforated-sheets.jpg";
 
+import {
+  getWhatsAppUrl,
+  getMailToUrl,
+  getTelUrl,
+} from "../../utils/contactHelpers";
+
 const NickelAlloy200Sheets = () => {
   // ===============================
   // DATA - From raymondispat.com
@@ -787,7 +793,7 @@ const NickelAlloy200Sheets = () => {
       <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
         {/* WhatsApp Button */}
         <a
-          href={`https://wa.me/${(contact.whatsapp || contact.phone || "917045517104").replace(/[^0-9]/g, "")}`}
+          href={getWhatsAppUrl(contact)}
           target="_blank"
           rel="noopener noreferrer"
           className="flex h-14 w-14 items-center justify-center rounded-full bg-green-500 shadow-lg hover:scale-110 transition duration-300 hover:shadow-xl"
@@ -798,7 +804,7 @@ const NickelAlloy200Sheets = () => {
 
         {/* Call Button */}
         <a
-          href={`tel:${(contact.phone || "917045517104").replace(/[^0-9]/g, "")}`}
+          href={getTelUrl(contact)}
           className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-600 shadow-lg hover:scale-110 transition duration-300 hover:shadow-xl"
           aria-label="Call us"
         >
