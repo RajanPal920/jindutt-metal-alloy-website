@@ -162,11 +162,9 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-lg border-b border-slate-200/60 shadow-sm px-6 lg:px-10">
       <div className="w-full h-20 flex items-center justify-between">
-        {/* LOGO */}
+        {/* LOGO - FIXED: Removed Link wrapper around Header */}
         <div className="flex-shrink-0">
-          <Link to="/" className="block hover:opacity-80 transition-opacity">
-            <Header />
-          </Link>
+          <Header /> {/* Header now handles the Link internally */}
         </div>
 
         {/* DESKTOP MENU */}

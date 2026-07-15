@@ -61,7 +61,7 @@ const Hero4 = () => {
   const statsSectionRef = useRef(null);
   const industriesSectionRef = useRef(null);
 
-  // Stats data
+  // Stats data - UPPERCASE labels
   const stats = [
     {
       key: "materialGrades",
@@ -235,19 +235,19 @@ const Hero4 = () => {
           <div className="flex items-center gap-3 mb-2">
             <span className="w-10 h-0.5 bg-[#d79b20]"></span>
             <span className="text-xs font-bold tracking-[0.25em] text-[#d79b20] uppercase">
-              Quality Assurance Framework
+              QUALITY ASSURANCE FRAMEWORK
             </span>
             <span className="w-10 h-0.5 bg-[#d79b20]"></span>
           </div>
 
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-white uppercase leading-[1.15]">
-            Approved Third-Party{" "}
-            <span className="text-[#d79b20]">Inspection Agencies</span>
+            APPROVED THIRD-PARTY{" "}
+            <span className="text-[#d79b20]">INSPECTION AGENCIES</span>
           </h1>
 
           <p className="text-slate-300 text-sm md:text-base max-w-2xl leading-relaxed mt-2">
-            Our engineering components are universally verified and certified by
-            global metallurgical authorities.
+            OUR ENGINEERING COMPONENTS ARE UNIVERSALLY VERIFIED AND CERTIFIED BY
+            GLOBAL METALLURGICAL AUTHORITIES.
           </p>
         </div>
 
@@ -304,7 +304,7 @@ const Hero4 = () => {
           <div className="flex items-center gap-3 mb-2">
             <span className="w-10 h-0.5 bg-[#d79b20]"></span>
             <span className="text-xs font-bold tracking-[0.25em] text-[#d79b20] uppercase">
-              Quality Assurance Protocol
+              QUALITY ASSURANCE PROTOCOL
             </span>
             <span className="w-10 h-0.5 bg-[#d79b20]"></span>
           </div>
@@ -314,10 +314,10 @@ const Hero4 = () => {
             <span className="text-[#d79b20]">CERTIFICATIONS</span>
           </h1>
 
-          <p className="text-slate-300 text-sm md:text-base max-w-2xl leading-relaxed mt-2">
-            Our commitment to zero-failure performance is backed by globally
-            recognized triple-standard certifications, ensuring absolute
-            compliance for high-integrity industrial environments.
+          <p className="text-slate-300 text-sm md:text-base max-w-2xl leading-relaxed mt-2 uppercase">
+            OUR COMMITMENT TO ZERO-FAILURE PERFORMANCE IS BACKED BY GLOBALLY
+            RECOGNIZED TRIPLE-STANDARD CERTIFICATIONS, ENSURING ABSOLUTE
+            COMPLIANCE FOR HIGH-INTEGRITY INDUSTRIAL ENVIRONMENTS.
           </p>
         </div>
 
@@ -330,11 +330,11 @@ const Hero4 = () => {
               <div className="mb-5 p-3.5 bg-[#d79b20]/10 rounded-xl border border-[#d79b20]/20 group-hover:bg-[#d79b20]/20 transition-colors duration-300">
                 {item.icon}
               </div>
-              <h3 className="text-xl font-bold tracking-wide text-white mb-4">
+              <h3 className="text-xl font-bold tracking-wide text-white mb-4 uppercase">
                 {item.title}
               </h3>
               <div className="w-16 h-[2px] bg-[#d79b20]/30 mb-6 group-hover:bg-[#d79b20]/60 transition-colors duration-300"></div>
-              <p className="text-slate-300 text-sm leading-relaxed mb-auto px-2">
+              <p className="text-slate-300 text-sm leading-relaxed mb-auto px-2 uppercase">
                 {item.description}
               </p>
               <div className="mt-8 w-10 h-10 rounded-full bg-[#d79b20] flex items-center justify-center shadow-lg shadow-[#d79b20]/20 group-hover:scale-110 transition-transform duration-300">
@@ -353,7 +353,7 @@ const Hero4 = () => {
           <div className="flex items-center gap-3">
             <span className="w-10 h-0.5 bg-[#d79b20]"></span>
             <span className="text-xs font-bold tracking-[0.25em] text-[#d79b20] uppercase">
-              Global Metallurgy Standards
+              GLOBAL METALLURGY STANDARDS
             </span>
             <span className="w-10 h-0.5 bg-[#d79b20]"></span>
           </div>
@@ -361,10 +361,10 @@ const Hero4 = () => {
 
         <div className="flex flex-col gap-4 max-w-5xl mx-auto items-center justify-center">
           <h2 className="text-4xl lg:text-5xl font-black text-[#0a1a52] uppercase leading-[1.05] tracking-tighter">
-            Strategic Manufacturer of <br /> High-Yield
+            STRATEGIC MANUFACTURER OF <br /> HIGH-YIELD
           </h2>
           <h3 className="text-2xl md:text-5xl font-medium text-[#d79b20] uppercase leading-tight tracking-tight mt-2">
-            Industrial Infrastructure <br /> Components
+            INDUSTRIAL INFRASTRUCTURE <br /> COMPONENTS
           </h3>
         </div>
       </section>
@@ -379,11 +379,11 @@ const Hero4 = () => {
               <div className="w-14 h-14 rounded-2xl bg-[#d79b20]/10 flex items-center justify-center mb-6">
                 <FaShieldAlt className="w-6 h-6 text-[#d79b20]" />
               </div>
-              <p className="text-slate-600 font-medium text-[15px] md:text-base leading-relaxed text-left">
-                Jindutt Metal & Alloy Pvt. Ltd. commands systemic quality
-                control over a diverse inventory of critical pipeline
-                configurations, forged steel assemblies, structural fasteners
-                and heavy-duty plates.
+              <p className="text-slate-600 font-medium text-[15px] md:text-base leading-relaxed text-left uppercase">
+                JINDUTT METAL & ALLOY PVT. LTD. COMMANDS SYSTEMIC QUALITY
+                CONTROL OVER A DIVERSE INVENTORY OF CRITICAL PIPELINE
+                CONFIGURATIONS, FORGED STEEL ASSEMBLIES, STRUCTURAL FASTENERS
+                AND HEAVY-DUTY PLATES.
               </p>
             </div>
 
@@ -391,10 +391,10 @@ const Hero4 = () => {
               <div className="w-14 h-14 rounded-2xl bg-[#d79b20]/10 flex items-center justify-center mb-6">
                 <FaCogs className="w-6 h-6 text-[#d79b20]" />
               </div>
-              <p className="text-slate-600 font-medium text-[15px] md:text-base leading-relaxed text-left">
-                Engineered for Energy Infrastructure, Chemical Processing and
-                Power Generation sectors where operational reliability is
-                critical.
+              <p className="text-slate-600 font-medium text-[15px] md:text-base leading-relaxed text-left uppercase">
+                ENGINEERED FOR ENERGY INFRASTRUCTURE, CHEMICAL PROCESSING AND
+                POWER GENERATION SECTORS WHERE OPERATIONAL RELIABILITY IS
+                CRITICAL.
               </p>
             </div>
           </div>
@@ -411,7 +411,7 @@ const Hero4 = () => {
                     {card.title}
                   </h4>
                 </div>
-                <p className="text-slate-500 font-medium text-[13px] pl-8">
+                <p className="text-slate-500 font-medium text-[13px] pl-8 uppercase">
                   {card.desc}
                 </p>
               </div>
@@ -473,7 +473,7 @@ const Hero4 = () => {
           <div className="flex items-center gap-3 mb-2">
             <span className="w-10 h-0.5 bg-[#d79b20]"></span>
             <span className="text-xs font-bold tracking-[0.25em] text-[#d79b20] uppercase">
-              Global Industrial Ecosystem
+              GLOBAL INDUSTRIAL ECOSYSTEM
             </span>
             <span className="w-10 h-0.5 bg-[#d79b20]"></span>
           </div>
@@ -482,9 +482,9 @@ const Hero4 = () => {
             INDUSTRIES WE <span className="text-[#d79b20]">POWER</span>
           </h1>
 
-          <p className="text-slate-300 text-sm md:text-base max-w-2xl leading-relaxed mt-2">
-            Delivering certified industrial components to mission-critical
-            sectors worldwide.
+          <p className="text-slate-300 text-sm md:text-base max-w-2xl leading-relaxed mt-2 uppercase">
+            DELIVERING CERTIFIED INDUSTRIAL COMPONENTS TO MISSION-CRITICAL
+            SECTORS WORLDWIDE.
           </p>
         </div>
 
@@ -515,16 +515,16 @@ const Hero4 = () => {
                 </div>
                 <div className="flex flex-1 flex-col justify-between p-6">
                   <div>
-                    <h3 className="text-xl font-bold text-white transition-colors duration-300 group-hover:text-[#d79b20]">
+                    <h3 className="text-xl font-bold text-white transition-colors duration-300 group-hover:text-[#d79b20] uppercase">
                       {card.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-6 text-slate-300">
+                    <p className="mt-3 text-sm leading-6 text-slate-300 uppercase">
                       {card.subtitle}
                     </p>
                   </div>
                   <div className="mt-6">
                     <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#d79b20]">
-                      Industry Sector
+                      INDUSTRY SECTOR
                     </span>
                   </div>
                 </div>
@@ -542,7 +542,7 @@ const Hero4 = () => {
           <div className="flex items-center gap-3 mb-2">
             <span className="w-10 h-0.5 bg-[#d79b20]"></span>
             <span className="text-xs font-bold tracking-[0.25em] text-[#d79b20] uppercase">
-              Trusted Supply Network
+              TRUSTED SUPPLY NETWORK
             </span>
             <span className="w-10 h-0.5 bg-[#d79b20]"></span>
           </div>
@@ -603,18 +603,18 @@ const Hero4 = () => {
             <div className="flex items-center justify-center gap-3 mb-4">
               <span className="w-10 h-0.5 bg-[#d79b20]"></span>
               <span className="text-xs font-bold tracking-[0.25em] text-[#d79b20] uppercase">
-                Our Services
+                OUR SERVICES
               </span>
               <span className="w-10 h-0.5 bg-[#d79b20]"></span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-black text-[#0a1a52]">
-              Engineering <span className="text-[#d79b20]">Excellence</span>
+            <h2 className="text-4xl md:text-5xl font-black text-[#0a1a52] uppercase">
+              ENGINEERING <span className="text-[#d79b20]">EXCELLENCE</span>
             </h2>
 
-            <p className="mt-5 max-w-2xl mx-auto text-slate-500 leading-relaxed">
-              Precision manufacturing backed by technical expertise, rigorous
-              inspection, and complete supply-chain transparency.
+            <p className="mt-5 max-w-2xl mx-auto text-slate-500 leading-relaxed uppercase">
+              PRECISION MANUFACTURING BACKED BY TECHNICAL EXPERTISE, RIGOROUS
+              INSPECTION, AND COMPLETE SUPPLY-CHAIN TRANSPARENCY.
             </p>
           </div>
 
@@ -646,11 +646,11 @@ const Hero4 = () => {
                     }`}
                   >
                     <div className="w-12 h-12 border-l-4 border-t-4 border-[#d79b20] mb-8"></div>
-                    <h2 className="text-4xl lg:text-5xl font-black text-white whitespace-pre-line leading-tight">
+                    <h2 className="text-4xl lg:text-5xl font-black text-white whitespace-pre-line leading-tight uppercase">
                       {tab.title}
                     </h2>
                     <div className="w-20 h-1 bg-gradient-to-r from-[#d79b20] to-transparent my-8"></div>
-                    <p className="max-w-md text-slate-300 leading-8 text-lg">
+                    <p className="max-w-md text-slate-300 leading-8 text-lg uppercase">
                       {tab.desc}
                     </p>
                   </div>
@@ -685,61 +685,103 @@ const Hero4 = () => {
       {/* SECTION 9: GLOBAL FOOTPRINT */}
       {/* =============================== */}
       <section className="w-full bg-[#0a1a52] text-white py-20 px-6 md:px-16 lg:px-24">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+        <div className="max-w-8xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+          {/* LEFT CONTENT - Equal width */}
           <div className="w-full lg:w-1/2">
             <div className="flex items-center gap-3 mb-4">
               <span className="w-10 h-0.5 bg-[#d79b20]"></span>
               <span className="text-xs font-bold tracking-[0.25em] text-[#d79b20] uppercase">
-                Supply Chain Excellence
+                SUPPLY CHAIN EXCELLENCE
               </span>
             </div>
 
-            <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
+            <h1 className="text-4xl lg:text-5xl font-bold leading-tight uppercase">
               GLOBAL FOOTPRINT <br />
               <span className="text-[#d79b20]">& DOMESTIC REACH</span>
             </h1>
 
-            <p className="mt-6 text-slate-300 leading-8">
-              Jindutt Metal & Alloy Pvt. Ltd. operates a sophisticated
-              industrial supply chain, serving as a critical material partner
-              for refineries, petrochemical plants, and power stations across
-              50+ countries and every major industrial hub in India.
+            <p className="mt-6 text-slate-300 leading-8 uppercase text-sm md:text-base">
+              JINDUTT METAL & ALLOY PVT. LTD. OPERATES A SOPHISTICATED
+              INDUSTRIAL SUPPLY CHAIN, SERVING AS A CRITICAL MATERIAL PARTNER
+              FOR REFINERIES, PETROCHEMICAL PLANTS, AND POWER STATIONS ACROSS
+              50+ COUNTRIES AND EVERY MAJOR INDUSTRIAL HUB IN INDIA.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-8">
               <div>
                 <h3 className="text-4xl font-bold text-[#d79b20]">50+</h3>
                 <p className="text-sm uppercase text-white mt-2">
-                  Export Countries
+                  EXPORT COUNTRIES
                 </p>
               </div>
               <div>
                 <h3 className="text-4xl font-bold text-[#d79b20]">100+</h3>
                 <p className="text-sm uppercase text-white mt-2">
-                  Domestic Hubs
+                  DOMESTIC HUBS
                 </p>
               </div>
               <div>
                 <h3 className="text-4xl font-bold text-[#d79b20]">500+</h3>
                 <p className="text-sm uppercase text-white mt-2">
-                  Guaranteed Response
+                  GUARANTEED RESPONSE
                 </p>
               </div>
             </div>
           </div>
 
-          <div
-            className="w-full lg:w-1/2 h-[500px] p-[2px] bg-[#d79b20]/40 rounded-2xl overflow-hidden"
-            style={{
-              clipPath:
-                "polygon(8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%, 0% 8%)",
-            }}
-          >
-            <img
-              className="w-full h-full object-cover"
-              src={rpmexport}
-              alt="Jindutt Metal & Alloy Pvt. Ltd."
-            />
+          {/* RIGHT IMAGE - Equal width with full image */}
+          <div className="w-full lg:w-1/2 relative">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-[#d79b20]/10">
+              {/* Gradient Border */}
+              <div className="absolute inset-0 p-[3px] bg-gradient-to-r from-[#d79b20] via-[#d79b20]/50 to-[#0a1a52] rounded-2xl"></div>
+
+              {/* Main Image */}
+              <div className="relative rounded-2xl overflow-hidden">
+                <img
+                  className="w-full h-[350px] md:h-[450px] lg:h-[500px] object-cover object-center transition-transform duration-700 hover:scale-105"
+                  src={rpmexport}
+                  alt="Jindutt Metal & Alloy Pvt. Ltd."
+                />
+
+                {/* Image Overlay Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1a52]/70 via-[#0a1a52]/20 to-transparent"></div>
+
+                {/* Overlay Information Cards */}
+                <div className="absolute bottom-6 left-6 right-6 flex flex-wrap gap-3">
+                  <div className="bg-[#0a1a52]/90 backdrop-blur-md rounded-xl px-4 py-3 border border-[#d79b20]/30 flex-1 min-w-[100px]">
+                    <p className="text-[#d79b20] text-lg font-bold">50+</p>
+                    <p className="text-white/80 text-[10px] uppercase tracking-wider">
+                      Countries Served
+                    </p>
+                  </div>
+                  <div className="bg-[#0a1a52]/90 backdrop-blur-md rounded-xl px-4 py-3 border border-[#d79b20]/30 flex-1 min-w-[100px]">
+                    <p className="text-[#d79b20] text-lg font-bold">100%</p>
+                    <p className="text-white/80 text-[10px] uppercase tracking-wider">
+                      Quality Assured
+                    </p>
+                  </div>
+                  <div className="bg-[#0a1a52]/90 backdrop-blur-md rounded-xl px-4 py-3 border border-[#d79b20]/30 flex-1 min-w-[100px]">
+                    <p className="text-[#d79b20] text-lg font-bold">24/7</p>
+                    <p className="text-white/80 text-[10px] uppercase tracking-wider">
+                      Global Support
+                    </p>
+                  </div>
+                </div>
+
+                {/* Top Badge */}
+                <div className="absolute top-4 right-4 bg-[#d79b20] text-[#0a1a52] px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider shadow-lg">
+                  ISO 9001:2015
+                </div>
+
+                {/* Corner Accents */}
+                <div className="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-[#d79b20]/50"></div>
+                <div className="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-[#d79b20]/50"></div>
+              </div>
+            </div>
+
+            {/* Decorative Elements */}
+            <div className="absolute -top-4 -left-4 w-12 h-12 border-2 border-[#d79b20]/20 rounded-full"></div>
+            <div className="absolute -bottom-4 -right-4 w-16 h-16 border-2 border-[#d79b20]/20 rounded-full"></div>
           </div>
         </div>
       </section>
@@ -752,7 +794,7 @@ const Hero4 = () => {
           <div className="flex items-center gap-3 mb-2">
             <span className="w-10 h-0.5 bg-[#d79b20]"></span>
             <span className="text-xs font-bold tracking-[0.25em] text-[#d79b20] uppercase">
-              National Infrastructure Support
+              NATIONAL INFRASTRUCTURE SUPPORT
             </span>
             <span className="w-10 h-0.5 bg-[#d79b20]"></span>
           </div>
@@ -763,10 +805,10 @@ const Hero4 = () => {
 
           <div className="w-24 h-1 bg-gradient-to-r from-[#0a1a52] to-[#d79b20] rounded-full"></div>
 
-          <p className="text-[#0a1a52]/70 text-sm md:text-base max-w-2xl leading-relaxed mt-2">
-            Jindutt Metal & Alloy Pvt. Ltd. serves as a critical material
-            partner for India's premier industrial hubs, delivering
-            high-integrity alloys for zero-failure performance.
+          <p className="text-[#0a1a52]/70 text-sm md:text-base max-w-2xl leading-relaxed mt-2 uppercase">
+            JINDUTT METAL & ALLOY PVT. LTD. SERVES AS A CRITICAL MATERIAL
+            PARTNER FOR INDIA'S PREMIER INDUSTRIAL HUBS, DELIVERING
+            HIGH-INTEGRITY ALLOYS FOR ZERO-FAILURE PERFORMANCE.
           </p>
         </div>
 
@@ -774,7 +816,7 @@ const Hero4 = () => {
           {state.map((item, index) => (
             <button
               key={index}
-              className="py-3 px-6 rounded-full border border-[#d79b20]/30 bg-white text-[#0a1a52] font-bold text-sm flex items-center justify-center gap-2 transition-all duration-300 hover:bg-gradient-to-r hover:from-[#d79b20] hover:to-[#c08a1a] hover:text-white hover:border-transparent hover:shadow-xl hover:shadow-[#d79b20]/20 hover:-translate-y-1"
+              className="py-3 px-6 rounded-full border border-[#d79b20]/30 bg-white text-[#0a1a52] font-bold text-sm flex items-center justify-center gap-2 transition-all duration-300 hover:bg-gradient-to-r hover:from-[#d79b20] hover:to-[#c08a1a] hover:text-white hover:border-transparent hover:shadow-xl hover:shadow-[#d79b20]/20 hover:-translate-y-1 uppercase"
             >
               <span className="text-[#d79b20] text-xs group-hover:text-white">
                 ◆
@@ -795,7 +837,7 @@ const Hero4 = () => {
           <div className="flex items-center gap-3 mb-2">
             <span className="w-10 h-0.5 bg-[#d79b20]"></span>
             <span className="text-xs font-bold tracking-[0.25em] text-[#d79b20] uppercase">
-              Global Trade Authority
+              GLOBAL TRADE AUTHORITY
             </span>
             <span className="w-10 h-0.5 bg-[#d79b20]"></span>
           </div>
@@ -806,11 +848,11 @@ const Hero4 = () => {
 
           <div className="w-24 h-1 bg-gradient-to-r from-[#d79b20] to-white/30 rounded-full"></div>
 
-          <p className="text-slate-300 text-sm md:text-base max-w-2xl leading-relaxed mt-2">
-            As a premier ISO Certified manufacturer, Jindutt Metal & Alloy Pvt.
-            Ltd. maintains a high-velocity export corridor, delivering
-            precision-engineered piping solutions to over 50 countries
-            worldwide.
+          <p className="text-slate-300 text-sm md:text-base max-w-2xl leading-relaxed mt-2 uppercase">
+            AS A PREMIER ISO CERTIFIED MANUFACTURER, JINDUTT METAL & ALLOY PVT.
+            LTD. MAINTAINS A HIGH-VELOCITY EXPORT CORRIDOR, DELIVERING
+            PRECISION-ENGINEERED PIPING SOLUTIONS TO OVER 50 COUNTRIES
+            WORLDWIDE.
           </p>
         </div>
 
@@ -832,11 +874,11 @@ const Hero4 = () => {
                 />
               </div>
               <div className="relative z-10 flex flex-col items-start">
-                <span className="font-semibold text-slate-800 transition-colors duration-300 group-hover:text-white">
+                <span className="font-semibold text-slate-800 transition-colors duration-300 group-hover:text-white uppercase">
                   {country.name}
                 </span>
                 <span className="text-xs uppercase tracking-widest text-slate-500 transition-colors duration-300 group-hover:text-[#d79b20]">
-                  Export Market
+                  EXPORT MARKET
                 </span>
               </div>
             </button>
@@ -852,7 +894,7 @@ const Hero4 = () => {
           <div className="flex items-center gap-3 mb-2">
             <span className="w-10 h-0.5 bg-[#d79b20]"></span>
             <span className="text-xs font-bold tracking-[0.25em] text-[#d79b20] uppercase">
-              Market Trust
+              MARKET TRUST
             </span>
             <span className="w-10 h-0.5 bg-[#d79b20]"></span>
           </div>
@@ -876,10 +918,10 @@ const Hero4 = () => {
                 </div>
               </div>
 
-              <p className="text-slate-600 italic leading-8 text-base transition-colors duration-500 group-hover:text-[#0a1a52]">
+              <p className="text-slate-600 italic leading-8 text-base transition-colors duration-500 group-hover:text-[#0a1a52] uppercase">
                 "
                 {item.text ||
-                  "Jindutt Metal & Alloy Pvt. Ltd. consistently delivers certified piping components with complete documentation and traceability. Their responsiveness and commitment to quality have made them a dependable sourcing partner."}
+                  "JINDUTT METAL & ALLOY PVT. LTD. CONSISTENTLY DELIVERS CERTIFIED PIPING COMPONENTS WITH COMPLETE DOCUMENTATION AND TRACEABILITY. THEIR RESPONSIVENESS AND COMMITMENT TO QUALITY HAVE MADE THEM A DEPENDABLE SOURCING PARTNER."}
                 "
               </p>
 
@@ -887,7 +929,7 @@ const Hero4 = () => {
 
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 rounded-xl border border-slate-200 bg-slate-50 flex items-center justify-center transition-all duration-500 group-hover:bg-[#d79b20] group-hover:border-[#d79b20]">
-                  <span className="text-[#d79b20] text-xl font-bold transition-colors duration-500 group-hover:text-white">
+                  <span className="text-[#d79b20] text-xl font-bold transition-colors duration-500 group-hover:text-white uppercase">
                     {item.initials || "JM"}
                   </span>
                 </div>

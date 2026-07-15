@@ -1,4 +1,4 @@
-// src/pages/About/About.jsx
+// src/pages/About/About.jsx - Fixed Hero Section
 import React from "react";
 import { Link } from "react-router-dom";
 import {
@@ -11,9 +11,13 @@ import {
   FaCheckCircle,
   FaStar,
   FaArrowRight,
+  FaPlay,
+  FaBuilding,
+  FaUsers,
+  FaClipboardCheck,
 } from "react-icons/fa";
 
-import heroBg from "../../assets/images/industries/main-banner.webp";
+import heroBg from "../../assets/images/industries/hero2.png";
 import workshop from "../../assets/images/industries/workshop.webp";
 import aboutCardData from "../../data/aboutCard";
 import industriesData from "../../data/industriesData";
@@ -22,18 +26,20 @@ const About = () => {
   return (
     <>
       {/* =============================== */}
-      {/* HERO SECTION */}
+      {/* HERO SECTION - FIXED IMAGE ALIGNMENT */}
       {/* =============================== */}
-      <section
-        className="relative w-full min-h-[90vh] flex items-center pt-20 lg:pt-24"
-        style={{
-          backgroundImage: `url(${heroBg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1a52]/90 to-[#0a1a52]/70"></div>
-        <div className="absolute inset-0 bg-[url('/src/assets/images/pattern-dots.svg')] opacity-10"></div>
+      <section className="relative w-full min-h-[90vh] flex items-center pt-20 lg:pt-24 overflow-hidden">
+        {/* Background Image Container */}
+        <div className="absolute inset-0 w-full h-full">
+          <img
+            src={heroBg}
+            alt="Jindutt Metal & Alloy Hero Background"
+            className="w-full h-full object-cover"
+          />
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1a52]/90 to-[#0a1a52]/70"></div>
+          <div className="absolute inset-0 bg-[url('/src/assets/images/pattern-dots.svg')] opacity-10"></div>
+        </div>
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 py-12 lg:py-16">
           <div className="max-w-3xl">
@@ -112,75 +118,157 @@ const About = () => {
       </section>
 
       {/* =============================== */}
-      {/* ABOUT SECTION */}
+      {/* ABOUT SECTION - REDESIGNED IMAGE STRUCTURE */}
       {/* =============================== */}
       <section className="w-full py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12">
-          {/* IMAGE SECTION */}
-          <div className="w-full lg:w-1/2 relative">
-            <div className="absolute -inset-2 bg-gradient-to-r from-[#d79b20]/20 to-[#0a1a52]/20 rounded-3xl blur-2xl"></div>
-            <div className="relative">
-              <img
-                src={workshop}
-                alt="Workshop"
-                className="w-full h-[400px] lg:h-[500px] object-cover rounded-3xl shadow-2xl"
-              />
-              <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm rounded-xl px-6 py-4 shadow-lg">
-                <div className="flex items-center gap-3">
-                  <FaTrophy className="w-6 h-6 text-[#d79b20]" />
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* IMAGE SECTION */}
+            <div className="relative order-1 lg:order-1">
+              <div className="relative">
+                {/* Decorative Background Elements */}
+                <div className="absolute -top-6 -left-6 w-20 h-20 md:w-24 md:h-24 border-4 border-[#d79b20] rounded-2xl opacity-20"></div>
+                <div className="absolute -bottom-6 -right-6 w-24 h-24 md:w-32 md:h-32 border-4 border-[#d79b20]/30 rounded-2xl opacity-20"></div>
+
+                {/* Gradient Glow */}
+                <div className="absolute -inset-4 bg-gradient-to-br from-[#d79b20]/10 to-[#0a1a52]/10 rounded-3xl blur-2xl"></div>
+
+                {/* Main Image */}
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                  <img
+                    src={workshop}
+                    alt="Jindutt Metal & Alloy Workshop"
+                    className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover transition-transform duration-700 hover:scale-105"
+                  />
+
+                  {/* Image Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1a52]/30 via-transparent to-transparent"></div>
+
+                  {/* Play Button Overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#d79b20] flex items-center justify-center shadow-2xl cursor-pointer hover:scale-110 transition-transform duration-300 group">
+                      <FaPlay className="w-6 h-6 md:w-8 md:h-8 text-white ml-0.5 md:ml-1 group-hover:scale-110 transition-transform" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Floating Badge Cards */}
+                <div className="absolute -bottom-3 left-3 md:-bottom-4 md:left-8 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-3 md:p-4 lg:p-6 border border-[#d79b20]/10 flex items-center gap-3 md:gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#d79b20]/10 flex items-center justify-center flex-shrink-0">
+                    <FaTrophy className="w-5 h-5 md:w-6 md:h-6 text-[#d79b20]" />
+                  </div>
                   <div>
-                    <p className="text-sm font-bold text-[#0a1a52]">
+                    <p className="text-base md:text-lg font-bold text-[#0a1a52]">
                       25+ Years
                     </p>
-                    <p className="text-xs text-slate-500">
+                    <p className="text-[10px] md:text-xs text-slate-500">
                       Industry Experience
                     </p>
                   </div>
                 </div>
+
+                <div className="absolute -top-3 right-3 md:-top-4 md:right-8 bg-[#0a1a52]/95 backdrop-blur-sm rounded-2xl shadow-2xl p-3 md:p-4 border border-[#d79b20]/20 hidden sm:flex items-center gap-2 md:gap-3">
+                  <div className="flex -space-x-2">
+                    <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-[#d79b20] border-2 border-white flex items-center justify-center text-white text-[10px] md:text-xs font-bold">
+                      J
+                    </div>
+                    <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-blue-600 border-2 border-white flex items-center justify-center text-white text-[10px] md:text-xs font-bold">
+                      M
+                    </div>
+                    <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-emerald-600 border-2 border-white flex items-center justify-center text-white text-[10px] md:text-xs font-bold">
+                      A
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-[10px] md:text-xs font-bold text-white">
+                      Trusted Team
+                    </p>
+                    <p className="text-[8px] md:text-[10px] text-slate-400">
+                      100+ Experts
+                    </p>
+                  </div>
+                </div>
               </div>
+
+              {/* Decorative Dots Pattern */}
+              <div className="absolute -z-10 top-1/2 -translate-y-1/2 -right-6 md:-right-8 w-24 h-24 md:w-32 md:h-32 bg-[url('/src/assets/images/pattern-dots.svg')] opacity-10"></div>
             </div>
-          </div>
 
-          {/* TEXT SECTION */}
-          <div className="w-full lg:w-1/2 flex flex-col gap-6">
-            <div className="flex items-center gap-3">
-              <span className="w-12 h-0.5 bg-[#d79b20]"></span>
-              <span className="text-[#d79b20] text-sm font-semibold uppercase tracking-widest">
-                About Us
-              </span>
-            </div>
-
-            <h1 className="text-[#0a1a52] text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-              ABOUT JINDUTT METAL & ALLOY <br />
-              <span className="text-[#d79b20]">PVT. LTD. EXPORT</span>
-            </h1>
-
-            <p className="text-slate-600 text-base md:text-lg leading-relaxed">
-              Jindutt Metal & Alloy Pvt. Ltd. is a trusted manufacturer,
-              stockist, supplier and exporter of premium metal products. We
-              serve oil & gas, petrochemical, power generation, marine,
-              pharmaceutical, food processing and infrastructure industries.
-            </p>
-
-            <p className="text-slate-600 text-base md:text-lg leading-relaxed">
-              Our commitment to quality, timely delivery and technical
-              excellence enables us to support critical industrial projects
-              across domestic and international markets.
-            </p>
-
-            <div className="flex flex-wrap gap-4 mt-4">
-              <div className="flex items-center gap-2">
-                <FaCheckCircle className="w-4 h-4 text-[#d79b20]" />
-                <span className="text-sm text-slate-600">ISO Certified</span>
+            {/* TEXT SECTION */}
+            <div className="order-2 lg:order-2">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="w-12 h-0.5 bg-[#d79b20]"></span>
+                <span className="text-[#d79b20] text-sm font-semibold uppercase tracking-widest">
+                  About Us
+                </span>
               </div>
-              <div className="flex items-center gap-2">
-                <FaCheckCircle className="w-4 h-4 text-[#d79b20]" />
-                <span className="text-sm text-slate-600">Global Reach</span>
+
+              <h2 className="text-[#0a1a52] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                ABOUT JINDUTT METAL & ALLOY <br />
+                <span className="text-[#d79b20]">PVT. LTD. EXPORT</span>
+              </h2>
+
+              <div className="mt-4 md:mt-6 space-y-3 md:space-y-4">
+                <p className="text-slate-600 text-sm md:text-base lg:text-lg leading-relaxed">
+                  Jindutt Metal & Alloy Pvt. Ltd. is a trusted manufacturer,
+                  stockist, supplier and exporter of premium metal products. We
+                  serve oil & gas, petrochemical, power generation, marine,
+                  pharmaceutical, food processing and infrastructure industries.
+                </p>
+
+                <p className="text-slate-600 text-sm md:text-base lg:text-lg leading-relaxed">
+                  Our commitment to quality, timely delivery and technical
+                  excellence enables us to support critical industrial projects
+                  across domestic and international markets.
+                </p>
               </div>
-              <div className="flex items-center gap-2">
-                <FaCheckCircle className="w-4 h-4 text-[#d79b20]" />
-                <span className="text-sm text-slate-600">Premium Quality</span>
+
+              {/* Feature List */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-3 mt-4 md:mt-6">
+                <div className="flex items-center gap-2 md:gap-3 bg-slate-50 rounded-xl px-3 md:px-4 py-2 md:py-3 hover:bg-[#d79b20]/5 transition-colors group">
+                  <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-[#d79b20]/10 flex items-center justify-center group-hover:bg-[#d79b20] transition-colors flex-shrink-0">
+                    <FaCheckCircle className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#d79b20] group-hover:text-white transition-colors" />
+                  </div>
+                  <span className="text-xs md:text-sm font-medium text-slate-700">
+                    ISO Certified
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-2 md:gap-3 bg-slate-50 rounded-xl px-3 md:px-4 py-2 md:py-3 hover:bg-[#d79b20]/5 transition-colors group">
+                  <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-[#d79b20]/10 flex items-center justify-center group-hover:bg-[#d79b20] transition-colors flex-shrink-0">
+                    <FaGlobe className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#d79b20] group-hover:text-white transition-colors" />
+                  </div>
+                  <span className="text-xs md:text-sm font-medium text-slate-700">
+                    Global Reach
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-2 md:gap-3 bg-slate-50 rounded-xl px-3 md:px-4 py-2 md:py-3 hover:bg-[#d79b20]/5 transition-colors group">
+                  <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-[#d79b20]/10 flex items-center justify-center group-hover:bg-[#d79b20] transition-colors flex-shrink-0">
+                    <FaShieldAlt className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#d79b20] group-hover:text-white transition-colors" />
+                  </div>
+                  <span className="text-xs md:text-sm font-medium text-slate-700">
+                    Premium Quality
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-2 md:gap-3 bg-slate-50 rounded-xl px-3 md:px-4 py-2 md:py-3 hover:bg-[#d79b20]/5 transition-colors group">
+                  <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-[#d79b20]/10 flex items-center justify-center group-hover:bg-[#d79b20] transition-colors flex-shrink-0">
+                    <FaHeadset className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#d79b20] group-hover:text-white transition-colors" />
+                  </div>
+                  <span className="text-xs md:text-sm font-medium text-slate-700">
+                    24/7 Support
+                  </span>
+                </div>
               </div>
+
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 mt-6 md:mt-8 bg-[#0a1a52] hover:bg-[#1a3a7a] text-white font-semibold px-6 md:px-8 py-3 md:py-3.5 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#0a1a52]/25 text-sm md:text-base"
+              >
+                Learn More About Us
+                <FaArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </div>
           </div>
         </div>
@@ -191,7 +279,6 @@ const About = () => {
       {/* =============================== */}
       <section className="w-full py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          {/* Heading */}
           <div className="text-center max-w-3xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-4">
               <span className="w-12 h-0.5 bg-[#d79b20]"></span>
@@ -212,7 +299,6 @@ const About = () => {
             </p>
           </div>
 
-          {/* Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
             {aboutCardData.map((card, index) => {
               const Icon = card.svg;
@@ -222,10 +308,8 @@ const About = () => {
                   key={index}
                   className="group bg-white rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:border-[#d79b20]/30 relative overflow-hidden"
                 >
-                  {/* Decorative Line */}
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#d79b20] to-[#0a1a52] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
 
-                  {/* Icon */}
                   <div className="w-16 h-16 rounded-2xl bg-[#d79b20]/10 flex items-center justify-center group-hover:bg-[#d79b20] transition-all duration-300">
                     <Icon
                       size={32}
@@ -233,18 +317,14 @@ const About = () => {
                     />
                   </div>
 
-                  {/* Title */}
                   <h3 className="mt-6 text-xl font-bold text-[#0a1a52] group-hover:text-[#d79b20] transition-colors">
                     {card.title}
                   </h3>
 
-                  {/* Line */}
                   <div className="w-12 h-0.5 bg-[#d79b20] rounded-full my-4"></div>
 
-                  {/* Description */}
                   <p className="text-slate-500 leading-7">{card.description}</p>
 
-                  {/* Arrow on Hover */}
                   <div className="mt-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                     <FaArrowRight className="w-4 h-4 text-[#d79b20]" />
                   </div>
@@ -309,12 +389,10 @@ const About = () => {
       {/* =============================== */}
       <section className="relative max-w-7xl mx-auto px-6 lg:px-8 pb-20 mt-20">
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#0a1a52] via-[#1a3a7a] to-[#0a1a52] py-16 px-8 lg:px-16">
-          {/* Decorative Elements */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#d79b20]/5 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#d79b20]/5 rounded-full blur-3xl"></div>
 
           <div className="relative flex flex-col lg:flex-row items-center justify-between gap-10">
-            {/* Left Content */}
             <div className="max-w-2xl">
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-12 h-0.5 bg-[#d79b20]"></span>
@@ -337,7 +415,6 @@ const About = () => {
               </p>
             </div>
 
-            {/* Right Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0">
               <Link
                 to="/contact"

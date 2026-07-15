@@ -24,9 +24,9 @@ const Hero2 = () => {
             </div>
 
             {/* Heading */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#0a1a52] leading-[1.1]">
+            <h2 className="text-3xl uppercase sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#0a1a52] leading-[1.1]">
               Engineered for <br />
-              <span className="text-[#d79b20]">Extremes</span>
+              <span className="text-[#d79b20] uppercase">Extremes</span>
             </h2>
 
             <p className="text-lg md:text-xl text-slate-600 mt-4 leading-relaxed">

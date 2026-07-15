@@ -395,24 +395,24 @@ const NickelAlloy200Plates = () => {
     ourProducts: [
       { name: "Coils", slug: "coils" },
       { name: "Pipes", slug: "pipes" },
-      { name: "Flutes", slug: "flutes" },
+      { name: "Plates", slug: "plates" },
       { name: "Round Bars", slug: "round-bars" },
       { name: "Sheets", slug: "sheets" },
       { name: "Tubes", slug: "tubes" },
       { name: "Wires", slug: "wires" },
-      { name: "Industrial Flanges", slug: "industrial-flanges" },
+      { name: "Industrial Flanges", slug: "flanges" },
       { name: "Buttweld Fittings", slug: "buttweld-fittings" },
       { name: "Angle & Channels", slug: "angle-channels" },
       { name: "Forged Fittings", slug: "forged-fittings" },
-      { name: "Industrial Fasteners", slug: "industrial-fasteners" },
-      { name: "Industrial Valves", slug: "industrial-valves" },
-      { name: "Flats & Pairs", slug: "flats-pairs" },
-      { name: "Industrial Rings", slug: "industrial-rings" },
-      { name: "Industrial Circles", slug: "industrial-circles" },
-      { name: "Industrial Strips", slug: "industrial-strips" },
+      { name: "Industrial Fasteners", slug: "fasteners" },
+      { name: "Industrial Valves", slug: "valves" },
+      { name: "Flats & Pairs", slug: "patta-patti" },
+      { name: "Industrial Rings", slug: "rings" },
+      { name: "Industrial Circles", slug: "circles" },
+      { name: "Industrial Strips", slug: "strips" },
     ],
 
-    shopByMaterial: [
+   shopByMaterial: [
       { name: "Copper Nickel", slug: "copper-nickel" },
       { name: "Duplex Steel", slug: "duplex-steel" },
       { name: "Hastelloy", slug: "hastelloy" },
@@ -420,9 +420,9 @@ const NickelAlloy200Plates = () => {
       { name: "Inconel", slug: "inconel" },
       { name: "Monel", slug: "monel" },
       { name: "Nickel Alloy", slug: "nickel-alloy" },
-      { name: "Other Metals", slug: "other-metals" },
-      { name: "Samico", slug: "samico" },
-      { name: "Special Metals", slug: "special-metals" },
+      { name: "Other Materials", slug: "other-meterials" },
+      { name: "Sanico", slug: "sanico" },
+      { name: "Special Materials", slug: "special-materials" },
       { name: "Stainless Steel", slug: "stainless-steel" },
       { name: "Titanium", slug: "titanium" },
     ],
@@ -528,7 +528,7 @@ const NickelAlloy200Plates = () => {
                 <img
                   src={productImage}
                   alt={productData.title}
-                  className="w-full rounded-lg shadow-lg"
+                  className="w-full h-60 object-cover rounded-lg shadow-lg"
                 />
               </div>
 

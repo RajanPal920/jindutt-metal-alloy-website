@@ -2,28 +2,40 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaArrowRight, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import hero1 from "../../assets/images/industries/hero1.png";
+import hero2 from "../../assets/images/industries/hero2.png";
+import hero3 from "../../assets/images/industries/hero3.png";
+import hero4 from "../../assets/images/industries/hero4.png";
+import hero5 from "../../assets/images/industries/hero5.png";
 
+// ✅ FIXED: All slides now have unique images
 const slides = [
   {
-    image: "https://rpmexport.in/assets/uploads/slider-5.webp",
+    image: hero2,
     title: "Built on Strength",
     subtitle: "Premium Quality Stainless Steel Products for Global Industries",
   },
   {
-    image: "https://rpmexport.in/assets/uploads/slider-2.webp",
+    image: hero1,
     title: "Quality Metals for Critical Industries",
     subtitle:
       "Trusted by Oil & Gas, Petrochemical, Marine & Power Generation Sectors",
   },
   {
-    image: "https://rpmexport.in/assets/uploads/slider-3.webp",
+    image: hero3,
     title: "Global Reach, Local Expertise",
     subtitle: "Serving 50+ Countries with Premium Metal Products",
   },
   {
-    image: "https://rpmexport.in/assets/uploads/slider-4.webp",
+    image: hero4,
     title: "Engineered for Performance",
     subtitle: "ISO Certified Quality Assurance Across All Product Lines",
+  },
+
+  {
+    image: hero5,
+    title: "Innovation in Metallurgy",
+    subtitle: "Advanced Alloy Solutions for Tomorrow's Challenges",
   },
 ];
 

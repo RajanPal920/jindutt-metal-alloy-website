@@ -55,7 +55,7 @@ import IncoloyTubes from "./IncoloyTubes"; // Product
 import IncoloyRoundBars from "./IncoloyRoundBars"; // Product
 import IncoloySheets from "./IncoloySheets"; // Product
 import IncoloyPlates from "./IncoloyPlates"; // Product
-import IncoloyWires from "./IncoloyWires"; // Product
+// import IncoloyWires from "./IncoloyWires"; // Product (keep commented if file doesn't exist)
 import IncoloyCoils from "./IncoloyCoils"; // Product
 import IncoloyPipes from "./IncoloyPipes"; // Product
 
@@ -229,146 +229,148 @@ export const productComponentMap = {
   // =============================
   // 🟢 STAINLESS STEEL (PRODUCTS)
   // =============================
-  "stainless-steel-tubes": StainlessSteelTubes, // Product
-  "stainless-steel-round-bars": StainlessSteelRoundBars, // Product
-  "stainless-steel-sheets": StainlessSteelSheets, // Product
-  "stainless-steel-plates": StainlessSteelPlates, // Product
-  "stainless-steel-wires": StainlessSteelWires, // Product
-  "stainless-steel-coils": StainlessSteelCoils, // Product
-  "stainless-steel-pipes": StainlessSteelPipes, // Product
+  "stainless-steel-tubes": StainlessSteelTubes,
+  "stainless-steel-round-bars": StainlessSteelRoundBars,
+  "stainless-steel-sheets": StainlessSteelSheets,
+  "stainless-steel-plates": StainlessSteelPlates,
+  "stainless-steel-wires": StainlessSteelWires,
+  "stainless-steel-coils": StainlessSteelCoils,
+  "stainless-steel-pipes": StainlessSteelPipes,
 
   // =============================
   // 🔵 COPPER NICKEL (PRODUCTS)
   // =============================
-  "copper-nickel-tubes": CopperNickelTubes, // Product
-  "copper-nickel-pipes": CopperNickelPipes, // Product
-  "copper-nickel-round-bars": CopperNickelRoundBars, // Product
-  "copper-nickel-sheets": CopperNickelSheets, // Product
-  "copper-nickel-plates": CopperNickelPlates, // Product
-  "copper-nickel-wires": CopperNickelWires, // Product
-  "copper-nickel-coils": CopperNickelCoils, // Product
+  "copper-nickel-tubes": CopperNickelTubes,
+  "copper-nickel-pipes": CopperNickelPipes,
+  "copper-nickel-round-bars": CopperNickelRoundBars,
+  "copper-nickel-sheets": CopperNickelSheets,
+  "copper-nickel-plates": CopperNickelPlates,
+  "copper-nickel-wires": CopperNickelWires,
+  "copper-nickel-coils": CopperNickelCoils,
 
   // =============================
   // 🟡 DUPLEX STEEL (PRODUCTS)
   // =============================
-  "duplex-steel-tubes": DuplexSteelTubes, // Product
-  "duplex-steel-round-bars": DuplexSteelRoundBars, // Product
-  "duplex-steel-sheets": DuplexSteelSheets, // Product
-  "duplex-steel-plates": DuplexSteelPlates, // Product
-  "duplex-steel-wires": DuplexSteelWires, // Product
-  "duplex-steel-coils": DuplexSteelCoils, // Product
-  "duplex-steel-pipes": DuplexSteelPipes, // Product
+  "duplex-steel-tubes": DuplexSteelTubes,
+  "duplex-steel-round-bars": DuplexSteelRoundBars,
+  "duplex-steel-sheets": DuplexSteelSheets,
+  "duplex-steel-plates": DuplexSteelPlates,
+  "duplex-steel-wires": DuplexSteelWires,
+  "duplex-steel-coils": DuplexSteelCoils,
+  "duplex-steel-pipes": DuplexSteelPipes,
+  // ✅ ADDED: Missing entry for the URL pattern
+  "duplex-super-duplex-steel-wires": DuplexSteelWires,
 
   // =============================
   // ⚪ NICKEL ALLOY 200/201 (PRODUCTS)
   // =============================
-  "nickel-alloy-200-201-tubes": NickelAlloyTubes, // Product
-  "nickel-alloy-200-201-round-bars": NickelAlloyRoundBars, // Product
-  "nickel-alloy-200-201-sheets": NickelAlloySheets, // Product
-  "nickel-alloy-200-201-plates": NickelAlloyPlates, // Product
-  "nickel-alloy-200-201-wires": NickelAlloyWires, // Product
-  "nickel-alloy-200-201-coils": NickelAlloyCoils, // Product
-  "nickel-alloy-200-201-pipes": NickelAlloyPipes, // Product
+  "nickel-alloy-200-201-tubes": NickelAlloyTubes,
+  "nickel-alloy-200-201-round-bars": NickelAlloyRoundBars,
+  "nickel-alloy-200-201-sheets": NickelAlloySheets,
+  "nickel-alloy-200-201-plates": NickelAlloyPlates,
+  "nickel-alloy-200-201-wires": NickelAlloyWires,
+  "nickel-alloy-200-201-coils": NickelAlloyCoils,
+  "nickel-alloy-200-201-pipes": NickelAlloyPipes,
 
   // =============================
   // ⚪ DUPLEX & SUPER DUPLEX (PRODUCTS)
   // =============================
-  "duplex-super-duplex-tubes": DuplexSteelTubes, // Product
-  "duplex-super-duplex-round-bars": DuplexSteelRoundBars, // Product
-  "duplex-super-duplex-sheets": DuplexSteelSheets, // Product
-  "duplex-super-duplex-plates": DuplexSteelPlates, // Product
-  "duplex-super-duplex-wires": DuplexSteelWires, // Product
-  "duplex-super-duplex-coils": DuplexSteelCoils, // Product
-  "duplex-super-duplex-pipes": DuplexSteelPipes, // Product
+  "duplex-super-duplex-tubes": DuplexSteelTubes,
+  "duplex-super-duplex-round-bars": DuplexSteelRoundBars,
+  "duplex-super-duplex-sheets": DuplexSteelSheets,
+  "duplex-super-duplex-plates": DuplexSteelPlates,
+  "duplex-super-duplex-wires": DuplexSteelWires,
+  "duplex-super-duplex-coils": DuplexSteelCoils,
+  "duplex-super-duplex-pipes": DuplexSteelPipes,
 
   // =============================
   // 🟠 HASTELLOY (PRODUCTS)
   // =============================
-  "hastelloy-tubes": HastelloyTubes, // Product
-  "hastelloy-round-bars": HastelloyRoundBars, // Product
-  "hastelloy-sheets": HastelloySheets, // Product
-  "hastelloy-plates": HastelloyPlates, // Product
-  "hastelloy-wires": HastelloyWires, // Product
-  "hastelloy-coils": HastelloyCoils, // Product
-  "hastelloy-pipes": HastelloyPipes, // Product
+  "hastelloy-tubes": HastelloyTubes,
+  "hastelloy-round-bars": HastelloyRoundBars,
+  "hastelloy-sheets": HastelloySheets,
+  "hastelloy-plates": HastelloyPlates,
+  "hastelloy-wires": HastelloyWires,
+  "hastelloy-coils": HastelloyCoils,
+  "hastelloy-pipes": HastelloyPipes,
 
   // =============================
   // 🟣 INCOLOY (PRODUCTS)
   // =============================
-  "incoloy-tubes": IncoloyTubes, // Product
-  "incoloy-round-bars": IncoloyRoundBars, // Product
-  "incoloy-sheets": IncoloySheets, // Product
-  "incoloy-plates": IncoloyPlates, // Product
-  "incoloy-wires": IncoloyWires, // Product
-  "incoloy-coils": IncoloyCoils, // Product
-  "incoloy-pipes": IncoloyPipes, // Product
+  "incoloy-tubes": IncoloyTubes,
+  "incoloy-round-bars": IncoloyRoundBars,
+  "incoloy-sheets": IncoloySheets,
+  "incoloy-plates": IncoloyPlates,
+  "incoloy-coils": IncoloyCoils,
+  "incoloy-pipes": IncoloyPipes,
+  "incoloy-wires": IncloneyWires,
 
   // =============================
   // 🔴 INCONEL (PRODUCTS)
   // =============================
-  "inconel-tubes": InconelTubes, // Product
-  "inconel-round-bars": InconelRoundBars, // Product
-  "inconel-sheets": InconelSheets, // Product
-  "inconel-plates": InconelPlates, // Product
-  "inconel-wires": InconelWires, // Product
-  "inconel-coils": InconelCoils, // Product
-  "inconel-pipes": InconelPipes, // Product
+  "inconel-tubes": InconelTubes,
+  "inconel-round-bars": InconelRoundBars,
+  "inconel-sheets": InconelSheets,
+  "inconel-plates": InconelPlates,
+  "inconel-wires": InconelWires,
+  "inconel-coils": InconelCoils,
+  "inconel-pipes": InconelPipes,
 
   // =============================
   // 🟤 MONEL (PRODUCTS)
   // =============================
-  "monel-tubes": MonelTubes, // Product
-  "monel-round-bars": MonelRoundBars, // Product
-  "monel-sheets": MonelSheets, // Product
-  "monel-plates": MonelPlates, // Product
-  "monel-wires": MonelWires, // Product
-  "monel-coils": MonelCoils, // Product
-  "monel-pipes": MonelPipes, // Product
+  "monel-tubes": MonelTubes,
+  "monel-round-bars": MonelRoundBars,
+  "monel-sheets": MonelSheets,
+  "monel-plates": MonelPlates,
+  "monel-wires": MonelWires,
+  "monel-coils": MonelCoils,
+  "monel-pipes": MonelPipes,
 
   // =============================
   // ⚪ NICKEL ALLOY (Generic)
   // =============================
-  "nickel-alloy-tubes": NickelAlloyTubes, // Product
-  "nickel-alloy-round-bars": NickelAlloyRoundBars, // Product
-  "nickel-alloy-sheets": NickelAlloySheets, // Product
-  "nickel-alloy-plates": NickelAlloyPlates, // Product
-  "nickel-alloy-wires": NickelAlloyWires, // Product
-  "nickel-alloy-coils": NickelAlloyCoils, // Product
-  "nickel-alloy-pipes": NickelAlloyPipes, // Product
+  "nickel-alloy-tubes": NickelAlloyTubes,
+  "nickel-alloy-round-bars": NickelAlloyRoundBars,
+  "nickel-alloy-sheets": NickelAlloySheets,
+  "nickel-alloy-plates": NickelAlloyPlates,
+  "nickel-alloy-wires": NickelAlloyWires,
+  "nickel-alloy-coils": NickelAlloyCoils,
+  "nickel-alloy-pipes": NickelAlloyPipes,
 
   // =============================
   // ⚪ TITANIUM (PRODUCTS)
   // =============================
-  "titanium-tubes": TitaniumTubes, // Product
-  "titanium-round-bars": TitaniumRoundBars, // Product
-  "titanium-sheets": TitaniumSheets, // Product
-  "titanium-plates": TitaniumPlates, // Product
-  "titanium-wires": TitaniumWires, // Product
-  "titanium-coils": TitaniumCoils, // Product
-  "titanium-pipes": TitaniumPipes, // Product
+  "titanium-tubes": TitaniumTubes,
+  "titanium-round-bars": TitaniumRoundBars,
+  "titanium-sheets": TitaniumSheets,
+  "titanium-plates": TitaniumPlates,
+  "titanium-wires": TitaniumWires,
+  "titanium-coils": TitaniumCoils,
+  "titanium-pipes": TitaniumPipes,
 
   // =============================
   // ⚪ SANICRO (PRODUCTS)
   // =============================
-  "sanicro-28-pipes": Sanicro28Pipes, // Product
-  "sanicro-31-pipes": Sanicro31Pipes, // Product
+  "sanicro-28-pipes": Sanicro28Pipes,
+  "sanicro-31-pipes": Sanicro31Pipes,
 
   // =============================
   // ⚪ SPECIAL MATERIALS (PRODUCTS)
   // =============================
-  "high-performance-alloy-pipes": HighPerformanceAlloyPipes, // Product
-  "high-performance-alloy-tubes": HighPerformanceAlloyTubes, // Product
-  "high-performance-alloy-round-bars": HighPerformanceAlloyRoundBars, // Product
-  "high-performance-alloy-sheets": HighPerformanceAlloySheets, // Product
-  "high-performance-alloy-plates": HighPerformanceAlloyPlates, // Product
-  "high-performance-alloy-wires": HighPerformanceAlloyWires, // Product
-  "high-performance-alloy-coils": HighPerformanceAlloyCoils, // Product
+  "high-performance-alloy-pipes": HighPerformanceAlloyPipes,
+  "high-performance-alloy-tubes": HighPerformanceAlloyTubes,
+  "high-performance-alloy-round-bars": HighPerformanceAlloyRoundBars,
+  "high-performance-alloy-sheets": HighPerformanceAlloySheets,
+  "high-performance-alloy-plates": HighPerformanceAlloyPlates,
+  "high-performance-alloy-wires": HighPerformanceAlloyWires,
+  "high-performance-alloy-coils": HighPerformanceAlloyCoils,
 
   // =============================
   // ⚪ OTHER MATERIALS (PRODUCTS)
   // =============================
-  "carbon-steel-products": CarbonSteelProducts, // Product
-  "alloy-steel-products": AlloySteelProducts, // Product
+  "carbon-steel-products": CarbonSteelProducts,
+  "alloy-steel-products": AlloySteelProducts,
 
   // ============================================================================
   // 🏷️ MATERIAL MAPPINGS (Specific Grades)
@@ -377,109 +379,109 @@ export const productComponentMap = {
   // =============================
   // 🟢 STAINLESS STEEL (MATERIALS)
   // =============================
-  "stainless-steel-304-304l-pipes": StainlessSteel304304LPipes, // Material
-  "stainless-steel-310s-pipes": StainlessSteel310SPipes, // Material
-  "stainless-steel-316-316l-pipes": StainlessSteel316Pipes, // Material
-  "stainless-steel-317l-pipes": StainlessSteel317LPipes, // Material
-  "stainless-steel-321-pipes": StainlessSteel321Pipes, // Material
-  "stainless-steel-904l-pipes": StainlessSteel904LPipes, // Material
+  "stainless-steel-304-304l-pipes": StainlessSteel304304LPipes,
+  "stainless-steel-310s-pipes": StainlessSteel310SPipes,
+  "stainless-steel-316-316l-pipes": StainlessSteel316Pipes,
+  "stainless-steel-317l-pipes": StainlessSteel317LPipes,
+  "stainless-steel-321-pipes": StainlessSteel321Pipes,
+  "stainless-steel-904l-pipes": StainlessSteel904LPipes,
 
   // =============================
   // 🔵 COPPER NICKEL (MATERIALS)
   // =============================
-  "copper-nickel-90-10-pipes": CopperNickel9010Pipes, // Material
-  "copper-nickel-70-30-pipes": CopperNickel7030Pipes, // Material
-  "copper-nickel-pipes": CopperNickelPipes, // Material
+  "copper-nickel-90-10-pipes": CopperNickel9010Pipes,
+  "copper-nickel-70-30-pipes": CopperNickel7030Pipes,
+  "copper-nickel-pipes": CopperNickelPipes,
 
   // =============================
   // 🟡 DUPLEX STEEL (MATERIALS)
   // =============================
-  "duplex-s31803-s32205-pipes": DuplexSteelS31803S32205, // Material
-  "duplex-super-duplex-pipes": DuplexSuperDuplexPipes, // Material
-  "duplex-super-duplex-tubes": DuplexSuperDuplexTubes, // Material
+  "duplex-s31803-s32205-pipes": DuplexSteelS31803S32205,
+  "duplex-super-duplex-pipes": DuplexSuperDuplexPipes,
+  "duplex-super-duplex-tubes": DuplexSuperDuplexTubes,
 
   // =============================
   // 🟠 HASTELLOY (MATERIALS)
   // =============================
-  "hastelloy-b2-pipes": HastelloyB2Pipes, // Material
-  "hastelloy-b3-pipes": HastelloyB3Pipes, // Material
-  "hastelloy-c2000-c59-c4-hn-pipes": HastelloyC2000C59C4HN, // Material
-  "hastelloy-c22-pipes": HastelloyC22Pipes, // Material
-  "hastelloy-c276-pipes": HastelloyC276Pipes, // Material
-  "hastelloy-pipes": HastelloyPipes, // Material
+  "hastelloy-b2-pipes": HastelloyB2Pipes,
+  "hastelloy-b3-pipes": HastelloyB3Pipes,
+  "hastelloy-c2000-c59-c4-hn-pipes": HastelloyC2000C59C4HN,
+  "hastelloy-c22-pipes": HastelloyC22Pipes,
+  "hastelloy-c276-pipes": HastelloyC276Pipes,
+  "hastelloy-pipes": HastelloyPipes,
 
   // =============================
   // 🟣 INCOLOY (MATERIALS)
   // =============================
-  "incoloy-825-pipes": Incoloy825Pipes, // Material
-  "incoloy-800h-800ht-pipes": Incoloy800H800HTPipes, // Material
-  "incoloy-800-ds330-pipes": Incoloy800DS330Pipes, // Material
-  "incoloy-pipes": IncoloyPipes, // Material
-  "incoloy-wires": IncloneyWires, // Material
+  "incoloy-825-pipes": Incoloy825Pipes,
+  "incoloy-800h-800ht-pipes": Incoloy800H800HTPipes,
+  "incoloy-800-ds330-pipes": Incoloy800DS330Pipes,
+  "incoloy-pipes": IncoloyPipes,
+  "incoloy-wires": IncloneyWires,
 
   // =============================
   // 🔴 INCONEL (MATERIALS)
   // =============================
-  "inconel-x750-pipes": InconelX750Pipes, // Material
-  "inconel-718-pipes": Inconel718Pipes, // Material
-  "inconel-690-pipes": Inconel690Pipes, // Material
-  "inconel-625-pipes": Inconel625Pipes, // Material
-  "inconel-601-pipes": Inconel601Pipes, // Material
-  "inconel-600-pipes": Inconel600Pipes, // Material
-  "inconel-pipes": InconelPipes, // Material
+  "inconel-x750-pipes": InconelX750Pipes,
+  "inconel-718-pipes": Inconel718Pipes,
+  "inconel-690-pipes": Inconel690Pipes,
+  "inconel-625-pipes": Inconel625Pipes,
+  "inconel-601-pipes": Inconel601Pipes,
+  "inconel-600-pipes": Inconel600Pipes,
+  "inconel-pipes": InconelPipes,
 
   // =============================
   // 🟤 MONEL (MATERIALS)
   // =============================
-  "monel-400-pipes": MonelPipes, // Material
-  "monel-pipes": MonelPipes, // Material
-  "monel-400-coils": MonelCoils, // Material
-  "monel-400-plates": MonelPlates, // Material
-  "monel-400-sheets": MonelSheets, // Material
-  "monel-400-tubes": MonelTubes, // Material
+  "monel-400-pipes": MonelPipes,
+  "monel-pipes": MonelPipes,
+  "monel-400-coils": MonelCoils,
+  "monel-400-plates": MonelPlates,
+  "monel-400-sheets": MonelSheets,
+  "monel-400-tubes": MonelTubes,
 
   // =============================
   // ⚪ NICKEL ALLOY 200/201 (MATERIALS)
   // =============================
-  "nickel-alloy-200-201-pipes": NickelAlloy200201Pipes, // Material
-  "nickel-alloy-200-coils": NickelAlloy200Coils, // Material
-  "nickel-alloy-200-plates": NickelAlloy200Plates, // Material
-  "nickel-alloy-200-round-bars": NickelAlloy200RoundBars, // Material
-  "nickel-alloy-200-sheets": NickelAlloy200Sheets, // Material
-  "nickel-alloy-200-tubes": NickelAlloy200Tubes, // Material
-  "nickel-alloy-200-wires": NickelAlloy200Wires, // Material
-  "nickel-alloy-pipes": NickelAlloyPipes, // Material
+  "nickel-alloy-200-201-pipes": NickelAlloy200201Pipes,
+  "nickel-alloy-200-coils": NickelAlloy200Coils,
+  "nickel-alloy-200-plates": NickelAlloy200Plates,
+  "nickel-alloy-200-round-bars": NickelAlloy200RoundBars,
+  "nickel-alloy-200-sheets": NickelAlloy200Sheets,
+  "nickel-alloy-200-tubes": NickelAlloy200Tubes,
+  "nickel-alloy-200-wires": NickelAlloy200Wires,
+  "nickel-alloy-pipes": NickelAlloyPipes,
 
   // =============================
   // ⚪ OTHER ALLOYS (MATERIALS)
   // =============================
-  "smo-254-pipes": SMO254Pipes, // Material
-  "special-alloy-coils": SpecialAlloyCoils, // Material
-  "special-alloy-plates": SpecialAlloyPlates, // Material
-  "special-alloy-round-bars": SpecialAlloyRoundBars, // Material
-  "special-alloy-sheets": SpecialAlloySheets, // Material
-  "special-alloy-tubes": SpecialAlloyTubes, // Material
-  "special-alloy-wires": SpecialAlloyWires, // Material
+  "smo-254-pipes": SMO254Pipes,
+  "special-alloy-coils": SpecialAlloyCoils,
+  "special-alloy-plates": SpecialAlloyPlates,
+  "special-alloy-round-bars": SpecialAlloyRoundBars,
+  "special-alloy-sheets": SpecialAlloySheets,
+  "special-alloy-tubes": SpecialAlloyTubes,
+  "special-alloy-wires": SpecialAlloyWires,
 
   // =============================
   // ⚪ SUPER DUPLEX (MATERIALS)
   // =============================
-  "super-duplex-s32750-pipes": SuperDuplexS32750F53, // Material
-  "super-duplex-s32760-pipes": SuperDuplexS32760F55, // Material
+  "super-duplex-s32750-pipes": SuperDuplexS32750F53,
+  "super-duplex-s32760-pipes": SuperDuplexS32760F55,
 
   // =============================
   // ⚪ GENERAL (Products & Materials)
   // =============================
-  "alloy-20-pipes": Alloy20Pipes, // Product & Material
-  "alloy-28-pipes": Alloy28Pipes, // Product & Material
-  "alloy-28-coils": Alloy28Coils, // Product & Material
-  "alloy-28-plates": Alloy28Plates, // Product & Material
-  "alloy-28-round-bars": Alloy28RoundBars, // Product & Material
-  "alloy-28-sheets": Alloy28Sheets, // Product & Material
-  "alloy-28-tubes": Alloy28Tubes, // Product & Material
-  "alloy-28-wires": Alloy28Wires, // Product & Material
-  "titanium-pipes": TitaniumPipes, // Product & Material
-  "titanium-coils": TitaniumCoils, // Product & Material
+  "alloy-20-pipes": Alloy20Pipes,
+  "alloy-28-pipes": Alloy28Pipes,
+  "alloy-28-coils": Alloy28Coils,
+  "alloy-28-plates": Alloy28Plates,
+  "alloy-28-round-bars": Alloy28RoundBars,
+  "alloy-28-sheets": Alloy28Sheets,
+  "alloy-28-tubes": Alloy28Tubes,
+  "alloy-28-wires": Alloy28Wires,
+  "titanium-pipes": TitaniumPipes,
+  "titanium-coils": TitaniumCoils,
 };
 
 // ============================================================================
@@ -487,10 +489,25 @@ export const productComponentMap = {
 // ============================================================================
 
 export const getProductComponent = (slug) => {
-  const component = productComponentMap[slug];
+  // Try exact match first
+  let component = productComponentMap[slug];
+
   if (typeof component === "function") {
     return component;
   }
+
+  // Try to find a partial match if exact match fails
+  const keys = Object.keys(productComponentMap);
+  for (const key of keys) {
+    // Check if the slug contains the key or vice versa
+    if (slug.includes(key) || key.includes(slug)) {
+      component = productComponentMap[key];
+      if (typeof component === "function") {
+        return component;
+      }
+    }
+  }
+
   return null;
 };
 

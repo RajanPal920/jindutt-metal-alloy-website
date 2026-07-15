@@ -1,3 +1,4 @@
+// src/components/productDetails/IncloneyWires.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 import countries from "../../data/countries.js";
@@ -21,7 +22,8 @@ import wireRopeImage from "../../assets/images/stock/wire-rope.jpg";
 import coilWireImage from "../../assets/images/stock/coil-wire.jpg";
 import spoolWireImage from "../../assets/images/stock/spool-wire.jpg";
 
-const IncoloyWires = () => {
+// ✅ FIXED: Component name matches the file name
+const IncloneyWires = () => {
   // ===============================
   // DATA - From raymondispat.com
   // ===============================
@@ -38,6 +40,7 @@ const IncoloyWires = () => {
         "Incoloy wires are nickel-iron-chromium superalloys engineered to provide a high-performance, cost-effective solution for environments requiring both high-temperature strength and resistance to various forms of corrosion. These alloys act as a bridge between standard stainless steels and high-nickel superalloys, offering excellent oxidation resistance and structural stability. By balancing nickel and iron content, Incoloy wires maintain their mechanical properties under prolonged thermal stress and aggressive chemical exposure.",
     },
 
+    // ✅ FIXED: Ensure gradeBreakdown is always an array
     gradeBreakdown: [
       {
         title: "Incoloy 800, 800H, and 800HT Wires",
@@ -64,6 +67,10 @@ const IncoloyWires = () => {
         title: "Incoloy 825 and 925 Wires (Corrosion Resistant)",
         description:
           "Incoloy 825 (UNS N08825): A titanium-stabilized alloy with added molybdenum and copper. It provides exceptional resistance to many corrosive environments, particularly sulfuric and phosphoric acids. It is virtually immune to chloride-ion stress corrosion cracking. Incoloy 925 (UNS N09925): An age-hardenable version of Alloy 825. It provides the same superior corrosion resistance but with much higher mechanical strength and hardness through precipitation hardening.",
+        items: [
+          "Incoloy 825: Excellent resistance to sulfuric and phosphoric acids",
+          "Incoloy 925: Age-hardenable with superior mechanical strength",
+        ],
         keyApplications:
           "Oil and gas downhole components, acid production equipment, and high-strength marine fasteners.",
       },
@@ -329,21 +336,21 @@ const IncoloyWires = () => {
     ourProducts: [
       { name: "Coils", slug: "coils" },
       { name: "Pipes", slug: "pipes" },
-      { name: "Flutes", slug: "flutes" },
+      { name: "Plates", slug: "plates" },
       { name: "Round Bars", slug: "round-bars" },
       { name: "Sheets", slug: "sheets" },
       { name: "Tubes", slug: "tubes" },
       { name: "Wires", slug: "wires" },
-      { name: "Industrial Flanges", slug: "industrial-flanges" },
+      { name: "Industrial Flanges", slug: "flanges" },
       { name: "Buttweld Fittings", slug: "buttweld-fittings" },
       { name: "Angle & Channels", slug: "angle-channels" },
       { name: "Forged Fittings", slug: "forged-fittings" },
-      { name: "Industrial Fasteners", slug: "industrial-fasteners" },
-      { name: "Industrial Valves", slug: "industrial-valves" },
-      { name: "Flats & Pairs", slug: "flats-pairs" },
-      { name: "Industrial Rings", slug: "industrial-rings" },
-      { name: "Industrial Circles", slug: "industrial-circles" },
-      { name: "Industrial Strips", slug: "industrial-strips" },
+      { name: "Industrial Fasteners", slug: "fasteners" },
+      { name: "Industrial Valves", slug: "valves" },
+      { name: "Patta & Patti", slug: "patta-patti" },
+      { name: "Industrial Rings", slug: "rings" },
+      { name: "Industrial Circles", slug: "circles" },
+      { name: "Industrial Strips", slug: "strips" },
     ],
 
     shopByMaterial: [
@@ -354,15 +361,15 @@ const IncoloyWires = () => {
       { name: "Inconel", slug: "inconel" },
       { name: "Monel", slug: "monel" },
       { name: "Nickel Alloy", slug: "nickel-alloy" },
-      { name: "Other Metals", slug: "other-metals" },
-      { name: "Samico", slug: "samico" },
-      { name: "Special Metals", slug: "special-metals" },
+      { name: "Other Materials", slug: "other-meterials" },
+      { name: "Sanico", slug: "sanico" },
+      { name: "Special Materials", slug: "special-materials" },
       { name: "Stainless Steel", slug: "stainless-steel" },
       { name: "Titanium", slug: "titanium" },
     ],
-
-    countries: countries,
-    cities: state,
+    // ✅ FIXED: Add defensive checks for countries and cities
+    countries: Array.isArray(countries) ? countries : [],
+    cities: Array.isArray(state) ? state : [],
   };
 
   // ===============================
@@ -373,51 +380,64 @@ const IncoloyWires = () => {
     <h2 className="text-3xl font-bold text-[#0a1a52] mb-6">{children}</h2>
   );
 
-  const Table = ({ headers, rows }) => (
-    <div className="overflow-x-auto rounded-lg border border-gray-200">
-      <table className="min-w-full divide-y divide-gray-200">
-        <thead className="bg-gray-50">
-          <tr>
-            {headers.map((header, index) => (
-              <th
-                key={index}
-                className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-              >
-                {header}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody className="bg-white divide-y divide-gray-200">
-          {rows.map((row, index) => (
-            <tr
-              key={index}
-              className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
-            >
-              {row.map((cell, cellIndex) => (
-                <td key={cellIndex} className="px-4 py-3 text-sm text-gray-700">
-                  {cell}
-                </td>
+  // ✅ FIXED: Add null checks for Table component
+  const Table = ({ headers, rows }) => {
+    if (!headers || !rows) return null;
+
+    return (
+      <div className="overflow-x-auto rounded-lg border border-gray-200">
+        <table className="min-w-full divide-y divide-gray-200">
+          <thead className="bg-gray-50">
+            <tr>
+              {headers.map((header, index) => (
+                <th
+                  key={index}
+                  className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
+                  {header}
+                </th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
+          </thead>
+          <tbody className="bg-white divide-y divide-gray-200">
+            {rows.map((row, index) => (
+              <tr
+                key={index}
+                className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
+              >
+                {row.map((cell, cellIndex) => (
+                  <td
+                    key={cellIndex}
+                    className="px-4 py-3 text-sm text-gray-700"
+                  >
+                    {cell}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  };
 
-  const ChipList = ({ items }) => (
-    <div className="flex flex-wrap gap-2">
-      {items.map((item, index) => (
-        <span
-          key={index}
-          className="px-3 py-1 rounded-full text-sm bg-gray-100 text-gray-700 border border-gray-200"
-        >
-          {item}
-        </span>
-      ))}
-    </div>
-  );
+  // ✅ FIXED: Add null checks for ChipList component
+  const ChipList = ({ items }) => {
+    if (!items) return null;
+
+    return (
+      <div className="flex flex-wrap gap-2">
+        {items.map((item, index) => (
+          <span
+            key={index}
+            className="px-3 py-1 rounded-full text-sm bg-gray-100 text-gray-700 border border-gray-200"
+          >
+            {item}
+          </span>
+        ))}
+      </div>
+    );
+  };
 
   // ===============================
   // MAIN COMPONENT
@@ -462,7 +482,7 @@ const IncoloyWires = () => {
                 <img
                   src={productImage}
                   alt={productData.title}
-                  className="w-full rounded-lg shadow-lg"
+                  className="w-full h-60 object-cover rounded-lg shadow-lg"
                 />
               </div>
 
@@ -484,54 +504,64 @@ const IncoloyWires = () => {
               </p>
             </section>
 
-            {/* Grade Breakdown */}
+            {/* Grade Breakdown - ✅ FIXED: Added safe check */}
             <section className="mb-8">
               <SectionTitle>Incoloy Alloy Grades & Applications</SectionTitle>
-              {productData.gradeBreakdown.map((section, idx) => (
-                <div
-                  key={idx}
-                  className="mb-4 p-4 bg-white border border-gray-200 rounded-lg"
-                >
-                  <h3 className="text-lg font-semibold text-[#0a1a52] mb-2">
-                    {section.title}
-                  </h3>
-                  <p className="text-gray-700 text-sm mb-2">
-                    {section.description}
-                  </p>
-                  <ul className="list-disc pl-5 space-y-1 mb-2">
-                    {section.items.map((item, i) => (
-                      <li key={i} className="text-gray-700 text-sm">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  {section.keyApplications && (
-                    <div className="mt-2 p-2 bg-gray-50 rounded border border-gray-200">
-                      <span className="font-semibold text-sm text-[#0a1a52]">
-                        Key Applications:{" "}
-                      </span>
-                      <span className="text-gray-700 text-sm">
-                        {section.keyApplications}
-                      </span>
-                    </div>
-                  )}
-                </div>
-              ))}
+              {productData.gradeBreakdown &&
+              productData.gradeBreakdown.length > 0 ? (
+                productData.gradeBreakdown.map((section, idx) => (
+                  <div
+                    key={idx}
+                    className="mb-4 p-4 bg-white border border-gray-200 rounded-lg"
+                  >
+                    <h3 className="text-lg font-semibold text-[#0a1a52] mb-2">
+                      {section.title}
+                    </h3>
+                    {section.description && (
+                      <p className="text-gray-700 text-sm mb-2">
+                        {section.description}
+                      </p>
+                    )}
+                    {section.items && section.items.length > 0 && (
+                      <ul className="list-disc pl-5 space-y-1 mb-2">
+                        {section.items.map((item, i) => (
+                          <li key={i} className="text-gray-700 text-sm">
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {section.keyApplications && (
+                      <div className="mt-2 p-2 bg-gray-50 rounded border border-gray-200">
+                        <span className="font-semibold text-sm text-[#0a1a52]">
+                          Key Applications:{" "}
+                        </span>
+                        <span className="text-gray-700 text-sm">
+                          {section.keyApplications}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                ))
+              ) : (
+                <p className="text-gray-500">No grade information available.</p>
+              )}
             </section>
 
             {/* Key Features */}
             <section className="mb-8">
               <SectionTitle>Key Features & Benefits</SectionTitle>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {productData.keyFeatures.map((feature, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-2 bg-white border border-gray-200 rounded-lg p-3 hover:shadow-md transition"
-                  >
-                    <span className="text-[#d79b20] text-lg">✓</span>
-                    <span className="text-gray-700 text-sm">{feature}</span>
-                  </div>
-                ))}
+                {productData.keyFeatures &&
+                  productData.keyFeatures.map((feature, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center gap-2 bg-white border border-gray-200 rounded-lg p-3 hover:shadow-md transition"
+                    >
+                      <span className="text-[#d79b20] text-lg">✓</span>
+                      <span className="text-gray-700 text-sm">{feature}</span>
+                    </div>
+                  ))}
               </div>
             </section>
 
@@ -539,15 +569,16 @@ const IncoloyWires = () => {
             <section className="mb-8">
               <SectionTitle>Applications Across Industries</SectionTitle>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {productData.applications.map((app, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-2 bg-white border border-gray-200 rounded-lg p-3 hover:shadow-md transition"
-                  >
-                    <span className="text-[#d79b20] text-lg">▸</span>
-                    <span className="text-gray-700 text-sm">{app}</span>
-                  </div>
-                ))}
+                {productData.applications &&
+                  productData.applications.map((app, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center gap-2 bg-white border border-gray-200 rounded-lg p-3 hover:shadow-md transition"
+                    >
+                      <span className="text-[#d79b20] text-lg">▸</span>
+                      <span className="text-gray-700 text-sm">{app}</span>
+                    </div>
+                  ))}
               </div>
             </section>
 
@@ -555,36 +586,40 @@ const IncoloyWires = () => {
             <section className="mb-8">
               <SectionTitle>Stock Availability of Incoloy Wire</SectionTitle>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {Object.entries(productData.stockAvailability).map(
-                  ([key, stock]) => (
-                    <div
-                      key={key}
-                      className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition"
-                    >
-                      <img
-                        src={stock.image}
-                        alt={stock.title}
-                        className="w-full h-32 object-cover"
-                      />
-                      <div className="p-3">
-                        <h3 className="text-sm font-semibold text-[#0a1a52] mb-2">
-                          {stock.title}
-                        </h3>
-                        <ul className="space-y-1">
-                          {stock.items.map((item, index) => (
-                            <li
-                              key={index}
-                              className="text-xs text-gray-600 flex items-start gap-2"
-                            >
-                              <span className="text-[#d79b20] mt-0.5">•</span>
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
+                {productData.stockAvailability &&
+                  Object.entries(productData.stockAvailability).map(
+                    ([key, stock]) => (
+                      <div
+                        key={key}
+                        className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition"
+                      >
+                        <img
+                          src={stock.image}
+                          alt={stock.title}
+                          className="w-full h-32 object-cover"
+                        />
+                        <div className="p-3">
+                          <h3 className="text-sm font-semibold text-[#0a1a52] mb-2">
+                            {stock.title}
+                          </h3>
+                          <ul className="space-y-1">
+                            {stock.items &&
+                              stock.items.map((item, index) => (
+                                <li
+                                  key={index}
+                                  className="text-xs text-gray-600 flex items-start gap-2"
+                                >
+                                  <span className="text-[#d79b20] mt-0.5">
+                                    •
+                                  </span>
+                                  <span>{item}</span>
+                                </li>
+                              ))}
+                          </ul>
+                        </div>
                       </div>
-                    </div>
-                  ),
-                )}
+                    ),
+                  )}
               </div>
             </section>
 
@@ -595,22 +630,23 @@ const IncoloyWires = () => {
               </SectionTitle>
               <div className="bg-white border border-gray-200 rounded-lg p-5">
                 <ul className="space-y-2">
-                  {Object.entries(productData.specifications).map(
-                    ([key, value]) => (
-                      <li
-                        key={key}
-                        className="text-gray-700 flex items-start gap-2 text-sm"
-                      >
-                        <span className="text-[#d79b20] mt-1">▸</span>
-                        <span>
-                          <span className="font-semibold capitalize">
-                            {key.replace(/([A-Z])/g, " $1").trim()}:
-                          </span>{" "}
-                          {value}
-                        </span>
-                      </li>
-                    ),
-                  )}
+                  {productData.specifications &&
+                    Object.entries(productData.specifications).map(
+                      ([key, value]) => (
+                        <li
+                          key={key}
+                          className="text-gray-700 flex items-start gap-2 text-sm"
+                        >
+                          <span className="text-[#d79b20] mt-1">▸</span>
+                          <span>
+                            <span className="font-semibold capitalize">
+                              {key.replace(/([A-Z])/g, " $1").trim()}:
+                            </span>{" "}
+                            {value}
+                          </span>
+                        </li>
+                      ),
+                    )}
                 </ul>
               </div>
             </section>
@@ -619,8 +655,8 @@ const IncoloyWires = () => {
             <section className="mb-8">
               <SectionTitle>Equivalent Grades</SectionTitle>
               <Table
-                headers={productData.equivalentGrades.headers}
-                rows={productData.equivalentGrades.rows}
+                headers={productData.equivalentGrades?.headers}
+                rows={productData.equivalentGrades?.rows}
               />
             </section>
 
@@ -628,8 +664,8 @@ const IncoloyWires = () => {
             <section className="mb-8">
               <SectionTitle>Chemical Composition</SectionTitle>
               <Table
-                headers={productData.chemicalComposition.headers}
-                rows={productData.chemicalComposition.rows}
+                headers={productData.chemicalComposition?.headers}
+                rows={productData.chemicalComposition?.rows}
               />
             </section>
 
@@ -637,8 +673,8 @@ const IncoloyWires = () => {
             <section className="mb-8">
               <SectionTitle>Mechanical & Physical Properties</SectionTitle>
               <Table
-                headers={productData.mechanicalProperties.headers}
-                rows={productData.mechanicalProperties.rows}
+                headers={productData.mechanicalProperties?.headers}
+                rows={productData.mechanicalProperties?.rows}
               />
             </section>
 
@@ -648,8 +684,8 @@ const IncoloyWires = () => {
                 Diameter Tolerance: Incoloy Alloy Wires
               </SectionTitle>
               <Table
-                headers={productData.toleranceChart.headers}
-                rows={productData.toleranceChart.rows}
+                headers={productData.toleranceChart?.headers}
+                rows={productData.toleranceChart?.rows}
               />
             </section>
 
@@ -659,15 +695,16 @@ const IncoloyWires = () => {
                 Specialized in Incoloy Alloy Wires & Filler Metals
               </SectionTitle>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                {productData.specializedProducts.map((product, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-2 bg-white border border-gray-200 rounded-lg p-2 hover:shadow-md transition"
-                  >
-                    <span className="text-[#d79b20] text-sm">▸</span>
-                    <span className="text-gray-700 text-xs">{product}</span>
-                  </div>
-                ))}
+                {productData.specializedProducts &&
+                  productData.specializedProducts.map((product, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center gap-2 bg-white border border-gray-200 rounded-lg p-2 hover:shadow-md transition"
+                    >
+                      <span className="text-[#d79b20] text-sm">▸</span>
+                      <span className="text-gray-700 text-xs">{product}</span>
+                    </div>
+                  ))}
               </div>
             </section>
 
@@ -693,16 +730,17 @@ const IncoloyWires = () => {
               </div>
 
               <div className="max-h-[400px] overflow-y-auto">
-                {productData.ourProducts.map((product, index) => (
-                  <Link
-                    key={index}
-                    to={`/products/${product.slug}`}
-                    className="flex items-center gap-3 border-b border-gray-100 px-4 py-2.5 text-sm text-gray-700 transition hover:bg-[#0a1a52] hover:text-white"
-                  >
-                    <span className="text-[#d79b20] text-xs">◉</span>
-                    {product.name}
-                  </Link>
-                ))}
+                {productData.ourProducts &&
+                  productData.ourProducts.map((product, index) => (
+                    <Link
+                      key={index}
+                      to={`/products/${product.slug}`}
+                      className="flex items-center gap-3 border-b border-gray-100 px-4 py-2.5 text-sm text-gray-700 transition hover:bg-[#0a1a52] hover:text-white"
+                    >
+                      <span className="text-[#d79b20] text-xs">◉</span>
+                      {product.name}
+                    </Link>
+                  ))}
               </div>
             </div>
 
@@ -715,16 +753,17 @@ const IncoloyWires = () => {
               </div>
 
               <div className="max-h-[300px] overflow-y-auto">
-                {productData.shopByMaterial.map((material, index) => (
-                  <Link
-                    key={index}
-                    to={`/materials/${material.slug}`}
-                    className="flex items-center gap-3 border-b border-gray-100 px-4 py-2.5 text-sm text-gray-700 transition hover:bg-[#0a1a52] hover:text-white"
-                  >
-                    <span className="text-[#d79b20] text-xs">◉</span>
-                    {material.name}
-                  </Link>
-                ))}
+                {productData.shopByMaterial &&
+                  productData.shopByMaterial.map((material, index) => (
+                    <Link
+                      key={index}
+                      to={`/materials/${material.slug}`}
+                      className="flex items-center gap-3 border-b border-gray-100 px-4 py-2.5 text-sm text-gray-700 transition hover:bg-[#0a1a52] hover:text-white"
+                    >
+                      <span className="text-[#d79b20] text-xs">◉</span>
+                      {material.name}
+                    </Link>
+                  ))}
               </div>
             </div>
 
@@ -737,7 +776,7 @@ const IncoloyWires = () => {
                 Email us for a quote or contact us for more information.
               </p>
               <a
-                href={`mailto:${contact.email || "info@alloypipe.com"}`}
+                href={`mailto:${contact?.email || "info@alloypipe.com"}`}
                 className="inline-block bg-[#d79b20] hover:bg-[#c08a1a] text-white font-semibold px-6 py-2.5 rounded-lg transition text-sm"
               >
                 Email Us Now
@@ -749,63 +788,67 @@ const IncoloyWires = () => {
         {/* =============================== */}
         {/* COUNTRIES - Full Width Below */}
         {/* =============================== */}
-        <section className="mt-12">
-          <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-            <div className="mb-4">
-              <h2 className="text-2xl font-black uppercase leading-tight">
-                <span className="text-[#0a1a52]">Countries We </span>
-                <span className="text-[#d79b20]">Export Our Products To</span>
-              </h2>
-              <div className="mt-1 h-[2px] w-32 bg-[#d79b20]" />
-            </div>
+        {productData.countries && productData.countries.length > 0 && (
+          <section className="mt-12">
+            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+              <div className="mb-4">
+                <h2 className="text-2xl font-black uppercase leading-tight">
+                  <span className="text-[#0a1a52]">Countries We </span>
+                  <span className="text-[#d79b20]">Export Our Products To</span>
+                </h2>
+                <div className="mt-1 h-[2px] w-32 bg-[#d79b20]" />
+              </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
-              {productData.countries.map((country, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#d79b20] hover:bg-[#0a1a52] hover:shadow-md cursor-pointer"
-                >
-                  <span
-                    className={`fi fi-${(country.code || country).toLowerCase()} rounded-sm shadow`}
-                  ></span>
-                  <span className="text-sm font-medium text-gray-700 transition-colors duration-300 hover:text-white">
-                    {country.name || country}
-                  </span>
-                </div>
-              ))}
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
+                {productData.countries.map((country, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#d79b20] hover:bg-[#0a1a52] hover:shadow-md cursor-pointer"
+                  >
+                    <span
+                      className={`fi fi-${(country.code || country).toLowerCase()} rounded-sm shadow`}
+                    ></span>
+                    <span className="text-sm font-medium text-gray-700 transition-colors duration-300 hover:text-white">
+                      {country.name || country}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* =============================== */}
         {/* CITIES - Full Width Below */}
         {/* =============================== */}
-        <section className="mt-6">
-          <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-            <div className="mb-4">
-              <h2 className="text-2xl font-black uppercase leading-tight">
-                <span className="text-[#0a1a52]">
-                  We Supply Our Products In
-                </span>{" "}
-                <span className="text-[#d79b20]">The Following Cities</span>
-              </h2>
-              <div className="mt-1 h-[2px] w-32 bg-[#d79b20]" />
-            </div>
+        {productData.cities && productData.cities.length > 0 && (
+          <section className="mt-6">
+            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+              <div className="mb-4">
+                <h2 className="text-2xl font-black uppercase leading-tight">
+                  <span className="text-[#0a1a52]">
+                    We Supply Our Products In
+                  </span>{" "}
+                  <span className="text-[#d79b20]">The Following Cities</span>
+                </h2>
+                <div className="mt-1 h-[2px] w-32 bg-[#d79b20]" />
+              </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
-              {productData.cities.map((city, index) => (
-                <div
-                  key={index}
-                  className="rounded-lg border border-gray-200 bg-white px-3 py-2 text-center transition-all duration-300 hover:-translate-y-0.5 hover:border-[#d79b20] hover:bg-[#0a1a52] hover:shadow-md cursor-pointer"
-                >
-                  <span className="text-sm font-medium text-gray-700 transition-colors duration-300 hover:text-white">
-                    {city.name || city}
-                  </span>
-                </div>
-              ))}
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
+                {productData.cities.map((city, index) => (
+                  <div
+                    key={index}
+                    className="rounded-lg border border-gray-200 bg-white px-3 py-2 text-center transition-all duration-300 hover:-translate-y-0.5 hover:border-[#d79b20] hover:bg-[#0a1a52] hover:shadow-md cursor-pointer"
+                  >
+                    <span className="text-sm font-medium text-gray-700 transition-colors duration-300 hover:text-white">
+                      {city.name || city}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
       </div>
 
       {/* =============================== */}
@@ -814,7 +857,7 @@ const IncoloyWires = () => {
       <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
         {/* WhatsApp Button */}
         <a
-          href={`https://wa.me/${(contact.whatsapp || contact.phone || "917045517104").replace(/[^0-9]/g, "")}`}
+          href={`https://wa.me/${(contact?.whatsapp || contact?.phone || "917045517104").replace(/[^0-9]/g, "")}`}
           target="_blank"
           rel="noopener noreferrer"
           className="flex h-14 w-14 items-center justify-center rounded-full bg-green-500 shadow-lg hover:scale-110 transition duration-300 hover:shadow-xl"
@@ -825,7 +868,7 @@ const IncoloyWires = () => {
 
         {/* Call Button */}
         <a
-          href={`tel:${(contact.phone || "917045517104").replace(/[^0-9]/g, "")}`}
+          href={`tel:${(contact?.phone || "917045517104").replace(/[^0-9]/g, "")}`}
           className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-600 shadow-lg hover:scale-110 transition duration-300 hover:shadow-xl"
           aria-label="Call us"
         >
@@ -836,4 +879,5 @@ const IncoloyWires = () => {
   );
 };
 
-export default IncoloyWires;
+// ✅ FIXED: Export with the same name as the component
+export default IncloneyWires;

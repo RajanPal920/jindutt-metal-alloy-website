@@ -31,7 +31,7 @@ const Contact = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const leftVariant = {
     hidden: { opacity: 0, x: -100 },
@@ -48,34 +48,32 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Mailto Link Handler - Simple Email Solution
+  // Mailto Link Handler - Opens default email client
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      // Format the email subject and body
-      const subject = `Inquiry from ${formData.name} - Jindutt Website`;
+      // Format the email subject
+      const subject = `Inquiry from ${formData.name} - Jindutt Metal & Alloy`;
 
+      // Format the email body with all details
       const body =
         `%0A%0A` +
-        `---------- INQUIRY DETAILS ----------%0A` +
-        `%0A` +
-        `*Name:* ${formData.name}%0A` +
-        `*Phone:* ${formData.phone}%0A` +
-        `*Email:* ${formData.email}%0A` +
-        `*Specification:* ${formData.specification || "N/A"}%0A` +
-        `%0A` +
-        `---------- REQUIREMENTS ----------%0A` +
-        `${formData.message}%0A` +
-        `%0A` +
+        `---------- INQUIRY DETAILS ----------%0A%0A` +
+        `Name: ${formData.name}%0A` +
+        `Phone: ${formData.phone}%0A` +
+        `Email: ${formData.email}%0A` +
+        `Component Specification: ${formData.specification || "N/A"}%0A%0A` +
+        `---------- REQUIREMENTS ----------%0A%0A` +
+        `${formData.message}%0A%0A` +
         `---------- %0A` +
-        `Sent from Jindutt Metal & Alloy Website`;
+        `This inquiry was sent from the Jindutt Metal & Alloy Website Contact Form`;
 
-      // Open default email client with pre-filled data
+      // Create mailto link
       const mailtoLink = `mailto:info@jinduttmetalalloy.com?subject=${encodeURIComponent(subject)}&body=${body}`;
 
-      // Open email client
+      // Open default email client
       window.location.href = mailtoLink;
 
       // Show success message
@@ -362,8 +360,8 @@ const Contact = () => {
             {submitStatus === "success" && (
               <div className="mt-4 rounded-xl bg-green-50 border border-green-200 p-4 text-green-700 text-sm font-medium flex items-center gap-2">
                 <CheckCircle className="w-5 h-5 text-green-500" />
-                Inquiry transmitted successfully! Please check your email client
-                to send the message.
+                Inquiry prepared! Please check your email client to send the
+                message.
               </div>
             )}
             {submitStatus === "error" && (
@@ -374,7 +372,7 @@ const Contact = () => {
               </div>
             )}
 
-            {/* Note: Mailto will open default email client */}
+            {/* Info note about email client */}
             <div className="mt-4 rounded-xl bg-blue-50 border border-blue-200 p-3 text-blue-700 text-xs font-medium flex items-center gap-2">
               <span className="text-lg">📧</span>
               This will open your default email client with pre-filled

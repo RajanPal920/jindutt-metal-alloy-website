@@ -835,9 +835,9 @@ const HastelloyB2Pipes = () => {
       { name: "Inconel", slug: "inconel" },
       { name: "Monel", slug: "monel" },
       { name: "Nickel Alloy", slug: "nickel-alloy" },
-      { name: "Other Metals", slug: "other-metals" },
-      { name: "Samico", slug: "samico" },
-      { name: "Special Metals", slug: "special-metals" },
+      { name: "Other Materials", slug: "other-meterials" },
+      { name: "Sanico", slug: "sanico" },
+      { name: "Special Materials", slug: "special-materials" },
       { name: "Stainless Steel", slug: "stainless-steel" },
       { name: "Titanium", slug: "titanium" },
     ],
@@ -943,7 +943,7 @@ const HastelloyB2Pipes = () => {
                 <img
                   src={productImage}
                   alt={productData.title}
-                  className="w-full rounded-lg shadow-lg"
+                  className="w-full h-60 object-cover rounded-lg shadow-lg"
                 />
               </div>
 

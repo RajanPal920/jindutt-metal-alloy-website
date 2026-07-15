@@ -62,7 +62,7 @@ const Monel400Tubes = () => {
       "Excellent weldability and formability",
       "Maintains properties from cryogenic to 538°C (1000°F)",
       "Natural biofouling resistance in marine environments",
-      "Size: 1/8\" OD to 24\" NB | Custom wall thickness available",
+      'Size: 1/8" OD to 24" NB | Custom wall thickness available',
       "Condition & Finish: Annealed, Stress Relieved, Bright Annealed, Polished (Mirror Finish)",
       "Types & Forms: Seamless, Welded, ERW, EFW | Round, Square, Rectangular, U-Bend",
       "Complies with ASTM B163, B165, B725, B730 / ASME SB163, SB165",
@@ -151,35 +151,137 @@ const Monel400Tubes = () => {
     specifications: {
       standards: "ASTM B163, B165, B725, B730 / ASME SB163, SB165",
       sizeRange: '1/8" OD to 24" NB | Custom wall thickness available',
-      conditionFinish: "Annealed, Stress Relieved, Bright Annealed, Polished (Mirror Finish)",
-      typesForms: "Seamless, Welded, ERW, EFW | Round, Square, Rectangular, U-Bend",
+      conditionFinish:
+        "Annealed, Stress Relieved, Bright Annealed, Polished (Mirror Finish)",
+      typesForms:
+        "Seamless, Welded, ERW, EFW | Round, Square, Rectangular, U-Bend",
     },
 
     equivalentGrades: {
-      headers: ["Grade Series", "UNS Number", "Werkstoff Nr.", "Common Designation"],
+      headers: [
+        "Grade Series",
+        "UNS Number",
+        "Werkstoff Nr.",
+        "Common Designation",
+      ],
       rows: [["Monel 400", "N04400", "2.4360 / 2.4361", "Alloy 400"]],
     },
 
     chemicalComposition: {
       headers: ["Grade", "Ni", "Cu", "Fe", "Mn", "Si"],
-      rows: [["Monel 400", "63.0 min", "28.0 - 34.0", "2.5 max", "2.0 max", "0.5 max"]],
+      rows: [
+        [
+          "Monel 400",
+          "63.0 min",
+          "28.0 - 34.0",
+          "2.5 max",
+          "2.0 max",
+          "0.5 max",
+        ],
+      ],
     },
 
     mechanicalProperties: {
-      headers: ["Grade", "Tensile (MPa)", "Yield (MPa)", "Elongation (%)", "Density (g/cm³)"],
+      headers: [
+        "Grade",
+        "Tensile (MPa)",
+        "Yield (MPa)",
+        "Elongation (%)",
+        "Density (g/cm³)",
+      ],
       rows: [["Monel 400", "480 min", "195 min", "35% min", "8.80"]],
     },
 
     dimensionsChart: {
-      headers: ["Tube O.D.", "Wall (Inch)", "Gauge 10 (0.134)", "Gauge 12 (0.109)", "Gauge 14 (0.083)", "Gauge 16 (0.065)", "Gauge 18 (0.049)", "Gauge 20 (0.035)", "Gauge 22 (0.028)"],
+      headers: [
+        "Tube O.D.",
+        "Wall (Inch)",
+        "Gauge 10 (0.134)",
+        "Gauge 12 (0.109)",
+        "Gauge 14 (0.083)",
+        "Gauge 16 (0.065)",
+        "Gauge 18 (0.049)",
+        "Gauge 20 (0.035)",
+        "Gauge 22 (0.028)",
+      ],
       rows: [
-        ['1/2"', "I.D. (In)", "0.232", "0.282", "0.334", "0.370", "0.402", "0.430", "0.444"],
-        ['3/4"', "I.D. (In)", "0.482", "0.532", "0.584", "0.620", "0.652", "0.680", "0.694"],
-        ['1"', "I.D. (In)", "0.732", "0.782", "0.834", "0.870", "0.902", "0.930", "0.944"],
-        ['1-1/2"', "I.D. (In)", "1.232", "1.282", "1.334", "1.370", "1.402", "1.430", "1.444"],
-        ['2"', "I.D. (In)", "1.732", "1.782", "1.834", "1.870", "1.902", "1.930", "1.944"],
-        ['3"', "I.D. (In)", "2.732", "2.782", "2.834", "2.870", "2.902", "2.930", "2.944"],
-        ['4"', "I.D. (In)", "3.732", "3.782", "3.834", "3.870", "3.902", "3.930", "3.944"],
+        [
+          '1/2"',
+          "I.D. (In)",
+          "0.232",
+          "0.282",
+          "0.334",
+          "0.370",
+          "0.402",
+          "0.430",
+          "0.444",
+        ],
+        [
+          '3/4"',
+          "I.D. (In)",
+          "0.482",
+          "0.532",
+          "0.584",
+          "0.620",
+          "0.652",
+          "0.680",
+          "0.694",
+        ],
+        [
+          '1"',
+          "I.D. (In)",
+          "0.732",
+          "0.782",
+          "0.834",
+          "0.870",
+          "0.902",
+          "0.930",
+          "0.944",
+        ],
+        [
+          '1-1/2"',
+          "I.D. (In)",
+          "1.232",
+          "1.282",
+          "1.334",
+          "1.370",
+          "1.402",
+          "1.430",
+          "1.444",
+        ],
+        [
+          '2"',
+          "I.D. (In)",
+          "1.732",
+          "1.782",
+          "1.834",
+          "1.870",
+          "1.902",
+          "1.930",
+          "1.944",
+        ],
+        [
+          '3"',
+          "I.D. (In)",
+          "2.732",
+          "2.782",
+          "2.834",
+          "2.870",
+          "2.902",
+          "2.930",
+          "2.944",
+        ],
+        [
+          '4"',
+          "I.D. (In)",
+          "3.732",
+          "3.782",
+          "3.834",
+          "3.870",
+          "3.902",
+          "3.930",
+          "3.944",
+        ],
       ],
     },
 
@@ -188,7 +290,10 @@ const Monel400Tubes = () => {
       rows: [
         [".028", "1/8, 3/16, 1/4, 5/16, 3/8, 1/2, 3/4, 1, 1 1/2, 2"],
         [".035", "1/8, 1/4, 5/16, 3/8, 1/2, 5/8, 3/4, 7/8, 1, 1 1/4, 1 1/2, 2"],
-        [".049", "3/16, 1/4, 3/8, 1/2, 5/8, 3/4, 7/8, 1, 1 1/8, 1 1/4, 1 1/2, 2"],
+        [
+          ".049",
+          "3/16, 1/4, 3/8, 1/2, 5/8, 3/4, 7/8, 1, 1 1/8, 1 1/4, 1 1/2, 2",
+        ],
         [".065", "1/4, 3/8, 1/2, 5/8, 3/4, 7/8, 1, 1 1/4, 1 1/2, 2, 2 1/2, 3"],
         [".083", "1/4, 3/8, 1/2, 5/8, 3/4, 1, 1 1/4, 1 1/2, 2, 2 1/2, 3"],
         [".109", "1/2, 3/4, 1, 1 1/4, 1 1/2, 2"],
@@ -197,7 +302,16 @@ const Monel400Tubes = () => {
     },
 
     pressureRatingChart: {
-      headers: ["Tube O.D. (in.)", ".028", ".035", ".049", ".065", ".083", ".095", ".109"],
+      headers: [
+        "Tube O.D. (in.)",
+        ".028",
+        ".035",
+        ".049",
+        ".065",
+        ".083",
+        ".095",
+        ".109",
+      ],
       rows: [
         ["1/8", "7900", "10100", "-", "-", "-", "-", "-"],
         ["1/4", "3700", "4800", "7000", "9500", "-", "-", "-"],
@@ -259,21 +373,21 @@ const Monel400Tubes = () => {
     ourProducts: [
       { name: "Coils", slug: "coils" },
       { name: "Pipes", slug: "pipes" },
-      { name: "Flutes", slug: "flutes" },
+      { name: "Plates", slug: "plates" },
       { name: "Round Bars", slug: "round-bars" },
       { name: "Sheets", slug: "sheets" },
       { name: "Tubes", slug: "tubes" },
       { name: "Wires", slug: "wires" },
-      { name: "Industrial Flanges", slug: "industrial-flanges" },
+      { name: "Industrial Flanges", slug: "flanges" },
       { name: "Buttweld Fittings", slug: "buttweld-fittings" },
       { name: "Angle & Channels", slug: "angle-channels" },
       { name: "Forged Fittings", slug: "forged-fittings" },
-      { name: "Industrial Fasteners", slug: "industrial-fasteners" },
-      { name: "Industrial Valves", slug: "industrial-valves" },
-      { name: "Flats & Pairs", slug: "flats-pairs" },
-      { name: "Industrial Rings", slug: "industrial-rings" },
-      { name: "Industrial Circles", slug: "industrial-circles" },
-      { name: "Industrial Strips", slug: "industrial-strips" },
+      { name: "Industrial Fasteners", slug: "fasteners" },
+      { name: "Industrial Valves", slug: "valves" },
+      { name: "Flats & Pairs", slug: "patta-patti" },
+      { name: "Industrial Rings", slug: "rings" },
+      { name: "Industrial Circles", slug: "circles" },
+      { name: "Industrial Strips", slug: "strips" },
     ],
 
     shopByMaterial: [
@@ -284,9 +398,9 @@ const Monel400Tubes = () => {
       { name: "Inconel", slug: "inconel" },
       { name: "Monel", slug: "monel" },
       { name: "Nickel Alloy", slug: "nickel-alloy" },
-      { name: "Other Metals", slug: "other-metals" },
-      { name: "Samico", slug: "samico" },
-      { name: "Special Metals", slug: "special-metals" },
+      { name: "Other Materials", slug: "other-meterials" },
+      { name: "Sanico", slug: "sanico" },
+      { name: "Special Materials", slug: "special-materials" },
       { name: "Stainless Steel", slug: "stainless-steel" },
       { name: "Titanium", slug: "titanium" },
     ],
@@ -392,7 +506,7 @@ const Monel400Tubes = () => {
                 <img
                   src={productImage}
                   alt={productData.title}
-                  className="w-full rounded-lg shadow-lg"
+                  className="w-full h-60 object-cover rounded-lg shadow-lg"
                 />
               </div>
 
@@ -416,7 +530,9 @@ const Monel400Tubes = () => {
 
             {/* Key Characteristics */}
             <section className="mb-8">
-              <SectionTitle>{productData.keyCharacteristics.title}</SectionTitle>
+              <SectionTitle>
+                {productData.keyCharacteristics.title}
+              </SectionTitle>
               <ul className="list-disc pl-5 space-y-2">
                 {productData.keyCharacteristics.items.map((item, index) => (
                   <li key={index} className="text-gray-700 text-sm">
@@ -428,7 +544,9 @@ const Monel400Tubes = () => {
 
             {/* Industrial Applications */}
             <section className="mb-8">
-              <SectionTitle>{productData.industrialApplications.title}</SectionTitle>
+              <SectionTitle>
+                {productData.industrialApplications.title}
+              </SectionTitle>
               <ul className="list-disc pl-5 space-y-2">
                 {productData.industrialApplications.items.map((item, index) => (
                   <li key={index} className="text-gray-700 text-sm">
@@ -472,7 +590,9 @@ const Monel400Tubes = () => {
 
             {/* Stock Availability */}
             <section className="mb-8">
-              <SectionTitle>Stock Availability of Monel 400 Tubes & Tubing</SectionTitle>
+              <SectionTitle>
+                Stock Availability of Monel 400 Tubes & Tubing
+              </SectionTitle>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {Object.entries(productData.stockAvailability).map(
                   ([key, stock]) => (
@@ -509,7 +629,9 @@ const Monel400Tubes = () => {
 
             {/* Specifications */}
             <section className="mb-8">
-              <SectionTitle>Technical Specifications: Monel 400 Tubes</SectionTitle>
+              <SectionTitle>
+                Technical Specifications: Monel 400 Tubes
+              </SectionTitle>
               <div className="bg-white border border-gray-200 rounded-lg p-5">
                 <ul className="space-y-2">
                   {Object.entries(productData.specifications).map(
@@ -561,7 +683,9 @@ const Monel400Tubes = () => {
 
             {/* Dimensions Chart */}
             <section className="mb-8">
-              <SectionTitle>Monel 400 Tubes Dimensions Chart (I.D. in Inches)</SectionTitle>
+              <SectionTitle>
+                Monel 400 Tubes Dimensions Chart (I.D. in Inches)
+              </SectionTitle>
               <Table
                 headers={productData.dimensionsChart.headers}
                 rows={productData.dimensionsChart.rows}
@@ -570,7 +694,9 @@ const Monel400Tubes = () => {
 
             {/* Wall Thickness Chart */}
             <section className="mb-8">
-              <SectionTitle>Monel 400 Tubing Size Wall Thickness Range</SectionTitle>
+              <SectionTitle>
+                Monel 400 Tubing Size Wall Thickness Range
+              </SectionTitle>
               <Table
                 headers={productData.wallThicknessChart.headers}
                 rows={productData.wallThicknessChart.rows}
@@ -579,7 +705,9 @@ const Monel400Tubes = () => {
 
             {/* Pressure Rating Chart */}
             <section className="mb-8">
-              <SectionTitle>Monel 400 Tubes Pressure Rating (psig)</SectionTitle>
+              <SectionTitle>
+                Monel 400 Tubes Pressure Rating (psig)
+              </SectionTitle>
               <Table
                 headers={productData.pressureRatingChart.headers}
                 rows={productData.pressureRatingChart.rows}
@@ -588,7 +716,9 @@ const Monel400Tubes = () => {
 
             {/* Specialized Products */}
             <section className="mb-8">
-              <SectionTitle>Specialized in Monel 400 Tubes & Tubing</SectionTitle>
+              <SectionTitle>
+                Specialized in Monel 400 Tubes & Tubing
+              </SectionTitle>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {productData.specializedProducts.map((product, index) => (
                   <div
