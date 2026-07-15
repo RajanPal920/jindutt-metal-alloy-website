@@ -103,7 +103,9 @@ const Certificates = () => {
                 {/* Buttons */}
                 <div className="mt-5 pt-5 border-t border-gray-100 group-hover:border-[#d79b20]/20 transition-colors flex items-center gap-3">
                   <Link
-                    to={certificate.route}
+                    to={
+                      certificate.route || `/certificates/${certificate.slug}`
+                    }
                     className="flex-1 inline-flex items-center justify-center gap-2 bg-[#0a1a52] hover:bg-[#122a6e] text-white text-sm font-semibold py-2.5 px-4 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-[#0a1a52]/20 group-hover:shadow-[#0a1a52]/20"
                   >
                     View Details

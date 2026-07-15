@@ -17,9 +17,11 @@ import {
   ShieldCheck,
   CheckCircle,
   Loader2,
+  MessageCircle,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import logo from "../../assets/images/logo/jindutt-logo.png";
+import testimonials from "../../data/testimonials";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -70,8 +72,8 @@ const Contact = () => {
         `---------- %0A` +
         `This inquiry was sent from the Jindutt Metal & Alloy Website Contact Form`;
 
-      // Create mailto link
-      const mailtoLink = `mailto:info@jinduttmetalalloy.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+      // Create mailto link with new email
+      const mailtoLink = `mailto:info@jinduttmetal.com?subject=${encodeURIComponent(subject)}&body=${body}`;
 
       // Open default email client
       window.location.href = mailtoLink;
@@ -160,6 +162,67 @@ const Contact = () => {
       </section>
 
       {/* =============================== */}
+      {/* TESTIMONIALS SECTION - NEW */}
+      {/* =============================== */}
+      <section className="w-full py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <span className="w-10 h-0.5 bg-[#d79b20]"></span>
+              <span className="text-xs font-bold tracking-[0.25em] text-[#d79b20] uppercase">
+                Client Testimonials
+              </span>
+              <span className="w-10 h-0.5 bg-[#d79b20]"></span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black uppercase text-[#0a1a52] tracking-tight">
+              What Our <span className="text-[#d79b20]">Clients Say</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-14 h-14 rounded-full bg-[#0a1a52] flex items-center justify-center text-white font-bold text-xl">
+                    {testimonial.initials}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[#0a1a52] text-lg">
+                      {testimonial.name}
+                    </h4>
+                    <p className="text-sm text-[#d79b20] font-medium">
+                      {testimonial.company}
+                    </p>
+                  </div>
+                </div>
+                <p className="text-slate-600 leading-relaxed text-sm italic">
+                  "{testimonial.review}"
+                </p>
+                <div className="mt-4 flex items-center gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <svg
+                      key={i}
+                      className="w-4 h-4 text-[#d79b20] fill-current"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                    </svg>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =============================== */}
       {/* DIRECTORY SECTION - Premium */}
       {/* =============================== */}
       <section className="w-full py-20 bg-slate-50 relative">
@@ -182,7 +245,7 @@ const Contact = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-12 max-w-6xl mx-auto">
-            {/* Card 1 */}
+            {/* Card 1 - Head Office (Updated) */}
             <motion.div
               initial={{ opacity: 0, y: 80 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -210,21 +273,67 @@ const Contact = () => {
               <div className="mt-4 h-px w-full bg-gradient-to-r from-[#d79b20]/30 to-transparent"></div>
 
               <div className="mt-4 flex-1">
-                <p className="text-sm leading-relaxed text-slate-500">
-                  Office No. 5, Plot No. 39/41,
-                  <br />
-                  [Office Address Line 1 - PLEASE UPDATE]
-                  <br />
-                  [Office Address Line 2 - PLEASE UPDATE]
-                  <br />
-                  [Office Address Line 3 - PLEASE UPDATE]
-                  <br />
-                  [City - PIN - PLEASE UPDATE]
-                </p>
+                <div className="flex items-start gap-3 text-sm text-slate-500">
+                  <MapPin className="w-4 h-4 text-[#d79b20] flex-shrink-0 mt-0.5" />
+                  <p className="leading-relaxed">
+                    1st Floor, New No.22 Old No.44,
+                    <br />
+                    Post Office Street, Parrys,
+                    <br />
+                    Chennai - 600001, Tamil Nadu
+                  </p>
+                </div>
+                <div className="mt-3 flex items-start gap-3 text-sm text-slate-500">
+                  <Phone className="w-4 h-4 text-[#d79b20] flex-shrink-0 mt-0.5" />
+                  <div>
+                    <a
+                      href="tel:+919167631676"
+                      className="block hover:text-[#d79b20] transition-colors"
+                    >
+                      +91 9167631676
+                    </a>
+                    <a
+                      href="tel:+919967078222"
+                      className="block hover:text-[#d79b20] transition-colors mt-0.5"
+                    >
+                      +91 9967078222
+                    </a>
+                  </div>
+                </div>
+                <div className="mt-3 flex items-start gap-3 text-sm text-slate-500">
+                  <MessageCircle className="w-4 h-4 text-[#d79b20] flex-shrink-0 mt-0.5" />
+                  <div>
+                    <a
+                      href="https://wa.me/919167631676"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block hover:text-[#d79b20] transition-colors"
+                    >
+                      +91 9167631676
+                    </a>
+                    <a
+                      href="https://wa.me/919967078222"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block hover:text-[#d79b20] transition-colors mt-0.5"
+                    >
+                      +91 9967078222
+                    </a>
+                  </div>
+                </div>
+                <div className="mt-3 flex items-start gap-3 text-sm text-slate-500">
+                  <Mail className="w-4 h-4 text-[#d79b20] flex-shrink-0 mt-0.5" />
+                  <a
+                    href="mailto:info@jinduttmetal.com"
+                    className="hover:text-[#d79b20] transition-colors break-all"
+                  >
+                    info@jinduttmetal.com
+                  </a>
+                </div>
               </div>
             </motion.div>
 
-            {/* Card 2 */}
+            {/* Card 2 - Manufacturing & Logistics (Updated) */}
             <motion.div
               initial={{ opacity: 0, y: 80 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -252,15 +361,46 @@ const Contact = () => {
               <div className="mt-4 h-px w-full bg-gradient-to-r from-[#d79b20]/30 to-transparent"></div>
 
               <div className="mt-4 flex-1">
-                <p className="text-sm leading-relaxed text-slate-500">
-                  Unit No. 1661, Kalamboli Steel Market Yard, Kalamboli, Panvel,
-                  <br />
-                  Navi [City, State - PIN - PLEASE UPDATE]
-                </p>
+                <div className="flex items-start gap-3 text-sm text-slate-500">
+                  <MapPin className="w-4 h-4 text-[#d79b20] flex-shrink-0 mt-0.5" />
+                  <p className="leading-relaxed">
+                    333-9, Post Office St, Mannadi,
+                    <br />
+                    George Town, Chennai,
+                    <br />
+                    Greater Chennai, Tamil Nadu 600001
+                  </p>
+                </div>
+                <div className="mt-3 flex items-start gap-3 text-sm text-slate-500">
+                  <Phone className="w-4 h-4 text-[#d79b20] flex-shrink-0 mt-0.5" />
+                  <div>
+                    <a
+                      href="tel:+919167631676"
+                      className="block hover:text-[#d79b20] transition-colors"
+                    >
+                      +91 9167631676
+                    </a>
+                    <a
+                      href="tel:+919967078222"
+                      className="block hover:text-[#d79b20] transition-colors mt-0.5"
+                    >
+                      +91 9967078222
+                    </a>
+                  </div>
+                </div>
+                <div className="mt-3 flex items-start gap-3 text-sm text-slate-500">
+                  <Mail className="w-4 h-4 text-[#d79b20] flex-shrink-0 mt-0.5" />
+                  <a
+                    href="mailto:info@jinduttmetal.com"
+                    className="hover:text-[#d79b20] transition-colors break-all"
+                  >
+                    info@jinduttmetal.com
+                  </a>
+                </div>
               </div>
             </motion.div>
 
-            {/* Card 3 */}
+            {/* Card 3 - Central Communications (Updated) */}
             <motion.div
               initial={{ opacity: 0, y: 80 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -289,40 +429,40 @@ const Contact = () => {
 
               <div className="mt-4 flex-1 space-y-3">
                 <a
-                  href="https://wa.me/919967078222"
+                  href="https://wa.me/919167631676"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-col hover:text-[#d79b20] transition-colors group/link"
                 >
                   <span className="text-xs text-[#d79b20] font-semibold uppercase tracking-wider">
-                    Mobile Network
+                    WhatsApp
                   </span>
                   <span className="text-sm text-slate-600 group-hover/link:text-[#d79b20] transition-colors">
-                    +91 90306 41798
+                    +91 9167631676 / +91 9967078222
                   </span>
                 </a>
 
                 <a
-                  href="tel:+912200000000"
+                  href="tel:+919167631676"
                   className="flex flex-col hover:text-[#d79b20] transition-colors group/link"
                 >
                   <span className="text-xs text-[#d79b20] font-semibold uppercase tracking-wider">
-                    Domestic Line
+                    Phone Numbers
                   </span>
                   <span className="text-sm text-slate-600 group-hover/link:text-[#d79b20] transition-colors">
-                    +91 22 4688 1798
+                    +91 9167631676 / +91 9967078222
                   </span>
                 </a>
 
                 <a
-                  href="mailto:info@jinduttmetalalloy.com"
+                  href="mailto:info@jinduttmetal.com"
                   className="flex flex-col hover:text-[#d79b20] transition-colors group/link"
                 >
                   <span className="text-xs text-[#d79b20] font-semibold uppercase tracking-wider">
                     Secure Email
                   </span>
                   <span className="text-sm text-slate-600 group-hover/link:text-[#d79b20] transition-colors break-all">
-                    info@jinduttmetalalloy.com
+                    info@jinduttmetal.com
                   </span>
                 </a>
               </div>
@@ -351,7 +491,7 @@ const Contact = () => {
               </span>
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-black text-[#0a1a52] tracking-tight">
+            <h2 className="text-3xl uppercase  md:text-4xl font-black text-[#0a1a52] tracking-tight">
               Transmit Technical
               <span className="text-[#d79b20] block mt-1">Inquiry</span>
             </h2>
@@ -368,7 +508,7 @@ const Contact = () => {
               <div className="mt-4 rounded-xl bg-red-50 border border-red-200 p-4 text-red-700 text-sm font-medium flex items-center gap-2">
                 <span className="text-lg">⚠️</span>
                 Failed to open email client. Please contact us directly at
-                info@jinduttmetalalloy.com
+                info@jinduttmetal.com
               </div>
             )}
 
@@ -532,7 +672,7 @@ const Contact = () => {
                 </span>
 
                 <h3 className="mt-3 text-xl font-bold tracking-wide text-white">
-                  MR. RAMESH PATEL
+                  MR. NAGARAM HARIRAM PARMAR
                 </h3>
                 <p className="text-slate-400 text-xs mt-1 uppercase tracking-wider font-medium">
                   Head of Operations
@@ -540,26 +680,52 @@ const Contact = () => {
 
                 <div className="mt-5 space-y-3">
                   <a
-                    href="tel:+91 00000 00000"
+                    href="tel:+919167631676"
                     className="flex items-center gap-3 text-slate-200 hover:text-white transition-colors group/link bg-white/5 p-2.5 rounded-xl border border-white/5 hover:bg-white/10"
                   >
                     <div className="bg-[#d79b20]/20 p-2 rounded-lg text-[#d79b20] group-hover/link:bg-[#d79b20] group-hover/link:text-white transition-colors">
                       <Phone size={16} />
                     </div>
                     <span className="font-medium tracking-wide text-sm">
-                      +91 98206 41798
+                      +91 9167631676
                     </span>
                   </a>
 
                   <a
-                    href="mailto:info@jinduttmetalalloy.com"
+                    href="tel:+919967078222"
+                    className="flex items-center gap-3 text-slate-200 hover:text-white transition-colors group/link bg-white/5 p-2.5 rounded-xl border border-white/5 hover:bg-white/10"
+                  >
+                    <div className="bg-[#d79b20]/20 p-2 rounded-lg text-[#d79b20] group-hover/link:bg-[#d79b20] group-hover/link:text-white transition-colors">
+                      <Phone size={16} />
+                    </div>
+                    <span className="font-medium tracking-wide text-sm">
+                      +91 9967078222
+                    </span>
+                  </a>
+
+                  <a
+                    href="https://wa.me/919167631676"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 text-slate-200 hover:text-white transition-colors group/link bg-white/5 p-2.5 rounded-xl border border-white/5 hover:bg-white/10"
+                  >
+                    <div className="bg-[#d79b20]/20 p-2 rounded-lg text-[#d79b20] group-hover/link:bg-[#d79b20] group-hover/link:text-white transition-colors">
+                      <MessageCircle size={16} />
+                    </div>
+                    <span className="font-medium tracking-wide text-sm">
+                      WhatsApp: +91 9167631676
+                    </span>
+                  </a>
+
+                  <a
+                    href="mailto:info@jinduttmetal.com"
                     className="flex items-center gap-3 text-slate-200 hover:text-white transition-colors group/link bg-white/5 p-2.5 rounded-xl border border-white/5 hover:bg-white/10"
                   >
                     <div className="bg-[#d79b20]/20 p-2 rounded-lg text-[#d79b20] group-hover/link:bg-[#d79b20] group-hover/link:text-white transition-colors">
                       <Mail size={16} />
                     </div>
                     <span className="font-medium tracking-wide text-sm">
-                      info@jinduttmetalalloy.com
+                      info@jinduttmetal.com
                     </span>
                   </a>
                 </div>
@@ -616,7 +782,7 @@ const Contact = () => {
               <span className="w-10 h-0.5 bg-[#d79b20]"></span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-black text-[#0a1a52]">
+            <h2 className="text-4xl md:text-5xl uppercase font-black text-[#0a1a52]">
               Factory Coordinates Mapping
             </h2>
           </div>
@@ -649,7 +815,7 @@ const Contact = () => {
 
             <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-2xl">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.367940963654!2d72.8255938750855!3d18.959351082221364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7cf1505ae6453%3A0x7e1cf95923fa3d61!2sBhavesh%20Steel!5e0!3m2!1sen!2sin!4v1783173881123!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.586965741859!2d80.2782993748848!3d13.086897587250059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526f6e55f12655%3A0xbcf999ea90d4d043!2s333-9%2C%20Post%20Office%20St%2C%20Mannadi%2C%20George%20Town%2C%20Chennai%2C%20Greater%20Chennai%2C%20Tamil%20Nadu%20600001!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                 width="100%"
                 height="620"
                 style={{ border: 0 }}
@@ -675,21 +841,37 @@ const Contact = () => {
                   Head Office
                 </h3>
                 <p className="mt-3 leading-7 text-slate-300 text-sm">
-                  Office No. 5, Plot No. 39/41,
+                  1st Floor, New No.22 Old No.44,
                   <br />
-                  [Office Address Line 1 - PLEASE UPDATE]
+                  Post Office Street, Parrys,
                   <br />
-                  [Office Address Line 2 - PLEASE UPDATE]
-                  <br />
-                  [Office Address Line 3 - PLEASE UPDATE]
-                  <br />
-                  [City - PIN - PLEASE UPDATE]
+                  Chennai - 600001, Tamil Nadu
                 </p>
+                <div className="mt-3 flex flex-wrap gap-4 text-sm">
+                  <a
+                    href="tel:+919167631676"
+                    className="text-slate-300 hover:text-[#d79b20] transition-colors flex items-center gap-2"
+                  >
+                    <Phone size={14} /> +91 9167631676
+                  </a>
+                  <a
+                    href="tel:+919967078222"
+                    className="text-slate-300 hover:text-[#d79b20] transition-colors flex items-center gap-2"
+                  >
+                    <Phone size={14} /> +91 9967078222
+                  </a>
+                  <a
+                    href="mailto:info@jinduttmetal.com"
+                    className="text-slate-300 hover:text-[#d79b20] transition-colors flex items-center gap-2"
+                  >
+                    <Mail size={14} /> info@jinduttmetal.com
+                  </a>
+                </div>
               </div>
             </div>
 
             <a
-              href="https://maps.google.com/?q=[JINDUTT-ADDRESS-PLACEHOLDER]"
+              href="https://maps.app.goo.gl/EQLmXyu12hGPeuM77?g_st=ac"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 rounded-full bg-[#d79b20] hover:bg-[#c08a1a] px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#d79b20]/25"
@@ -709,8 +891,8 @@ const Contact = () => {
           <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#d79b20] flex-shrink-0">
             <Diamond size={16} className="text-[#0a1a52] fill-[#0a1a52]" />
           </span>
-          Operational Warehouse Target: Unit No. 1661, Kalamboli Steel Market
-          Yard, Kalamboli, Panvel, Navi [City, State - PIN - PLEASE UPDATE]
+          Operational Warehouse: 333-9, Post Office St, Mannadi, George Town,
+          Chennai, Greater Chennai, Tamil Nadu 600001
         </h6>
       </section>
     </>

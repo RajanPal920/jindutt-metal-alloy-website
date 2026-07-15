@@ -317,7 +317,7 @@ const TitaniumSheets = () => {
       { name: "Industrial Strips", slug: "strips" },
     ],
 
-    shopByMaterial: [
+       shopByMaterial: [
       { name: "Copper Nickel", slug: "copper-nickel" },
       { name: "Duplex Steel", slug: "duplex-steel" },
       { name: "Hastelloy", slug: "hastelloy" },
@@ -325,8 +325,8 @@ const TitaniumSheets = () => {
       { name: "Inconel", slug: "inconel" },
       { name: "Monel", slug: "monel" },
       { name: "Nickel Alloy", slug: "nickel-alloy" },
-      { name: "Other Materials", slug: "other-meterials" },
-      { name: "Sanico", slug: "sanico" },
+      { name: "Other Materials", slug: "other-materials" },
+      { name: "Sanicro", slug: "sanicro" },
       { name: "Special Materials", slug: "special-materials" },
       { name: "Stainless Steel", slug: "stainless-steel" },
       { name: "Titanium", slug: "titanium" },

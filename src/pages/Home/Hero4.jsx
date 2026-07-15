@@ -738,7 +738,7 @@ const Hero4 = () => {
               {/* Main Image */}
               <div className="relative rounded-2xl overflow-hidden">
                 <img
-                  className="w-full h-[350px] md:h-[450px] lg:h-[500px] object-cover object-center transition-transform duration-700 hover:scale-105"
+                  className="w-full h-[350px] md:h-[450px] lg:h-[500px] object-contain bg-white transition-transform duration-700 hover:scale-105"
                   src={rpmexport}
                   alt="Jindutt Metal & Alloy Pvt. Ltd."
                 />

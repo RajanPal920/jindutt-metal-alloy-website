@@ -28,32 +28,40 @@ const About = () => {
       {/* =============================== */}
       {/* HERO SECTION - FIXED IMAGE ALIGNMENT */}
       {/* =============================== */}
-      <section className="relative w-full min-h-[90vh] flex items-center pt-20 lg:pt-24 overflow-hidden">
-        {/* Background Image Container */}
-        <div className="absolute inset-0 w-full h-full">
+      <section className="relative w-full min-h-[900px] lg:min-h-[950px] overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0">
           <img
             src={heroBg}
             alt="Jindutt Metal & Alloy Hero Background"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
           />
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1a52]/90 to-[#0a1a52]/70"></div>
+
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1a52]/90 via-[#0a1a52]/75 to-[#0a1a52]/50"></div>
+
+          {/* Pattern */}
           <div className="absolute inset-0 bg-[url('/src/assets/images/pattern-dots.svg')] opacity-10"></div>
         </div>
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 py-12 lg:py-16">
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-28 pb-40">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-4">
               <span className="w-12 h-0.5 bg-[#d79b20]"></span>
+
               <span className="text-[#d79b20] text-sm font-semibold uppercase tracking-widest">
                 Global Metal Supplies & Exporter
               </span>
             </div>
 
-            <h1 className="text-white font-black text-4xl md:text-6xl lg:text-7xl leading-[1.1] mt-4">
-              ENGINEERED FOR <br />
-              <span className="text-[#d79b20]">PERFORMANCE.</span> <br />
-              BUILT FOR GLOBAL <br />
+            <h1 className="text-white font-black text-4xl md:text-6xl lg:text-7xl leading-[1.1]">
+              ENGINEERED FOR
+              <br />
+              <span className="text-[#d79b20]">PERFORMANCE.</span>
+              <br />
+              BUILT FOR GLOBAL
+              <br />
               <span className="text-[#d79b20]">INDUSTRY.</span>
             </h1>
 
@@ -67,51 +75,62 @@ const About = () => {
             <div className="flex flex-wrap gap-4 mt-8">
               <Link
                 to="/products"
-                className="bg-[#d79b20] hover:bg-[#c08a1a] text-white font-semibold px-8 py-3.5 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#d79b20]/25"
+                className="bg-[#d79b20] hover:bg-[#c08a1a] text-white font-semibold px-8 py-3.5 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#d79b20]/30"
               >
                 Explore Products
               </Link>
+
               <Link
                 to="/contact"
-                className="border-2 border-white/30 hover:border-white text-white font-semibold px-8 py-3.5 rounded-xl transition-all duration-300 hover:bg-white/10"
+                className="border-2 border-white/30 hover:border-white hover:bg-white/10 text-white font-semibold px-8 py-3.5 rounded-xl transition-all duration-300"
               >
                 Get a Quote
               </Link>
             </div>
           </div>
+        </div>
 
-          {/* STATS SECTION */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all group">
-              <div className="w-12 h-12 rounded-xl bg-[#d79b20]/20 flex items-center justify-center mb-3 group-hover:bg-[#d79b20]/30 transition-colors">
-                <FaGlobe className="w-5 h-5 text-[#d79b20]" />
+        {/* Stats Cards */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 w-full max-w-7xl px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+            <div className="rounded-2xl bg-white/10 backdrop-blur-xl border border-white/10 p-6 transition duration-300 hover:bg-white/15">
+              <div className="w-12 h-12 rounded-xl bg-[#d79b20]/20 flex items-center justify-center mb-4">
+                <FaGlobe className="text-[#d79b20] text-xl" />
               </div>
+
               <h2 className="text-3xl font-bold text-white">50+</h2>
-              <p className="text-slate-300 text-sm mt-1">Countries Served</p>
+
+              <p className="text-slate-300 text-sm mt-2">Countries Served</p>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all group">
-              <div className="w-12 h-12 rounded-xl bg-[#d79b20]/20 flex items-center justify-center mb-3 group-hover:bg-[#d79b20]/30 transition-colors">
-                <FaBoxes className="w-5 h-5 text-[#d79b20]" />
+            <div className="rounded-2xl bg-white/10 backdrop-blur-xl border border-white/10 p-6 transition duration-300 hover:bg-white/15">
+              <div className="w-12 h-12 rounded-xl bg-[#d79b20]/20 flex items-center justify-center mb-4">
+                <FaBoxes className="text-[#d79b20] text-xl" />
               </div>
+
               <h2 className="text-3xl font-bold text-white">5000+</h2>
-              <p className="text-slate-300 text-sm mt-1">Product Variants</p>
+
+              <p className="text-slate-300 text-sm mt-2">Product Variants</p>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all group">
-              <div className="w-12 h-12 rounded-xl bg-[#d79b20]/20 flex items-center justify-center mb-3 group-hover:bg-[#d79b20]/30 transition-colors">
-                <FaAward className="w-5 h-5 text-[#d79b20]" />
+            <div className="rounded-2xl bg-white/10 backdrop-blur-xl border border-white/10 p-6 transition duration-300 hover:bg-white/15">
+              <div className="w-12 h-12 rounded-xl bg-[#d79b20]/20 flex items-center justify-center mb-4">
+                <FaAward className="text-[#d79b20] text-xl" />
               </div>
+
               <h2 className="text-3xl font-bold text-white">ISO</h2>
-              <p className="text-slate-300 text-sm mt-1">Certified Quality</p>
+
+              <p className="text-slate-300 text-sm mt-2">Certified Quality</p>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all group">
-              <div className="w-12 h-12 rounded-xl bg-[#d79b20]/20 flex items-center justify-center mb-3 group-hover:bg-[#d79b20]/30 transition-colors">
-                <FaHeadset className="w-5 h-5 text-[#d79b20]" />
+            <div className="rounded-2xl bg-white/10 backdrop-blur-xl border border-white/10 p-6 transition duration-300 hover:bg-white/15">
+              <div className="w-12 h-12 rounded-xl bg-[#d79b20]/20 flex items-center justify-center mb-4">
+                <FaHeadset className="text-[#d79b20] text-xl" />
               </div>
+
               <h2 className="text-3xl font-bold text-white">24/7</h2>
-              <p className="text-slate-300 text-sm mt-1">Customer Support</p>
+
+              <p className="text-slate-300 text-sm mt-2">Customer Support</p>
             </div>
           </div>
         </div>
@@ -123,9 +142,9 @@ const About = () => {
       <section className="w-full py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* IMAGE SECTION */}
-            <div className="relative order-1 lg:order-1">
-              <div className="relative">
+            {/* IMAGE SECTION - LEFT SIDE */}
+            <div className="relative order-1 lg:order-1 flex justify-center lg:justify-start">
+              <div className="relative w-full max-w-[500px] lg:max-w-full">
                 {/* Decorative Background Elements */}
                 <div className="absolute -top-6 -left-6 w-20 h-20 md:w-24 md:h-24 border-4 border-[#d79b20] rounded-2xl opacity-20"></div>
                 <div className="absolute -bottom-6 -right-6 w-24 h-24 md:w-32 md:h-32 border-4 border-[#d79b20]/30 rounded-2xl opacity-20"></div>
@@ -134,26 +153,16 @@ const About = () => {
                 <div className="absolute -inset-4 bg-gradient-to-br from-[#d79b20]/10 to-[#0a1a52]/10 rounded-3xl blur-2xl"></div>
 
                 {/* Main Image */}
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[520px]">
                   <img
                     src={workshop}
-                    alt="Jindutt Metal & Alloy Workshop"
-                    className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover transition-transform duration-700 hover:scale-105"
+                    alt="Workshop"
+                    className="w-full h-[520px] object-fill"
                   />
-
-                  {/* Image Overlay Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1a52]/30 via-transparent to-transparent"></div>
-
-                  {/* Play Button Overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#d79b20] flex items-center justify-center shadow-2xl cursor-pointer hover:scale-110 transition-transform duration-300 group">
-                      <FaPlay className="w-6 h-6 md:w-8 md:h-8 text-white ml-0.5 md:ml-1 group-hover:scale-110 transition-transform" />
-                    </div>
-                  </div>
                 </div>
 
                 {/* Floating Badge Cards */}
-                <div className="absolute -bottom-3 left-3 md:-bottom-4 md:left-8 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-3 md:p-4 lg:p-6 border border-[#d79b20]/10 flex items-center gap-3 md:gap-4">
+                {/* <div className="absolute -bottom-3 left-3 md:-bottom-4 md:left-8 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-3 md:p-4 lg:p-5 border border-[#d79b20]/10 flex items-center gap-3 md:gap-4">
                   <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#d79b20]/10 flex items-center justify-center flex-shrink-0">
                     <FaTrophy className="w-5 h-5 md:w-6 md:h-6 text-[#d79b20]" />
                   </div>
@@ -165,9 +174,9 @@ const About = () => {
                       Industry Experience
                     </p>
                   </div>
-                </div>
+                </div> */}
 
-                <div className="absolute -top-3 right-3 md:-top-4 md:right-8 bg-[#0a1a52]/95 backdrop-blur-sm rounded-2xl shadow-2xl p-3 md:p-4 border border-[#d79b20]/20 hidden sm:flex items-center gap-2 md:gap-3">
+                {/* <div className="absolute -top-3 right-3 opacity-20 md:-top-4 md:right-8 bg-[#0a1a52]/95 backdrop-blur-sm rounded-2xl shadow-2xl p-3 md:p-4 border border-[#d79b20]/20 hidden sm:flex items-center gap-2 md:gap-3">
                   <div className="flex -space-x-2">
                     <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-[#d79b20] border-2 border-white flex items-center justify-center text-white text-[10px] md:text-xs font-bold">
                       J
@@ -187,14 +196,14 @@ const About = () => {
                       100+ Experts
                     </p>
                   </div>
-                </div>
+                </div> */}
               </div>
 
               {/* Decorative Dots Pattern */}
               <div className="absolute -z-10 top-1/2 -translate-y-1/2 -right-6 md:-right-8 w-24 h-24 md:w-32 md:h-32 bg-[url('/src/assets/images/pattern-dots.svg')] opacity-10"></div>
             </div>
 
-            {/* TEXT SECTION */}
+            {/* TEXT SECTION - RIGHT SIDE */}
             <div className="order-2 lg:order-2">
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-12 h-0.5 bg-[#d79b20]"></span>

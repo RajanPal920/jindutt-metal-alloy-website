@@ -1,5 +1,5 @@
 // src/pages/Certificates/CertificateDetails.jsx
-import React from "react";
+import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import {
   ArrowLeft,
@@ -16,6 +16,7 @@ import certificates from "../../data/certificates";
 
 const CertificateDetails = () => {
   const { slug } = useParams();
+  const [isLoading, setIsLoading] = useState(true);
 
   const certificate = certificates.find((c) => c.slug === slug);
 
@@ -91,7 +92,7 @@ const CertificateDetails = () => {
             <div className="flex flex-wrap items-center gap-6 mt-6">
               <div className="flex items-center gap-2 text-sm text-slate-300">
                 <Award className="w-4 h-4 text-[#d79b20]" />
-                <span>ISO Certified</span>
+                <span>Verified Document</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-slate-300">
                 <Star className="w-4 h-4 text-[#d79b20]" />
@@ -99,7 +100,7 @@ const CertificateDetails = () => {
               </div>
               <div className="flex items-center gap-2 text-sm text-slate-300">
                 <CheckCircle className="w-4 h-4 text-[#d79b20]" />
-                <span>Verified Document</span>
+                <span>Official Copy</span>
               </div>
             </div>
           </div>
@@ -137,7 +138,7 @@ const CertificateDetails = () => {
 
               <a
                 href={certificate.pdf}
-                download
+                download={`${certificate.name}.pdf`}
                 className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#0a1a52] to-[#1a3a7a] px-6 py-3 text-sm font-semibold text-white hover:shadow-lg hover:shadow-[#0a1a52]/25 transition-all duration-200 hover:-translate-y-0.5"
               >
                 <Download className="w-4 h-4" />
@@ -157,18 +158,23 @@ const CertificateDetails = () => {
           {/* PDF VIEWER */}
           <div className="bg-slate-100 relative">
             {/* PDF Loading Indicator */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="text-center">
-                <div className="w-12 h-12 border-4 border-[#d79b20]/20 border-t-[#d79b20] rounded-full animate-spin mx-auto mb-4"></div>
-                <p className="text-slate-400 text-sm">Loading certificate...</p>
+            {isLoading && (
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="text-center">
+                  <div className="w-12 h-12 border-4 border-[#d79b20]/20 border-t-[#d79b20] rounded-full animate-spin mx-auto mb-4"></div>
+                  <p className="text-slate-400 text-sm">
+                    Loading certificate...
+                  </p>
+                </div>
               </div>
-            </div>
+            )}
 
             <iframe
               src={`${certificate.pdf}#toolbar=1`}
               className="w-full h-[650px] md:h-[900px] relative z-10"
               title={certificate.name}
               loading="lazy"
+              onLoad={() => setIsLoading(false)}
             />
           </div>
 
@@ -176,7 +182,7 @@ const CertificateDetails = () => {
           <div className="border-t border-slate-200 px-6 md:px-8 py-4 bg-slate-50/80 flex flex-col sm:flex-row justify-between items-center gap-3">
             <div className="flex items-center gap-2 text-xs text-slate-500">
               <ShieldCheck className="w-3.5 h-3.5 text-[#d79b20]" />
-              <span>Document verified • ISO 9001:2015 Certified</span>
+              <span>Document verified • Official Certificate</span>
             </div>
             <div className="text-xs text-slate-400">
               Last updated: {new Date().toLocaleDateString()}
@@ -185,37 +191,39 @@ const CertificateDetails = () => {
         </div>
 
         {/* Related Certificates */}
-        <div className="mt-12">
-          <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#0a1a52] mb-4">
-            Other Certificates
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {certificates
-              .filter((c) => c.slug !== slug)
-              .slice(0, 4)
-              .map((cert) => (
-                <Link
-                  key={cert.slug}
-                  to={`/certificates/${cert.slug}`}
-                  className="group bg-white rounded-xl p-4 border border-slate-200 hover:border-[#d79b20]/40 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-[#d79b20]/10 flex items-center justify-center flex-shrink-0">
-                      <ShieldCheck className="w-4 h-4 text-[#d79b20]" />
+        {certificates.filter((c) => c.slug !== slug).length > 0 && (
+          <div className="mt-12">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#0a1a52] mb-4">
+              Other Certificates
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {certificates
+                .filter((c) => c.slug !== slug)
+                .slice(0, 4)
+                .map((cert) => (
+                  <Link
+                    key={cert.slug}
+                    to={`/certificates/${cert.slug}`}
+                    className="group bg-white rounded-xl p-4 border border-slate-200 hover:border-[#d79b20]/40 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-[#d79b20]/10 flex items-center justify-center flex-shrink-0">
+                        <ShieldCheck className="w-4 h-4 text-[#d79b20]" />
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-semibold text-[#0a1a52] group-hover:text-[#d79b20] transition-colors line-clamp-1">
+                          {cert.name}
+                        </h4>
+                        <p className="text-xs text-slate-500 line-clamp-1">
+                          View Certificate
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-sm font-semibold text-[#0a1a52] group-hover:text-[#d79b20] transition-colors line-clamp-1">
-                        {cert.name}
-                      </h4>
-                      <p className="text-xs text-slate-500 line-clamp-1">
-                        View Certificate
-                      </p>
-                    </div>
-                  </div>
-                </Link>
-              ))}
+                  </Link>
+                ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
