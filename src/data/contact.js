@@ -16,7 +16,7 @@ const contact = {
   },
   email: "info@jinduttmetal.com",
   mapLink: "https://maps.app.goo.gl/EQLmXyu12hGPeuM77?g_st=ac",
-  // ✅ FIXED: Add fallback string values
+ 
   phoneString: "+91 9167631676",
   whatsappString: "+91 9167631676",
 };

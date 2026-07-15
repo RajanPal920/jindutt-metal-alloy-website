@@ -18,7 +18,6 @@ import {
   getMailToUrl,
   getTelUrl,
 } from "../../utils/contactHelpers";
-s;
 
 // Stock Availability Images (using sheet-specific or unified images)
 import hotRolledSheetsImage from "../../assets/images/stock/hot-rolled-sheets.jpg";
