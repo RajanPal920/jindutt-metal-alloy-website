@@ -1,5 +1,5 @@
 // src/pages/Contact/Contact.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import heroBg from "../../assets/images/industries/main-banner.webp";
 import {
   Building2,
@@ -13,13 +13,13 @@ import {
   MapPin,
   Navigation,
   Diamond,
-  ArrowRight,
   ShieldCheck,
   CheckCircle,
   Loader2,
   MessageCircle,
+  X,
 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import logo from "../../assets/images/logo/jindutt-logo.png";
 import testimonials from "../../data/testimonials";
 
@@ -33,7 +33,28 @@ const Contact = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [showError, setShowError] = useState(false);
+
+  // Auto-hide success toast after 6 seconds
+  useEffect(() => {
+    if (showSuccess) {
+      const timer = setTimeout(() => {
+        setShowSuccess(false);
+      }, 6000);
+      return () => clearTimeout(timer);
+    }
+  }, [showSuccess]);
+
+  // Auto-hide error toast after 5 seconds
+  useEffect(() => {
+    if (showError) {
+      const timer = setTimeout(() => {
+        setShowError(false);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [showError]);
 
   const leftVariant = {
     hidden: { opacity: 0, x: -100 },
@@ -50,7 +71,6 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Mailto Link Handler - Opens default email client
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -72,14 +92,15 @@ const Contact = () => {
         `---------- %0A` +
         `This inquiry was sent from the Jindutt Metal & Alloy Website Contact Form`;
 
-      // Create mailto link with new email
+      // Create mailto link
       const mailtoLink = `mailto:info@jinduttmetal.com?subject=${encodeURIComponent(subject)}&body=${body}`;
 
       // Open default email client
       window.location.href = mailtoLink;
 
       // Show success message
-      setSubmitStatus("success");
+      setShowSuccess(true);
+      setShowError(false);
 
       // Reset form
       setFormData({
@@ -89,22 +110,144 @@ const Contact = () => {
         specification: "",
         message: "",
       });
-
-      // Reset success message after 5 seconds
-      setTimeout(() => setSubmitStatus(null), 5000);
     } catch (error) {
       console.error("Form submission error:", error);
-      setSubmitStatus("error");
-      setTimeout(() => setSubmitStatus(null), 5000);
+      setShowError(true);
+      setShowSuccess(false);
     } finally {
       setIsSubmitting(false);
     }
   };
 
+  // Close toasts manually
+  const closeSuccessToast = () => {
+    setShowSuccess(false);
+  };
+
+  const closeErrorToast = () => {
+    setShowError(false);
+  };
+
   return (
     <>
       {/* =============================== */}
-      {/* HERO SECTION - Premium */}
+      {/* SUCCESS TOAST - Floating Notification */}
+      {/* =============================== */}
+      <AnimatePresence>
+        {showSuccess && (
+          <motion.div
+            initial={{ opacity: 0, y: -50, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -50, scale: 0.9 }}
+            transition={{ duration: 0.4, type: "spring", stiffness: 300 }}
+            className="fixed top-6 left-1/2 -translate-x-1/2 z-[9999] w-full max-w-lg mx-4"
+          >
+            <div className="relative bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-2xl shadow-2xl p-5 overflow-hidden">
+              {/* Success Animation Bars */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-400 to-emerald-500"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/5 rounded-full blur-2xl -mr-10 -mt-10"></div>
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl -ml-10 -mb-10"></div>
+
+              <div className="relative flex items-start gap-4">
+                {/* Icon */}
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center border border-green-200">
+                    <CheckCircle className="w-6 h-6 text-green-500" />
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 min-w-0">
+                  <h4 className="text-sm font-bold text-green-800 uppercase tracking-wider">
+                    Email Prepared Successfully!
+                  </h4>
+                  <p className="text-sm text-green-700 mt-1 leading-relaxed">
+                    Your inquiry has been prepared. Please check your email
+                    client to send the message.
+                  </p>
+                  <div className="mt-2 flex items-center gap-2 text-xs text-green-600">
+                    <span className="inline-block w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    <span>Redirecting to your email client...</span>
+                  </div>
+                </div>
+
+                {/* Close Button */}
+                <button
+                  onClick={closeSuccessToast}
+                  className="flex-shrink-0 p-1 hover:bg-green-200/50 rounded-lg transition-colors text-green-600"
+                  aria-label="Close notification"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Progress Bar - Auto dismiss indicator */}
+              <div className="relative mt-3 w-full h-1 bg-green-200 rounded-full overflow-hidden">
+                <motion.div
+                  initial={{ width: "100%" }}
+                  animate={{ width: "0%" }}
+                  transition={{ duration: 6, ease: "linear" }}
+                  className="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full"
+                />
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* =============================== */}
+      {/* ERROR TOAST */}
+      {/* =============================== */}
+      <AnimatePresence>
+        {showError && (
+          <motion.div
+            initial={{ opacity: 0, y: -50, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -50, scale: 0.9 }}
+            transition={{ duration: 0.4, type: "spring", stiffness: 300 }}
+            className="fixed top-6 left-1/2 -translate-x-1/2 z-[9999] w-full max-w-lg mx-4"
+          >
+            <div className="relative bg-gradient-to-r from-red-50 to-rose-50 border border-red-200 rounded-2xl shadow-2xl p-5 overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-400 to-rose-500"></div>
+
+              <div className="relative flex items-start gap-4">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center border border-red-200">
+                    <span className="text-2xl">⚠️</span>
+                  </div>
+                </div>
+
+                <div className="flex-1 min-w-0">
+                  <h4 className="text-sm font-bold text-red-800 uppercase tracking-wider">
+                    Failed to Open Email
+                  </h4>
+                  <p className="text-sm text-red-700 mt-1 leading-relaxed">
+                    Unable to open your email client. Please contact us directly
+                    at{" "}
+                    <a
+                      href="mailto:info@jinduttmetal.com"
+                      className="font-bold underline hover:text-red-900"
+                    >
+                      info@jinduttmetal.com
+                    </a>
+                  </p>
+                </div>
+
+                <button
+                  onClick={closeErrorToast}
+                  className="flex-shrink-0 p-1 hover:bg-red-200/50 rounded-lg transition-colors text-red-600"
+                  aria-label="Close notification"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* =============================== */}
+      {/* HERO SECTION */}
       {/* =============================== */}
       <section
         className="relative w-full min-h-[70vh] flex items-center"
@@ -162,7 +305,7 @@ const Contact = () => {
       </section>
 
       {/* =============================== */}
-      {/* TESTIMONIALS SECTION - NEW */}
+      {/* TESTIMONIALS SECTION */}
       {/* =============================== */}
       <section className="w-full py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
@@ -223,7 +366,7 @@ const Contact = () => {
       </section>
 
       {/* =============================== */}
-      {/* DIRECTORY SECTION - Premium */}
+      {/* DIRECTORY SECTION */}
       {/* =============================== */}
       <section className="w-full py-20 bg-slate-50 relative">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(215,155,32,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(215,155,32,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
@@ -245,7 +388,7 @@ const Contact = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-12 max-w-6xl mx-auto">
-            {/* Card 1 - Head Office (Updated) */}
+            {/* Card 1 - Head Office */}
             <motion.div
               initial={{ opacity: 0, y: 80 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -333,7 +476,7 @@ const Contact = () => {
               </div>
             </motion.div>
 
-            {/* Card 2 - Manufacturing & Logistics (Updated) */}
+            {/* Card 2 - Manufacturing & Logistics */}
             <motion.div
               initial={{ opacity: 0, y: 80 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -400,7 +543,7 @@ const Contact = () => {
               </div>
             </motion.div>
 
-            {/* Card 3 - Central Communications (Updated) */}
+            {/* Card 3 - Central Communications */}
             <motion.div
               initial={{ opacity: 0, y: 80 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -472,7 +615,7 @@ const Contact = () => {
       </section>
 
       {/* =============================== */}
-      {/* FORM & INFO SECTION - Premium */}
+      {/* FORM & INFO SECTION */}
       {/* =============================== */}
       <section className="w-full bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.5fr_1fr] shadow-2xl">
@@ -491,26 +634,10 @@ const Contact = () => {
               </span>
             </div>
 
-            <h2 className="text-3xl uppercase  md:text-4xl font-black text-[#0a1a52] tracking-tight">
+            <h2 className="text-3xl uppercase md:text-4xl font-black text-[#0a1a52] tracking-tight">
               Transmit Technical
               <span className="text-[#d79b20] block mt-1">Inquiry</span>
             </h2>
-
-            {/* Submit Status Messages */}
-            {submitStatus === "success" && (
-              <div className="mt-4 rounded-xl bg-green-50 border border-green-200 p-4 text-green-700 text-sm font-medium flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-green-500" />
-                Inquiry prepared! Please check your email client to send the
-                message.
-              </div>
-            )}
-            {submitStatus === "error" && (
-              <div className="mt-4 rounded-xl bg-red-50 border border-red-200 p-4 text-red-700 text-sm font-medium flex items-center gap-2">
-                <span className="text-lg">⚠️</span>
-                Failed to open email client. Please contact us directly at
-                info@jinduttmetal.com
-              </div>
-            )}
 
             {/* Info note about email client */}
             <div className="mt-4 rounded-xl bg-blue-50 border border-blue-200 p-3 text-blue-700 text-xs font-medium flex items-center gap-2">
@@ -631,13 +758,13 @@ const Contact = () => {
             </form>
           </motion.div>
 
-          {/* RIGHT SIDE - INFO */}
+          {/* RIGHT SIDE - INFO (Blue themed) */}
           <motion.div
             variants={rightVariant}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="bg-[#0a1a52] p-8 md:p-12 text-white relative overflow-hidden flex flex-col justify-center"
+            className="bg-gradient-to-br from-blue-700 via-blue-600 to-blue-400 p-8 md:p-12 text-white relative overflow-hidden flex flex-col justify-center"
           >
             <div
               className="absolute inset-0 opacity-5 pointer-events-none"
@@ -652,8 +779,8 @@ const Contact = () => {
 
             <div className="relative z-10 h-full flex flex-col justify-center">
               <div className="flex items-center gap-3 mb-4">
-                <span className="w-10 h-0.5 bg-[#d79b20]"></span>
-                <span className="text-xs font-bold tracking-[0.25em] text-[#d79b20] uppercase">
+                <span className="w-10 h-0.5 bg-blue-300"></span>
+                <span className="text-xs font-bold tracking-[0.25em] text-blue-200 uppercase">
                   Global Sales Desk
                 </span>
               </div>
@@ -661,29 +788,29 @@ const Contact = () => {
               <h2 className="text-3xl font-black uppercase leading-tight tracking-tight text-white">
                 Global Sales
                 <br />
-                <span className="text-[#d79b20]">Desk</span>
+                <span className="text-blue-200">Desk</span>
               </h2>
 
-              <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6 shadow-2xl relative overflow-hidden group hover:border-white/20 transition-colors">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#d79b20]/10 rounded-full blur-3xl -mr-10 -mt-10"></div>
+              <div className="mt-6 rounded-2xl border border-white/20 bg-blue-500/20 backdrop-blur-md p-6 shadow-2xl relative overflow-hidden group hover:border-white/30 hover:bg-blue-500/30 transition-all duration-300">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-300/30 rounded-full blur-3xl -mr-10 -mt-10"></div>
 
-                <span className="inline-block rounded-md border border-[#d79b20]/30 bg-[#d79b20]/10 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-[#d79b20]">
+                <span className="inline-block rounded-md border border-blue-300/30 bg-blue-400/30 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-blue-200">
                   INT_SALES_NODE
                 </span>
 
-                <h3 className="mt-3 text-xl font-bold tracking-wide text-white">
-                  MR. NAGARAM HARIRAM PARMAR
+                <h3 className="mt-3 text-xl font-bold tracking-wide text-white uppercase">
+                  MR. naresh mali
                 </h3>
-                <p className="text-slate-400 text-xs mt-1 uppercase tracking-wider font-medium">
+                <p className="text-blue-100 text-xs mt-1 uppercase tracking-wider font-medium">
                   Head of Operations
                 </p>
 
                 <div className="mt-5 space-y-3">
                   <a
                     href="tel:+919167631676"
-                    className="flex items-center gap-3 text-slate-200 hover:text-white transition-colors group/link bg-white/5 p-2.5 rounded-xl border border-white/5 hover:bg-white/10"
+                    className="flex items-center gap-3 text-blue-50 hover:text-white transition-all duration-300 group/link bg-white/10 p-2.5 rounded-xl border border-white/10 hover:bg-white/20 hover:border-white/30"
                   >
-                    <div className="bg-[#d79b20]/20 p-2 rounded-lg text-[#d79b20] group-hover/link:bg-[#d79b20] group-hover/link:text-white transition-colors">
+                    <div className="bg-blue-400/40 p-2 rounded-lg text-blue-200 group-hover/link:bg-blue-400 group-hover/link:text-white transition-all duration-300">
                       <Phone size={16} />
                     </div>
                     <span className="font-medium tracking-wide text-sm">
@@ -693,9 +820,9 @@ const Contact = () => {
 
                   <a
                     href="tel:+919967078222"
-                    className="flex items-center gap-3 text-slate-200 hover:text-white transition-colors group/link bg-white/5 p-2.5 rounded-xl border border-white/5 hover:bg-white/10"
+                    className="flex items-center gap-3 text-blue-50 hover:text-white transition-all duration-300 group/link bg-white/10 p-2.5 rounded-xl border border-white/10 hover:bg-white/20 hover:border-white/30"
                   >
-                    <div className="bg-[#d79b20]/20 p-2 rounded-lg text-[#d79b20] group-hover/link:bg-[#d79b20] group-hover/link:text-white transition-colors">
+                    <div className="bg-blue-400/40 p-2 rounded-lg text-blue-200 group-hover/link:bg-blue-400 group-hover/link:text-white transition-all duration-300">
                       <Phone size={16} />
                     </div>
                     <span className="font-medium tracking-wide text-sm">
@@ -707,9 +834,9 @@ const Contact = () => {
                     href="https://wa.me/919167631676"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-slate-200 hover:text-white transition-colors group/link bg-white/5 p-2.5 rounded-xl border border-white/5 hover:bg-white/10"
+                    className="flex items-center gap-3 text-blue-50 hover:text-white transition-all duration-300 group/link bg-white/10 p-2.5 rounded-xl border border-white/10 hover:bg-white/20 hover:border-white/30"
                   >
-                    <div className="bg-[#d79b20]/20 p-2 rounded-lg text-[#d79b20] group-hover/link:bg-[#d79b20] group-hover/link:text-white transition-colors">
+                    <div className="bg-blue-400/40 p-2 rounded-lg text-blue-200 group-hover/link:bg-blue-400 group-hover/link:text-white transition-all duration-300">
                       <MessageCircle size={16} />
                     </div>
                     <span className="font-medium tracking-wide text-sm">
@@ -719,9 +846,9 @@ const Contact = () => {
 
                   <a
                     href="mailto:info@jinduttmetal.com"
-                    className="flex items-center gap-3 text-slate-200 hover:text-white transition-colors group/link bg-white/5 p-2.5 rounded-xl border border-white/5 hover:bg-white/10"
+                    className="flex items-center gap-3 text-blue-50 hover:text-white transition-all duration-300 group/link bg-white/10 p-2.5 rounded-xl border border-white/10 hover:bg-white/20 hover:border-white/30"
                   >
-                    <div className="bg-[#d79b20]/20 p-2 rounded-lg text-[#d79b20] group-hover/link:bg-[#d79b20] group-hover/link:text-white transition-colors">
+                    <div className="bg-blue-400/40 p-2 rounded-lg text-blue-200 group-hover/link:bg-blue-400 group-hover/link:text-white transition-all duration-300">
                       <Mail size={16} />
                     </div>
                     <span className="font-medium tracking-wide text-sm">
@@ -731,8 +858,8 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="mt-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6 shadow-2xl group hover:border-white/20 transition-colors">
-                <span className="inline-block rounded-md border border-amber-400/30 bg-amber-500/10 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-amber-400">
+              <div className="mt-4 rounded-2xl border border-white/20 bg-blue-500/20 backdrop-blur-md p-6 shadow-2xl group hover:border-white/30 hover:bg-blue-500/30 transition-all duration-300">
+                <span className="inline-block rounded-md border border-blue-300/30 bg-blue-400/30 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-blue-200">
                   SYS_AVAILABILITY
                 </span>
 
@@ -742,22 +869,22 @@ const Contact = () => {
 
                 <div className="mt-4 space-y-3">
                   <div className="flex items-start gap-3">
-                    <div className="bg-white/10 p-2 rounded-lg text-amber-400 mt-0.5">
+                    <div className="bg-white/20 p-2 rounded-lg text-blue-200 mt-0.5">
                       <Clock3 size={16} />
                     </div>
                     <div>
                       <p className="text-white text-sm font-semibold tracking-wide">
                         Mon - Sat
                       </p>
-                      <p className="text-slate-300 text-xs mt-0.5">
+                      <p className="text-blue-100 text-xs mt-0.5">
                         9:00 AM - 7:00 PM (IST)
                       </p>
                     </div>
                   </div>
 
-                  <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs font-medium text-slate-400 uppercase tracking-wider">
+                  <div className="pt-3 border-t border-white/20 flex items-center justify-between text-xs font-medium text-blue-200 uppercase tracking-wider">
                     <span>Sunday</span>
-                    <span className="px-2 py-1 rounded-full bg-red-500/10 text-red-400 text-[10px]">
+                    <span className="px-2 py-1 rounded-full bg-red-500/30 text-red-200 text-[10px] border border-red-500/20">
                       System Closed
                     </span>
                   </div>
@@ -769,7 +896,7 @@ const Contact = () => {
       </section>
 
       {/* =============================== */}
-      {/* MAP SECTION - Premium */}
+      {/* MAP SECTION */}
       {/* =============================== */}
       <section className="w-full py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
@@ -884,7 +1011,7 @@ const Contact = () => {
       </section>
 
       {/* =============================== */}
-      {/* WAREHOUSE FOOTER - Premium */}
+      {/* WAREHOUSE FOOTER */}
       {/* =============================== */}
       <section className="w-full py-4 bg-[#0a1a52] flex items-center justify-center border-t border-[#d79b20]/20">
         <h6 className="flex items-center gap-3 text-white text-sm md:text-base font-medium px-4 text-center">

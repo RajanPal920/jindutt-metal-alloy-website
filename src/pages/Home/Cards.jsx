@@ -118,7 +118,7 @@ const Cards = () => {
         <div className="w-16 h-1 bg-[#d79b20] mt-4 rounded-full"></div>
       </div>
 
-      {/* CARDS GRID - WITH FLIP ANIMATION */}
+      {/* CARDS GRID - WITH ELEVATE & GLOW ANIMATION */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 max-w-7xl mx-auto">
         {cardData.map((card) => {
           const Icon = card.icon;
@@ -126,72 +126,73 @@ const Cards = () => {
             <Link
               key={card.id}
               to={card.link}
-              className="group relative block w-full h-[320px] perspective-1000"
+              className="group relative block w-full h-[320px] rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3"
             >
-              <div className="relative w-full h-full transition-transform duration-700 transform-style-3d group-hover:rotate-y-180">
-                {/* FRONT SIDE - Image */}
-                <div className="absolute inset-0 w-full h-full backface-hidden rounded-2xl overflow-hidden">
-                  <div className="relative w-full h-full bg-slate-100">
-                    <img
-                      src={card.image}
-                      alt={card.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
+              {/* Glow Effect - Background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#d79b20]/0 via-[#d79b20]/0 to-[#d79b20]/0 group-hover:from-[#d79b20]/5 group-hover:via-[#d79b20]/10 group-hover:to-[#d79b20]/20 transition-all duration-700 z-0"></div>
 
-                    {/* Front Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a1a52]/70 via-[#0a1a52]/30 to-transparent"></div>
+              {/* Card Inner */}
+              <div className="relative w-full h-full bg-slate-100 z-10">
+                {/* Image */}
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1"
+                />
 
-                    {/* Front Content */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <span className="inline-block text-[8px] font-extrabold tracking-[0.2em] text-white/80 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full uppercase mb-2">
-                        {card.subtitle}
-                      </span>
-                      <h3 className="text-xl font-black text-white uppercase leading-tight">
-                        {card.title}
-                      </h3>
-                      <div className="flex items-center gap-2 mt-2 text-white/60 text-xs">
-                        <span>Hover to flip</span>
-                        <span className="text-[#d79b20]">✦</span>
-                      </div>
-                    </div>
+                {/* Gradient Overlay - Static */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1a52]/80 via-[#0a1a52]/40 to-transparent transition-opacity duration-500 group-hover:opacity-90"></div>
+
+                {/* Shine Effect on Hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
+                  <div className="absolute -inset-full w-1/2 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 group-hover:translate-x-full transition-transform duration-1000"></div>
+                </div>
+
+                {/* Front Content */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
+                  {/* Top Decorative Line */}
+                  <div className="w-12 h-0.5 bg-[#d79b20] mb-3 transition-all duration-500 group-hover:w-20"></div>
+
+                  <span className="inline-block text-[8px] font-extrabold tracking-[0.2em] text-white/80 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full uppercase mb-2">
+                    {card.subtitle}
+                  </span>
+
+                  <h3 className="text-xl font-black text-white uppercase leading-tight transition-all duration-500 group-hover:text-[#d79b20]">
+                    {card.title}
+                  </h3>
+
+                  {/* Description - Reveal on Hover */}
+                  <div className="max-h-0 overflow-hidden transition-all duration-500 group-hover:max-h-20">
+                    <p className="text-white/80 text-xs mt-2 leading-relaxed">
+                      {card.description}
+                    </p>
+                  </div>
+
+                  {/* Hover Indicator */}
+                  <div className="flex items-center gap-2 mt-3 text-white/60 text-xs transition-all duration-500 group-hover:text-[#d79b20]">
+                    <span className="font-medium uppercase tracking-wider">
+                      Explore
+                    </span>
+                    <FaArrowRight className="w-3 h-3 transition-transform duration-500 group-hover:translate-x-2" />
                   </div>
                 </div>
 
-                {/* BACK SIDE - Content */}
-                <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-2xl overflow-hidden bg-gradient-to-br from-[#0a1a52] to-[#1a3a7a] p-6 flex flex-col justify-between">
-                  {/* Premium Top Line */}
-                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#d79b20] via-[#0a1a52] to-[#d79b20]"></div>
+                {/* Corner Accents */}
+                <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-white/20 transition-all duration-500 group-hover:border-[#d79b20]/50"></div>
+                <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-white/20 transition-all duration-500 group-hover:border-[#d79b20]/50"></div>
 
-                  {/* Decorative Corners */}
-                  <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-[#d79b20]/30"></div>
-                  <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-[#d79b20]/30"></div>
+                {/* Icon Badge - Top Right */}
+                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-[#d79b20]/20 backdrop-blur-sm border border-white/20 flex items-center justify-center transition-all duration-500 group-hover:bg-[#d79b20] group-hover:scale-110 group-hover:rotate-12 z-20">
+                  <Icon className="w-5 h-5 text-white transition-all duration-500 group-hover:text-white" />
+                </div>
 
-                  {/* Back Content */}
-                  <div className="flex-1 flex flex-col items-center justify-center text-center z-10">
-                    <div className="w-16 h-16 rounded-full bg-[#d79b20]/10 border-2 border-[#d79b20]/30 flex items-center justify-center mb-4">
-                      <Icon className="w-8 h-8 text-[#d79b20]" />
-                    </div>
-
-                    <h3 className="text-xl font-black text-white uppercase mb-2">
-                      {card.title}
-                    </h3>
-
-                    <p className="text-white/70 text-sm leading-relaxed max-w-xs">
-                      {card.description}
-                    </p>
-
-                    <div className="flex items-center gap-2 mt-4 text-[#d79b20] text-xs font-semibold uppercase tracking-wider">
-                      <span>Explore Now</span>
-                      <FaArrowRight className="w-3 h-3" />
-                    </div>
-                  </div>
-
-                  {/* Back Footer */}
-                  <div className="w-full border-t border-white/10 pt-4 flex justify-between items-center z-10">
-                    <span className="text-[8px] text-white/40 uppercase tracking-widest">
-                      Premium Quality
+                {/* Rating Badge - Bottom Right (hidden, appears on hover) */}
+                <div className="absolute bottom-20 right-4 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0 z-20">
+                  <div className="flex items-center gap-1 bg-[#0a1a52]/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-[#d79b20]/30">
+                    <FaStar className="w-3 h-3 text-[#d79b20]" />
+                    <span className="text-[10px] font-bold text-white">
+                      4.9
                     </span>
-                    <FaCheckCircle className="w-3 h-3 text-[#d79b20]" />
                   </div>
                 </div>
               </div>
@@ -210,26 +211,6 @@ const Cards = () => {
           <FaArrowRight className="w-4 h-4" />
         </Link>
       </div>
-
-      {/* Add CSS for 3D Flip */}
-      <style jsx>{`
-        .perspective-1000 {
-          perspective: 1000px;
-        }
-        .transform-style-3d {
-          transform-style: preserve-3d;
-        }
-        .backface-hidden {
-          backface-visibility: hidden;
-          -webkit-backface-visibility: hidden;
-        }
-        .rotate-y-180 {
-          transform: rotateY(180deg);
-        }
-        .group:hover .group-hover\\:rotate-y-180 {
-          transform: rotateY(180deg);
-        }
-      `}</style>
     </section>
   );
 };

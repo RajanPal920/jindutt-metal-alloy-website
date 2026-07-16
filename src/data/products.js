@@ -42,7 +42,7 @@ import fastenersImg from "../assets/images/productImage/fastener.webp";
 import ringsImg from "../assets/images/productImage/rings.webp";
 import pharmaFittingsImg from "../assets/images/productImage/pharma-fittings.webp";
 import hosePipeImg from "../assets/images/productImage/hose-pipe.webp";
-import hardoxPlateImg from "../assets/images/productImage/hardox-plate.webp";
+
 import platesImg from "../assets/images/productImage/plates.webp";
 import tubesImg from "../assets/images/productImage/tubes.webp";
 import forgedFittingsImg from "../assets/images/productImage/forged-fittings.webp";
@@ -214,15 +214,7 @@ const products = [
     category: "Industrial Hose",
     shortDescription: "Industrial hose pipes for chemical transfer.",
   },
-  {
-    id: 18,
-    name: "Hardox Plate",
-    slug: "hardox-plate",
-    image: hardoxPlateImg,
-    icon: Layers,
-    category: "Wear Resistant Plates",
-    shortDescription: "Premium Hardox wear-resistant plates.",
-  },
+
   {
     id: 19,
     name: "Plates",

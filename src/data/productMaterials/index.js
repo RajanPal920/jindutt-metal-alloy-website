@@ -8,7 +8,7 @@ import dairypharmaValves from "./dairy-pharma-valves";
 import fasteners from "./fasteners";
 import flanges from "./flanges";
 import forgedfitting from "./forged-fittings";
-import hardoxplate from "./hardox-plate";
+
 import hosepipe from "./hose-pipe";
 import pattapatti from "./patta-patti";
 import perforatedsheet from "./perforated-sheets";
@@ -47,7 +47,7 @@ const productMaterials = {
   "perforated-sheet": perforatedsheet,
   sheets,
   rings,
-  "hardox-plate": hardoxplate,
+
   "forged-fittings": forgedfitting,
   "dairy-fittings": dairyfitting,
 };

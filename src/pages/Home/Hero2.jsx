@@ -8,6 +8,8 @@ import {
   FaGlobe,
 } from "react-icons/fa";
 
+import pipeline from "../../assets/images/industries/pipeline.png";
+
 const Hero2 = () => {
   return (
     <section className="w-full bg-white py-16 md:py-24 overflow-hidden">
@@ -84,7 +86,7 @@ const Hero2 = () => {
             <div className="relative bg-gradient-to-br from-[#d79b20]/5 to-[#0a1a52]/5 rounded-3xl p-4 border border-slate-100 shadow-xl">
               <div className="relative overflow-hidden rounded-2xl">
                 <img
-                  src="https://rpmexport.in/images/pipeline.webp"
+                  src={pipeline}
                   alt="Industrial Pipeline"
                   className="w-full h-auto max-h-[450px] object-contain"
                 />

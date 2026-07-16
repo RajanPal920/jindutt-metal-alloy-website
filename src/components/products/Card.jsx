@@ -5,7 +5,7 @@ import { FaArrowRight, FaCheckCircle, FaStar } from "react-icons/fa";
 import "./ProductCard.css";
 
 const Card = ({
-  item,
+  product, // Changed from 'item' to 'product' for consistency
   showBadge = true,
   showStandards = true,
   badgeLabel = "Material Group",
@@ -26,53 +26,55 @@ const Card = ({
     <div className={`product-card group ${cardClassName}`}>
       {/* Image */}
       <div className={`product-card-image ${imageClassName}`}>
-        <img src={item.image} alt={item.title} loading="lazy" />
+        <img src={product.image} alt={product.title} loading="lazy" />
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a1a52]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a1a52]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
         {/* Quick View Badge */}
-        <div className="absolute bottom-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-[#0a1a52] shadow-sm opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+        <div className="absolute bottom-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-[#0a1a52] shadow-sm opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 pointer-events-none">
           Quick View
         </div>
       </div>
 
       {/* Card Content */}
       <div className={`product-card-body ${bodyClassName}`}>
-        <h3 className={`product-card-title ${titleClassName}`}>{item.title}</h3>
+        <h3 className={`product-card-title ${titleClassName}`}>
+          {product.title}
+        </h3>
 
         {/* Material Group / Badge */}
-        {showBadge && item.materialGroup && (
+        {showBadge && product.materialGroup && (
           <div className="mb-3">
             <span className={`product-card-badge ${badgeClassName}`}>
-              {item.materialGroup}
+              {product.materialGroup}
             </span>
           </div>
         )}
 
         {/* Description */}
         <p className={`product-card-description ${descriptionClassName}`}>
-          {item.shortDescription}
+          {product.shortDescription}
         </p>
 
         {/* Standards */}
-        {showStandards && item.standards && (
+        {showStandards && product.standards && (
           <p className={`product-card-standards ${standardsClassName}`}>
             <span className="inline-block bg-blue-50 text-blue-700 text-[10px] font-medium px-2 py-0.5 rounded-full mr-1.5">
               ✓
             </span>
-            {item.standards}
+            {product.standards}
           </p>
         )}
 
         {/* Additional Fields - Flexible */}
-        {item.application && (
+        {product.application && (
           <p className="product-card-application">
-            <strong>Application:</strong> {item.application}
+            <strong>Application:</strong> {product.application}
           </p>
         )}
 
-        {item.forms && (
+        {product.forms && (
           <p className="product-card-forms">
-            <strong>Forms:</strong> {item.forms}
+            <strong>Forms:</strong> {product.forms}
           </p>
         )}
 
@@ -91,7 +93,7 @@ const Card = ({
         {/* Button / CTA */}
         <div className={`product-card-cta ${ctaClassName}`}>
           <Link
-            to={`/products/${item.slug}`}
+            to={`/products/${product.slug}`}
             className={`product-card-button ${buttonClassName}`}
           >
             {ctaText}
